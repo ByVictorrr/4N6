@@ -1,1 +1,3 @@
-# 4N6 - is a team name of cal poly students helping the world of forensics.
+# 4N6 - CPE Cal Poly student's helping the world of forensics.
+
+
