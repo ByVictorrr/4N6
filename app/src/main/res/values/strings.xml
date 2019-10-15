@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Digital Evidence</string>
+
+    <string name="title_fave">Favorites</string>
+    <string name="title_home">Home</string>
+    <string name="title_search">Search</string>
+
+</resources>
