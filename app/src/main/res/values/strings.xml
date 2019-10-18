@@ -1,11 +1,17 @@
 <resources>
+    <string name="app_name">Digital Evidence</string>
 
     <string name="title_profile">Profile</string>
-    <string name="app_name">Digital Evidence</string>
     <string name="title_help">Help</string>
+    <string name="title_back">Back</string>
+    <string name="title_edit">Edit</string>
 
     <string name="title_fave">Favorites</string>
     <string name="title_home">Home</string>
     <string name="title_search">Search</string>
 
+    <string name="button_next">Next</string>
+    <string name="button_finish">Finish</string>
+
+    <string name="off_text">Leave the device off and collect info.</string>
 </resources>

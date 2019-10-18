@@ -4,24 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:weightSum="8"
     android:orientation="vertical"
     tools:context="com.example.digitalevidence.MainActivity">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/navigationBarTop"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.25"
-        android:background="@color/colorNavBack"
-        app:itemIconTint="@color/navigationcolors"
-        app:itemTextColor="@color/navigationcolors"
-        app:layout_constraintBottom_toTopOf="parent"
-        app:menu="@menu/naviagtionbartop" />
+        android:id="@+id/hometool"
+        style="@style/TopNavigation"
+        app:menu="@menu/hometool" >
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.5" />
+        android:layout_weight="0.5"
+        android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/mobile_button"
@@ -29,14 +25,12 @@
         android:layout_height="0dp"
         android:layout_gravity="center"
         android:layout_weight="1"
-        android:background="@drawable/mobile_button"
-        app:layout_constraintBottom_toTopOf="@+id/computer_button"
-        app:layout_constraintStart_toStartOf="@+id/computer_button" />
+        android:background="@drawable/mobile_button" />
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.5" />
+        android:layout_weight="0.5"
+        android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/computer_button"
@@ -44,14 +38,12 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:layout_gravity="center"
-        android:background="@drawable/computers_button"
-        app:layout_constraintBottom_toTopOf="@+id/storage_button"
-        app:layout_constraintStart_toStartOf="@+id/storage_button" />
+        android:background="@drawable/computers_button" />
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.5" />
+        android:layout_weight="0.5"
+        android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/storage_button"
@@ -59,14 +51,12 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:layout_gravity="center"
-        android:background="@drawable/storage_button"
-        app:layout_constraintBottom_toTopOf="@+id/gaming_button"
-        app:layout_constraintStart_toStartOf="@+id/gaming_button" />
+        android:background="@drawable/storage_button" />
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.5" />
+        android:layout_weight="0.5"
+        android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/gaming_button"
@@ -74,14 +64,12 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:layout_gravity="center"
-        android:background="@drawable/gaming_button"
-        app:layout_constraintBottom_toTopOf="@+id/misc_button"
-        app:layout_constraintStart_toStartOf="@+id/misc_button" />
+        android:background="@drawable/gaming_button" />
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.5" />
+        android:layout_weight="0.5"
+        android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/misc_button"
@@ -89,24 +77,17 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:layout_gravity="center"
-        android:background="@drawable/misc_button"
-        app:layout_constraintBottom_toTopOf="@+id/navigationBar"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:background="@drawable/misc_button" />
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1" />
+        android:layout_weight="0.5"
+        android:layout_height="wrap_content" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/navigationBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.25"
-        android:background="@color/colorNavBack"
-        app:itemIconTint="@color/navigationcolors"
-        app:itemTextColor="@color/navigationcolors"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:menu="@menu/navigationbar" />
+        android:id="@+id/homenav"
+        style="@style/BottomNavigation"
+        app:menu="@menu/nav" >
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 
 </LinearLayout>

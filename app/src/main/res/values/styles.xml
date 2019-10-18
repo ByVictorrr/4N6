@@ -1,11 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
+    <style name="AppTheme" parent="Theme.AppCompat">
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorSecondary">@color/colorSecondary</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:colorBackground">@color/colorBackground</item>
+        <item name="android:typeface">@font/opensansregular</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorBlack</item>
     </style>
 
+    <style name="AppButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:background">@drawable/vectors</item>
+        <item name="backgroundTint">@drawable/vectors</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="TopNavigation">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">top</item>
+        <item name="itemIconTint">@color/colorIconSel</item>
+        <item name="itemTextColor">@color/colorIconSel</item>
+        <item name="android:layout_alignParentTop">true</item>
+    </style>
+
+    <style name="BottomNavigation">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">bottom</item>
+        <item name="itemIconTint">@color/colorIcon</item>
+        <item name="itemTextColor">@color/colorIcon</item>
+        <item name="android:layout_alignParentBottom">true</item>
+    </style>
+
+    <style name="TextBox">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="itemIconTint">@color/colorIcon</item>
+        <item name="itemTextColor">@color/colorIcon</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:maxWidth">250dp</item>
+    </style>
 </resources>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
         android:id="@+id/navigation_fave"
@@ -12,8 +13,9 @@
         android:title="@string/title_home" />
 
     <item
-        android:id="@+id/navigation_search"
+        android:id="@+id/app_bar_search"
         android:icon="@drawable/search_nav"
-        android:title="@string/title_search" />
+        android:title="@string/title_search"
+        app:actionViewClass="android.widget.SearchView" />
 
 </menu>
