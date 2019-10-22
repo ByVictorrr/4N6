@@ -9,6 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".MiscActivity"
+            android:label="@string/title_activity_misc"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".StorageActivity"
+            android:label="@string/title_activity_storage"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ComputerActivity"
+            android:label="@string/title_activity_computer"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MobileActivity"
+            android:label="@string/title_activity_mobile"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
