@@ -9,6 +9,10 @@
     <string name="title_fave">Favorites</string>
     <string name="title_home">Home</string>
     <string name="title_search">Search</string>
+    <string name="title_activity_mobile">MobileActivity</string>
+    <string name="title_activity_computer">ComputerActivity</string>
+    <string name="title_activity_storage">StorageActivity</string>
+    <string name="title_activity_misc">MiscActivity</string>
 
     <string name="button_next">Next</string>
     <string name="button_finish">Finish</string>
