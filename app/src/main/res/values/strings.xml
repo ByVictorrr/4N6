@@ -16,6 +16,4 @@
 
     <string name="button_next">Next</string>
     <string name="button_finish">Finish</string>
-
-    <string name="off_text">Leave the device off and collect info.</string>
 </resources>

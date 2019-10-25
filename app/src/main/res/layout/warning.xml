@@ -8,7 +8,7 @@
     android:orientation="vertical"
     tools:context="com.example.digitalevidence.MainActivity">
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
+    <!--<com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/finishtool"
         style="@style/TopNavigation"
         app:menu="@menu/backtool" >
@@ -44,6 +44,6 @@
         android:id="@+id/finishnav"
         style="@style/BottomNavigation"
         app:menu="@menu/nav" >
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
+    </com.google.android.material.bottomnavigation.BottomNavigationView>-->
 
 </LinearLayout>

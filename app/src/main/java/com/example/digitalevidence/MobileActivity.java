@@ -44,13 +44,13 @@ public class MobileActivity extends AppCompatActivity {
 
 */
 
-        // Step 1 - define list of img views
+        /*// Step 1 - define list of img views
         List<ImageView> imgV = Arrays.asList((ImageView)findViewById(R.id.imageView));
         List<String> urls  = Arrays.asList("https://cnet4.cbsistatic.com/img/QJcTT2ab-sYWwOGrxJc0MXSt3UI=/2011/10/27/a66dfbb7-fdc7-11e2-8c7c-d4ae52e62bcc/android-wallpaper5_2560x1600_1.jpg");
         // Step 2 - set the list of img views and url
         setImageView(imgV);
         // step 3 -  change pictures for each img view
-        changePictureImageView(urls, imgV);
+        changePictureImageView(urls, imgV);*/
 
     }
 

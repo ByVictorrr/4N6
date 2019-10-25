@@ -7,7 +7,7 @@
     tools:context=".MobileActivity">
 
 
-    <include
+    <!--<include
         layout="@layout/content_mobile"
         android:layout_width="377dp"
         android:layout_height="460dp" />
@@ -24,7 +24,7 @@
         android:id="@+id/imageView"
         android:layout_width="72dp"
         android:layout_height="76dp"
-        app:srcCompat="@drawable/iphonex" />
+        app:srcCompat="@drawable/iphonex" />-->
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -8,11 +8,22 @@
     android:orientation="vertical"
     tools:context="com.example.digitalevidence.MainActivity">
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/hometool"
-        style="@style/TopNavigation"
-        app:menu="@menu/hometool" >
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ToolbarTheme" >
+
+        <!--<TextView
+            android:id="@+id/toolbar_title"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:text="@string/app_name"
+            android:textColor="@android:color/black" />-->
+
+    </android.support.v7.widget.Toolbar>
 
     <Space
         android:layout_width="match_parent"
@@ -85,8 +96,8 @@
         android:layout_height="wrap_content" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/homenav"
-        style="@style/BottomNavigation"
+        android:id="@+id/nav"
+        style="@style/Navigation"
         app:menu="@menu/nav" >
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 

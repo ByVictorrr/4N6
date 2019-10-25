@@ -8,7 +8,7 @@
     android:weightSum="1"
     tools:context="com.example.digitalevidence.MainActivity" >
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
+    <!--<com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/searchtool"
         style="@style/TopNavigation"
         app:menu="@menu/searchtool" >
@@ -23,6 +23,6 @@
         android:id="@+id/searchnav"
         style="@style/BottomNavigation"
         app:menu="@menu/nav">
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
+    </com.google.android.material.bottomnavigation.BottomNavigationView>-->
 
 </LinearLayout>
