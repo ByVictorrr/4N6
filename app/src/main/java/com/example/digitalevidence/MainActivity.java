@@ -2,19 +2,13 @@ package com.example.digitalevidence;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.service.autofill.OnClickAction;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 
 import android.view.Menu;
-import android.widget.TextView;
-import android.support.v7.app.ActionBar;
 import androidx.appcompat.widget.Toolbar;
 
-public class MainActivity extends AppCompatActivity/*  implements View.OnClickListener*/ {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,23 +16,17 @@ public class MainActivity extends AppCompatActivity/*  implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //getting the toolbar
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-
-        //setting the title
-        toolbar.setTitle("My Toolbar");
-
-        //placing toolbar in place of actionbar
-        setSupportActionBar(toolbar);
-
         /*Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("My Name Here");
-        setSupportActionBar(toolbar);
 
-        if (getSupportActionBar() != null) {
+        if(toolbar != null) {
+            getSupportActionBar().setTitle("My custom toolbar!");
+            setSupportActionBar(toolbar);
+            getSupportActionBar().setDisplayShowTitleEnabled(true);
+
+            getSupportActionBar().setHomeButtonEnabled(true);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
+
 
         toolbar.setNavigationIcon(R.drawable.back_arrow);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -46,9 +34,9 @@ public class MainActivity extends AppCompatActivity/*  implements View.OnClickLi
             public void onClick(View view) {
                 finish();
             }
-        });
+        });*/
 
-        TextView mTitle = (TextView) toolbar.findViewById(R.id.toolbar_title);
+        /*TextView mTitle = (TextView) toolbar.findViewById(R.id.toolbar_title);
 
         -------
 
@@ -72,18 +60,27 @@ public class MainActivity extends AppCompatActivity/*  implements View.OnClickLi
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.test, menu);
-        return super.onCreateOptionsMenu(menu);
+        getMenuInflater().inflate(R.menu.menutop, menu);
+        return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                finish();
-                break;
-        }
-        return true;
+        switch(item.getItemId()) {
+            case R.id.add:
+                //add the function to perform here
+                return(true);
+            case R.id.reset:
+                //add the function to perform here
+                return(true);
+            case R.id.about:
+                //add the function to perform here
+                return(true);
+            case R.id.exit:
+                //add the function to perform here
+                return(true);
+    }
+        return(super.onOptionsItemSelected(item));
     }
 
     /*@Override
