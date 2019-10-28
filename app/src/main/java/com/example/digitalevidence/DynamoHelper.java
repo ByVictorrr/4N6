@@ -1,8 +1,11 @@
 package com.example.digitalevidence;
 
 import android.app.Activity;
+import android.content.Context;
 
 import com.amazonaws.auth.CognitoCachingCredentialsProvider;
+import com.amazonaws.mobileconnectors.dynamodbv2.document.ScanOperationConfig;
+import com.amazonaws.mobileconnectors.dynamodbv2.document.Search;
 import com.amazonaws.mobileconnectors.dynamodbv2.document.Table;
 import com.amazonaws.mobileconnectors.dynamodbv2.document.UpdateItemOperationConfig;
 import com.amazonaws.mobileconnectors.dynamodbv2.document.datatype.Document;
@@ -21,50 +24,45 @@ import java.util.List;
 public class DynamoHelper {
     // for each type of activity i.e computer, mobile, ect..
     private List<Table> tables;
-    private List<String> tableNames = Arrays.asList("mobile"); //, "computer", "storage", "misc");
-    private static final String COGNITO_POOL_ID = "us-east-2:4a316b0c-77e0-4f36-8d6a-1a457af555f5";
+    private List<String> tableNames = Arrays.asList("Mobile"); //, "computer", "storage", "misc");
+    private static final String COGNITO_POOL_ID = "us-east-2:ae114fca-5629-47cd-aeb6-82090028f6be";
     private static final Regions COGNITO_REGION= Regions.US_EAST_2;
     public  static final int MOBILE_TABLE_INDEX = 0;
 
 
-    public void setTables(List<Table> t){
-        this.tables = t;
-    }
-    public List<Table> getTables(){
-        return this.tables;
-    }
-
-
-    private static CognitoCachingCredentialsProvider getCredProvider(Activity activity){
-        CognitoCachingCredentialsProvider credentialsProvider = new CognitoCachingCredentialsProvider(activity.getApplicationContext(), COGNITO_POOL_ID, COGNITO_REGION);
-        return credentialsProvider;
-    }
-    // Description: gets connection to the dynamoDB
-    private static AmazonDynamoDBClient getClientConnection(Activity activity){
-        CognitoCachingCredentialsProvider credentialsProvider = getCredProvider(activity);
+    public DynamoHelper(int table_size, Activity activity){
+        //CognitoCachingCredentialsProvider credentialsProvider = new CognitoCachingCredentialsProvider(activity, COGNITO_POOL_ID, COGNITO_REGION);
+        // Initialize the Amazon Cognito credentials provider
+        CognitoCachingCredentialsProvider credentialsProvider = new CognitoCachingCredentialsProvider(
+                activity,
+                "us-east-2:4a316b0c-77e0-4f36-8d6a-1a457af555f5", // Identity pool ID
+                Regions.US_EAST_2 // Region
+        );
         AmazonDynamoDBClient dbClient = new AmazonDynamoDBClient(credentialsProvider);
-        return dbClient;
-    }
-
-
-    // Description: gets all the tables in dynamoDB
-    public List<Table> getTables(Activity activity){
-        AmazonDynamoDBClient dbClient = getClientConnection(activity);
-        List<Table> tables = new ArrayList<>();
+        this.tables = new ArrayList<>(table_size);
         for (int i = 0; i < tableNames.size(); i++) {
             tables.set(i, Table.loadTable(dbClient, tableNames.get(i)));
         }
-        return tables;
     }
+
+    public List<Table> getTables(){ return this.tables; }
+
 
     // Description: get only one element in the tableIndex
-    public Document getById(String id, int tableIndex, Activity activity){
-        return tables.get(tableIndex).getItem(new Primitive(getCredProvider(activity).getCachedIdentityId()), new Primitive(id));
+    public Document getById(String id, int tableIndex){
+        return tables.get(tableIndex).getItem(new Primitive(id));
     }
-
+/*
     public List<Document> getAll(int tableIndex, Activity activity){
-        return tables.get(tableIndex).query(new Primitive(getCredProvider(activity).getCachedIdentityId())).getAllResults();
+        ScanOperationConfig scanConfig = new ScanOperationConfig();
+        List<String> attributeList = new ArrayList<>();
+        attributeList.add("name");
+        scanConfig.withAttributesToGet(attributeList);
+        Search searchResult = dbTable.scan(scanConfig);
+        return searchResult.getAllResults();
     }
+*/
+
 
 }
 
