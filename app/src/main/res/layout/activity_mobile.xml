@@ -9,8 +9,8 @@
 
     <include
         layout="@layout/content_mobile"
-        android:layout_width="377dp"
-        android:layout_height="460dp" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
@@ -21,7 +21,31 @@
         app:srcCompat="@android:drawable/ic_dialog_email" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageView0"
+        android:layout_width="72dp"
+        android:layout_height="76dp"
+        app:srcCompat="@drawable/iphonex" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="72dp"
+        android:layout_height="76dp"
+        android:foregroundGravity="center|center_horizontal"
+        app:srcCompat="@drawable/iphonex" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="72dp"
+        android:layout_height="76dp"
+        app:srcCompat="@drawable/iphonex" />
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="72dp"
+        android:layout_height="76dp"
+        app:srcCompat="@drawable/iphonex" />
+
+    <ImageView
+        android:id="@+id/imageView4"
         android:layout_width="72dp"
         android:layout_height="76dp"
         app:srcCompat="@drawable/iphonex" />
