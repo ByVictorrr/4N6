@@ -4,7 +4,7 @@
   "CredentialsProvider": {
     "CognitoIdentity": {
       "Default": {
-        "PoolId": "us-east-2:dfea3af9-d0fa-4314-86a4-bc848d234c90",
+        "PoolId": "us-east-2:9bf3662b-58e0-440e-aaec-a03b002c8c4a",
         "Region": "us-east-2"
       }
     }
@@ -14,7 +14,7 @@
   },
   "S3TransferUtility": {
     "Default": {
-      "Bucket": "digitalforensics-userfiles-mobilehub-1232538713",
+      "Bucket": "digitalforensics-userfiles-mobilehub-1666815180",
       "Region": "us-east-2"
     }
   },
@@ -25,7 +25,7 @@
   },
   "PinpointAnalytics": {
     "Default": {
-      "AppId": "c5625cb285214edf9017f1e9bdc7c348",
+      "AppId": "228a033e677849cd9027ac58d919525c",
       "Region": "us-east-1"
     }
   },
@@ -36,7 +36,7 @@
   },
   "UserFileManager": {
     "Default": {
-      "Bucket": "digitalforensics-userfiles-mobilehub-1232538713",
+      "Bucket": "digitalforensics-userfiles-mobilehub-1666815180",
       "Region": "us-east-2"
     }
   }

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.amazonaws:aws-android-sdk-appsync-gradle-plugin:2.9.0@jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/com.amazonaws/aws-android-sdk-appsync-gradle-plugin/2.9.0/da5140065fce0fdb80651881183e189d719836aa/aws-android-sdk-appsync-gradle-plugin-2.9.0.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/com.amazonaws/aws-android-sdk-appsync-gradle-plugin/2.9.0/818f528e660590ba055b37e202b3535bc8751f81/aws-android-sdk-appsync-gradle-plugin-2.9.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/com.amazonaws/aws-android-sdk-appsync-gradle-plugin/2.9.0/2a5eb2c57dfc192470898a54b7157aff15bb34eb/aws-android-sdk-appsync-gradle-plugin-2.9.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
