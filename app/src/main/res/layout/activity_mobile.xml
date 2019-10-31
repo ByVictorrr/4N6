@@ -28,8 +28,8 @@
 
     <ImageView
         android:id="@+id/imageView1"
-        android:layout_width="72dp"
-        android:layout_height="76dp"
+        android:layout_width="125dp"
+        android:layout_height="159dp"
         android:foregroundGravity="center|center_horizontal"
         app:srcCompat="@drawable/iphonex" />
 
@@ -38,16 +38,17 @@
         android:layout_width="72dp"
         android:layout_height="76dp"
         app:srcCompat="@drawable/iphonex" />
+
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="72dp"
-        android:layout_height="76dp"
+        android:layout_width="78dp"
+        android:layout_height="81dp"
         app:srcCompat="@drawable/iphonex" />
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="72dp"
-        android:layout_height="76dp"
+        android:layout_width="269dp"
+        android:layout_height="441dp"
         app:srcCompat="@drawable/iphonex" />
 
 
