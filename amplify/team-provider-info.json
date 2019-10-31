@@ -1,0 +1,14 @@
+{
+    "linux": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-4n6-linux-232530-authRole",
+            "UnauthRoleArn": "arn:aws:iam::515851393822:role/amplify-4n6-linux-232530-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::515851393822:role/amplify-4n6-linux-232530-authRole",
+            "Region": "us-east-2",
+            "DeploymentBucketName": "amplify-4n6-linux-232530-deployment",
+            "UnauthRoleName": "amplify-4n6-linux-232530-unauthRole",
+            "StackName": "amplify-4n6-linux-232530",
+            "StackId": "arn:aws:cloudformation:us-east-2:515851393822:stack/amplify-4n6-linux-232530/3d17c930-fba7-11e9-a619-02ba814fbd16"
+        }
+    }
+}

@@ -8,8 +8,8 @@ import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBTable;
 
 public class MobileDO extends Model{
 
-    private static String _name;
-    private static String _link;
+    private String _name;
+    private String _link;
 
     @DynamoDBHashKey(attributeName = "name")
     @DynamoDBAttribute(attributeName = "name")
@@ -21,7 +21,7 @@ public class MobileDO extends Model{
     }
 
     @DynamoDBAttribute(attributeName = "link")
-    public static String getLink() {
+    public String getLink() {
         return _link;
     }
 

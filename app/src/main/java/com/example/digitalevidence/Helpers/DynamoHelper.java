@@ -1,25 +1,19 @@
 package com.example.digitalevidence.Helpers;
 
-import android.annotation.TargetApi;
 import android.content.Context;
-import android.util.Log;
 
 import com.amazonaws.mobile.client.AWSMobileClient;
 import com.amazonaws.mobile.config.AWSConfiguration;
 import com.amazonaws.mobileconnectors.dynamodbv2.document.datatype.Document;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMapper;
-import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMapperConfig;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBScanExpression;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.PaginatedList;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 import com.example.digitalevidence.Models.MobileDO;
-import com.google.common.collect.Lists;
-import com.example.digitalevidence.Models.Model;
 
 
 import java.lang.reflect.Type;
 import java.util.List;
-import java.util.stream.Stream;
 
 public class DynamoHelper {
     private List<?> models; // list of data models (like moblileD0, ect..)
@@ -61,7 +55,6 @@ public class DynamoHelper {
 
  */
 
-    @TargetApi(24)
     //Description: returns a list of models given an activity (context) and a type (model, ex: would be mobileD0)
     public Thread getAll(final Type type) {
         // Step 1 - notify outside world that were in a thread
@@ -69,15 +62,7 @@ public class DynamoHelper {
         return new Thread(new Runnable() {
             public void run() {
                 // Step 2 - retrieve all items
-                //List<?> list = dynamoDBMapper.scan(type.getClass(), new DynamoDBScanExpression());
                 PaginatedList<MobileDO> list = dynamoDBMapper.scan(MobileDO.class, new DynamoDBScanExpression());
-
-
-                // TODO: only returning the same item
-                for(int i = 0; i < list.size(); i++){
-                    String var = list.get(i).getName();
-                    String fag = "fuck me";
-                }
                 setModels(list);
                 // step 3 - notify that were are going out
             }

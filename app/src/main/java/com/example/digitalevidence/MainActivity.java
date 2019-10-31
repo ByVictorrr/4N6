@@ -13,16 +13,24 @@ import android.widget.Toolbar;
 import com.amazonaws.mobile.client.AWSMobileClient;
 import com.amazonaws.mobile.client.AWSStartupHandler;
 import com.amazonaws.mobile.client.AWSStartupResult;
+import com.amazonaws.mobile.config.AWSConfiguration;
+import com.amazonaws.mobileconnectors.appsync.AWSAppSyncClient;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private AWSAppSyncClient mAWSAppSyncClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+
+        // App sync client
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
+        mAWSAppSyncClient = AWSAppSyncClient.builder()
+                .context(getApplicationContext())
+                .awsConfiguration(new AWSConfiguration(getApplicationContext()))
+                .build();
 
         // Establishes your connection to aws and acts as an interface for your services
         AWSMobileClient.getInstance().initialize(this, new AWSStartupHandler() {
@@ -40,14 +48,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         storageBTN.setOnClickListener(this);
         Button gamingBTN = (Button) findViewById(R.id.gaming_button);
         gamingBTN.setOnClickListener(this);
-        Button miscBTN = (Button)findViewById(R.id.misc_button);
+        Button miscBTN = (Button) findViewById(R.id.misc_button);
         miscBTN.setOnClickListener(this);
     }
 
     @Override
-    public void onClick(View v){
+    public void onClick(View v) {
         Intent i;
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.mobile_button:
                 i = new Intent(this, MobileActivity.class);
                 startActivity(i);
@@ -67,7 +75,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         }
     }
+
 }
+
 
 
 
