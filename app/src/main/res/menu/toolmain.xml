@@ -5,14 +5,16 @@
         android:id="@+id/profile"
         android:icon="@drawable/profile_button"
         app:showAsAction="ifRoom|withText"
-        android:title="@string/title_profile">
+        android:title="@string/title_profile"
+        android:orderInCategory="1">
     </item>
 
     <item
         android:id="@+id/help"
         android:icon="@drawable/help_button"
         app:showAsAction="ifRoom|withText"
-        android:title="@string/title_help">
+        android:title="@string/title_help"
+        android:orderInCategory="2">
     </item>
 
 </menu>

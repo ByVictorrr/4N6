@@ -1,14 +1,24 @@
 package com.example.digitalevidence;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
-
 import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-public class MainActivity extends AppCompatActivity {
+/*import com.amazonaws.mobile.client.AWSMobileClient;
+import com.amazonaws.mobile.client.AWSStartupHandler;
+import com.amazonaws.mobile.client.AWSStartupResult;
+import com.amazonaws.mobile.config.AWSConfiguration;
+import com.amazonaws.mobileconnectors.appsync.AWSAppSyncClient;*/
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    //private AWSAppSyncClient mAWSAppSyncClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,37 +26,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /*Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-
-        if(toolbar != null) {
-            getSupportActionBar().setTitle("My custom toolbar!");
-            setSupportActionBar(toolbar);
-            getSupportActionBar().setDisplayShowTitleEnabled(true);
-
-            getSupportActionBar().setHomeButtonEnabled(true);
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        }
-
-
-        toolbar.setNavigationIcon(R.drawable.back_arrow);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });*/
-
-        /*TextView mTitle = (TextView) toolbar.findViewById(R.id.toolbar_title);
-
-        -------
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-        getSupportActionBar().setDisplayShowTitleEnabled(true);
-        TextView mTitle = (TextView) toolbar.findViewById(R.id.toolbar_title);
-
-        Button mobileBTN = (Button) findViewById(R.id.mobile_button);
+        /*Button mobileBTN = (Button) findViewById(R.id.mobile_button);
         mobileBTN.setOnClickListener(this);
         Button computerBTN = (Button) findViewById(R.id.computer_button);
         computerBTN.setOnClickListener(this);
@@ -54,39 +38,52 @@ public class MainActivity extends AppCompatActivity {
         storageBTN.setOnClickListener(this);
         Button gamingBTN = (Button) findViewById(R.id.gaming_button);
         gamingBTN.setOnClickListener(this);
-        Button miscBTN = (Button)findViewById(R.id.misc_button);
-        miscBTN.setOnClickListener(this);*/
+        Button miscBTN = (Button) findViewById(R.id.misc_button);
+        miscBTN.setOnClickListener(this);
+
+        // App sync client
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        mAWSAppSyncClient = AWSAppSyncClient.builder()
+                .context(getApplicationContext())
+                .awsConfiguration(new AWSConfiguration(getApplicationContext()))
+                .build();
+
+        // Establishes your connection to aws and acts as an interface for your services
+        AWSMobileClient.getInstance().initialize(this, new AWSStartupHandler() {
+            @Override
+            public void onComplete(AWSStartupResult awsStartupResult) {
+                Log.d("YourMainActivity", "AWSMobileClient is instantiated and you are connected to AWS!");
+            }
+        }).execute();*/
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menutop, menu);
+        getMenuInflater().inflate(R.menu.toolmain, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()) {
-            case R.id.add:
+            case R.id.navigation_fave:
                 //add the function to perform here
                 return(true);
-            case R.id.reset:
+            case R.id.navigation_home:
                 //add the function to perform here
                 return(true);
-            case R.id.about:
+            case R.id.app_bar_search:
                 //add the function to perform here
                 return(true);
-            case R.id.exit:
-                //add the function to perform here
-                return(true);
-    }
+        }
         return(super.onOptionsItemSelected(item));
     }
 
-    /*@Override
-    public void onClick(View v){
+    @Override
+    public void onClick(View v) {
         Intent i;
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.mobile_button:
                 i = new Intent(this, MobileActivity.class);
                 startActivity(i);
@@ -99,13 +96,17 @@ public class MainActivity extends AppCompatActivity {
                 i = new Intent(this, StorageActivity.class);
                 startActivity(i);
                 break;
+            case R.id.gaming_button:
+                i = new Intent(this, GamingActivity.class);
+                startActivity(i);
+                break;
             case R.id.misc_button:
                 i = new Intent(this, MiscActivity.class);
                 startActivity(i);
                 break;
 
         }
-    }*/
+    }
 }
 
 

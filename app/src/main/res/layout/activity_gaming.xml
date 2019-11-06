@@ -16,14 +16,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:menu="@menu/toolfave">
+        app:menu="@menu/toolback">
 
         <TextView
             android:id="@+id/toolbar_title"
             style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/title_fave"
+            android:text="@string/title_gaming"
             android:textColor="@android:color/black" />
 
     </androidx.appcompat.widget.Toolbar>
