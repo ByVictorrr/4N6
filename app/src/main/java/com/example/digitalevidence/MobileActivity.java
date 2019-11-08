@@ -48,7 +48,6 @@ public class MobileActivity extends AppCompatActivity {
         imageViews = getImageViews();
         textViews = getTextViews();
 
-
         // Step 2 - get all urls from dynamo helper (for mobile objects)
         Thread getAll = dynamoHelper.getAll(MobileDO.class);
 
@@ -130,6 +129,7 @@ public class MobileActivity extends AppCompatActivity {
         imgV.add((ImageView)findViewById(R.id.imageView3));
         imgV.add((ImageView)findViewById(R.id.imageView4));
         imgV.add((ImageView)findViewById(R.id.imageView5));
+        imgV.add((ImageView)findViewById(R.id.imageView6));
         return imgV;
     }
     private List<TextView> getTextViews() {
@@ -141,6 +141,7 @@ public class MobileActivity extends AppCompatActivity {
         txtV.add((TextView)findViewById(R.id.textView3));
         txtV.add((TextView)findViewById(R.id.textView4));
         txtV.add((TextView)findViewById(R.id.textView5));
+        txtV.add((TextView)findViewById(R.id.textView6));
         return txtV;
     }
 

@@ -1,15 +1,19 @@
-package com.example.digitalevidence.Models;
+package Models;
 
-import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBAttribute;
-import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBHashKey;
-import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBTable;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
 
 @DynamoDBTable(tableName = "digitalforensics-mobilehub-1666815180-Mobile")
 
-public class MobileDO extends Model{
+public class MobileDO{
     private String _name;
     private String _link;
 
+    public MobileDO(String name, String link){
+        _name = name;
+        _link = _link;
+    }
     @DynamoDBHashKey(attributeName = "name")
     @DynamoDBAttribute(attributeName = "name")
     public String getName() {

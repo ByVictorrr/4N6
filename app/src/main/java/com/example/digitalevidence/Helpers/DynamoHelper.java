@@ -10,8 +10,6 @@ import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBScanExpr
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.PaginatedList;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 import com.example.digitalevidence.Models.MobileDO;
-
-
 import java.lang.reflect.Type;
 import java.util.List;
 
@@ -36,24 +34,6 @@ public class DynamoHelper {
 
     }
 
-
-
-/*
-    // Description: gets a Single value based off its id // TODO : use Dynamomapper to get the one item
-    void getItem(final String id, final Model model){ //TODO: use model to get table name
-        // how can we use parameters to get fed to run()  - use final variables
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                Table table = Table.loadTable(dynamoDBClient, model.getTableName());
-                Document d = table.getItem(new Primitive(id));
-                setItem(d);
-            }
-        }).start();
-
-    }
-
- */
 
     //Description: returns a list of models given an activity (context) and a type (model, ex: would be mobileD0)
     public Thread getAll(final Type type) {

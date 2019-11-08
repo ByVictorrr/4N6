@@ -8,6 +8,7 @@ import android.service.autofill.OnClickAction;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ScrollView;
 import android.widget.Toolbar;
 
 import com.amazonaws.mobile.client.AWSMobileClient;
@@ -50,6 +51,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         gamingBTN.setOnClickListener(this);
         Button miscBTN = (Button) findViewById(R.id.misc_button);
         miscBTN.setOnClickListener(this);
+
+        ScrollView scrollView = findViewById(R.id.ScrollView);
     }
 
     @Override
