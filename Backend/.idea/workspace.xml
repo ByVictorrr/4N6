@@ -2,36 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3251f53f-67e5-43e4-84ca-e91f6ff441ec" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_amazonaws_aws_java_sdk_core_1_11_163.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_amazonaws_aws_java_sdk_dynamodb_1_11_163.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_amazonaws_aws_java_sdk_kms_1_11_163.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_amazonaws_aws_java_sdk_s3_1_11_163.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_amazonaws_aws_lambda_java_core_1_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_amazonaws_aws_lambda_java_events_2_2_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_amazonaws_jmespath_java_1_11_163.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_6_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_6_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_6_7_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_dataformat_jackson_dataformat_cbor_2_6_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__joda_time_joda_time_2_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_ion_ion_java_1_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HelloWorldFunction/HelloWorld.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HelloWorldFunction/src/main/java/Models/MobileDO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HelloWorldFunction/src/main/java/Utility/Pair.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HelloWorldFunction/dependency-reduced-pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HelloWorldFunction/events/s3put.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_appcompat_appcompat_1_0_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_appcompat_appcompat_1_0_2_aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_arch_core_core_runtime_2_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_arch_core_core_runtime_2_0_0_aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_asynclayoutinflater_asynclayoutinflater_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_asynclayoutinflater_asynclayoutinflater_1_0_0_aar.xml" afterDir="false" />
@@ -78,14 +50,46 @@
       <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_google_android_material_material_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_google_android_material_material_1_0_0_aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_squareup_picasso_picasso_2_71828_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_squareup_picasso_picasso_2_71828_aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_amazonaws_aws_lambda_java_core_1_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_amazonaws_aws_lambda_java_core_1_2_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelloWorldFunction/HelloWorld.iml" beforeDir="false" afterPath="$PROJECT_DIR$/HelloWorldFunction/HelloWorld.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelloWorldFunction/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/HelloWorldFunction/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelloWorldFunction/src/main/java/Models/MobileDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/HelloWorldFunction/src/main/java/Models/MobileDO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelloWorldFunction/src/main/java/helloworld/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/HelloWorldFunction/src/main/java/helloworld/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelloWorldFunction/src/test/java/helloworld/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/HelloWorldFunction/src/test/java/helloworld/AppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelloWorldFunction/target/classes/Models/MobileDO.class" beforeDir="false" afterPath="$PROJECT_DIR$/HelloWorldFunction/target/classes/Models/MobileDO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelloWorldFunction/target/classes/Utility/Pair.class" beforeDir="false" afterPath="$PROJECT_DIR$/HelloWorldFunction/target/classes/Utility/Pair.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelloWorldFunction/target/classes/helloworld/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/HelloWorldFunction/target/classes/helloworld/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelloWorldFunction/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/HelloWorldFunction/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelloWorldFunction/target/surefire-reports/TEST-helloworld.AppTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/HelloWorldFunction/target/surefire-reports/TEST-helloworld.AppTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelloWorldFunction/target/surefire-reports/helloworld.AppTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/HelloWorldFunction/target/surefire-reports/helloworld.AppTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelloWorldFunction/target/test-classes/helloworld/AppTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/HelloWorldFunction/target/test-classes/helloworld/AppTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backendcd/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backendcd/.idea/aws.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backendcd/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backendcd/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backendcd/.idea/libraries/Maven__com_amazonaws_aws_lambda_java_core_1_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backendcd/.idea/libraries/Maven__junit_junit_4_12.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backendcd/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backendcd/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backendcd/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backendcd/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backendcd/Backendcd.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backendcd/HelloWorldFunction/HelloWorld.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../DynamoDBLocal/DynamoDBLocal.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../DynamoDBLocal/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/example/digitalevidence/Helpers/DynamoHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/example/digitalevidence/Helpers/DynamoHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/example/digitalevidence/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/example/digitalevidence/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/example/digitalevidence/MobileActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/example/digitalevidence/MobileActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/example/digitalevidence/Models/MobileDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/example/digitalevidence/Models/MobileDO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/example/digitalevidence/Models/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/example/digitalevidence/Models/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/res/layout/activity_mobile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/res/layout/activity_mobile.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SyncModule/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SyncModule/.idea/aws.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SyncModule/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SyncModule/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SyncModule/.idea/libraries/Maven__com_amazonaws_aws_lambda_java_core_1_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SyncModule/.idea/libraries/Maven__junit_junit_4_12.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SyncModule/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SyncModule/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SyncModule/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SyncModule/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SyncModule/HelloWorldFunction/HelloWorld.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SyncModule/SyncModule.iml" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -110,11 +114,14 @@
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1TJq9wjUqvIZ86LuIxQZSO60CmP" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/HelloWorldFunction/events/s3put.json" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15820312" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -138,7 +145,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="AWS Lambda.[Local] HelloWorldFunction">
     <configuration name="[Local] HelloWorldFunction" type="aws.lambda" factoryName="Local" nameIsGenerated="true">
       <option name="credentialProviderId" value="profile:4N6" />
       <option name="regionId" value="us-east-2" />
@@ -152,8 +159,8 @@
       <option name="templateFile" value="$PROJECT_DIR$/template.yaml" />
       <option name="timeout" value="300" />
       <option name="useTemplate" value="true" />
-      <option name="input" value="{&#10;  &quot;Records&quot;: [&#10;    {&#10;      &quot;eventVersion&quot;: &quot;2.0&quot;,&#10;      &quot;eventSource&quot;: &quot;aws:s3&quot;,&#10;      &quot;awsRegion&quot;: &quot;{region}&quot;,&#10;      &quot;eventTime&quot;: &quot;1970-01-01T00:00:00Z&quot;,&#10;      &quot;eventName&quot;: &quot;ObjectCreated:Put&quot;,&#10;      &quot;userIdentity&quot;: {&#10;        &quot;principalId&quot;: &quot;EXAMPLE&quot;&#10;      },&#10;      &quot;requestParameters&quot;: {&#10;        &quot;sourceIPAddress&quot;: &quot;127.0.0.1&quot;&#10;      },&#10;      &quot;responseElements&quot;: {&#10;        &quot;x-amz-request-id&quot;: &quot;EXAMPLE123456789&quot;,&#10;        &quot;x-amz-id-2&quot;: &quot;EXAMPLE123/5678abcdefghijklambdaisawesome/mnopqrstuvwxyzABCDEFGH&quot;&#10;      },&#10;      &quot;s3&quot;: {&#10;        &quot;s3SchemaVersion&quot;: &quot;1.0&quot;,&#10;        &quot;configurationId&quot;: &quot;testConfigRule&quot;,&#10;        &quot;bucket&quot;: {&#10;          &quot;name&quot;: &quot;sourcebucket&quot;,&#10;          &quot;ownerIdentity&quot;: {&#10;            &quot;principalId&quot;: &quot;EXAMPLE&quot;&#10;          },&#10;          &quot;arn&quot;: &quot;arn:{partition}:s3:::mybucket&quot;&#10;        },&#10;        &quot;object&quot;: {&#10;          &quot;key&quot;: &quot;HappyFace.jpg&quot;,&#10;          &quot;size&quot;: 1024,&#10;          &quot;eTag&quot;: &quot;0123456789abcdef0123456789abcdef&quot;,&#10;          &quot;sequencer&quot;: &quot;0A1B2C3D4E5F678901&quot;&#10;        }&#10;      }&#10;    }&#10;  ]&#10;}" />
-      <option name="inputIsFile" value="false" />
+      <option name="input" value="$PROJECT_DIR$/HelloWorldFunction/events/s3put.json" />
+      <option name="inputIsFile" value="true" />
       <sam>
         <option name="additionalBuildArgs" value="" />
         <option name="additionalLocalArgs" value="" />
@@ -163,6 +170,18 @@
       </sam>
       <method v="2" />
     </configuration>
+    <configuration name="[Remote] s3ToDynamodb" type="aws.lambda" factoryName="Remote" nameIsGenerated="true">
+      <option name="credentialProviderId" value="profile:4N6" />
+      <option name="regionId" value="us-east-2" />
+      <option name="functionName" value="s3ToDynamodb" />
+      <option name="input" value="{&#10;  &quot;Records&quot;: [&#10;    {&#10;      &quot;eventVersion&quot;: &quot;2.0&quot;,&#10;      &quot;eventSource&quot;: &quot;aws:s3&quot;,&#10;      &quot;awsRegion&quot;: &quot;{region}&quot;,&#10;      &quot;eventTime&quot;: &quot;1970-01-01T00:00:00Z&quot;,&#10;      &quot;eventName&quot;: &quot;ObjectCreated:Put&quot;,&#10;      &quot;userIdentity&quot;: {&#10;        &quot;principalId&quot;: &quot;EXAMPLE&quot;&#10;      },&#10;      &quot;requestParameters&quot;: {&#10;        &quot;sourceIPAddress&quot;: &quot;127.0.0.1&quot;&#10;      },&#10;      &quot;responseElements&quot;: {&#10;        &quot;x-amz-request-id&quot;: &quot;EXAMPLE123456789&quot;,&#10;        &quot;x-amz-id-2&quot;: &quot;EXAMPLE123/5678abcdefghijklambdaisawesome/mnopqrstuvwxyzABCDEFGH&quot;&#10;      },&#10;      &quot;s3&quot;: {&#10;        &quot;s3SchemaVersion&quot;: &quot;1.0&quot;,&#10;        &quot;configurationId&quot;: &quot;testConfigRule&quot;,&#10;        &quot;bucket&quot;: {&#10;          &quot;name&quot;: &quot;sourcebucket&quot;,&#10;          &quot;ownerIdentity&quot;: {&#10;            &quot;principalId&quot;: &quot;EXAMPLE&quot;&#10;          },&#10;          &quot;arn&quot;: &quot;arn:{partition}:s3:::mybucket&quot;&#10;        },&#10;        &quot;object&quot;: {&#10;          &quot;key&quot;: &quot;HappyFace.jpg&quot;,&#10;          &quot;size&quot;: 1024,&#10;          &quot;eTag&quot;: &quot;0123456789abcdef0123456789abcdef&quot;,&#10;          &quot;sequencer&quot;: &quot;0A1B2C3D4E5F678901&quot;&#10;        }&#10;      }&#10;    }&#10;  ]&#10;}" />
+      <option name="inputIsFile" value="false" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="AWS Lambda.[Local] HelloWorldFunction" />
+      <item itemvalue="AWS Lambda.[Remote] s3ToDynamodb" />
+    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -182,19 +201,39 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/HelloWorldFunction/src/test/java/helloworld/AppTest.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/HelloWorldFunction/src/main/java/helloworld/App.java</url>
-          <line>69</line>
-          <option name="timeStamp" value="2" />
+          <line>114</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/HelloWorldFunction/src/main/java/helloworld/App.java</url>
+          <line>93</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/HelloWorldFunction/src/main/java/helloworld/App.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

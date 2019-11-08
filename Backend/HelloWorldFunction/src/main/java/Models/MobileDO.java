@@ -12,7 +12,7 @@ public class MobileDO{
 
     public MobileDO(String name, String link){
         _name = name;
-        _link = _link;
+        _link = link;
     }
     @DynamoDBHashKey(attributeName = "name")
     @DynamoDBAttribute(attributeName = "name")

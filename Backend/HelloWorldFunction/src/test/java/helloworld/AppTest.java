@@ -19,3 +19,4 @@ public class AppTest {
     assertTrue(content.contains("\"location\""));
   }
 }
+
