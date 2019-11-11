@@ -27,7 +27,7 @@
           "arn": "arn:aws:s3:::digitalforensics-userfiles-mobilehub-1666815180"
         },
         "object": {
-          "key": "public/Mobile/amazon_phone.png",
+          "key": "public/Mobile/iphone10.jpg",
           "size": 1024,
           "eTag": "0123456789abcdef0123456789abcdef",
           "sequencer": "0A1B2C3D4E5F678901"

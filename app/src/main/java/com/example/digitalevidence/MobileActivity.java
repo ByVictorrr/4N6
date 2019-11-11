@@ -1,11 +1,14 @@
 package com.example.digitalevidence;
 
 import android.annotation.TargetApi;
+import android.content.Context;
 import android.media.Image;
 import android.os.Bundle;
 
 import com.example.digitalevidence.Helpers.DynamoHelper;
 import com.example.digitalevidence.Models.MobileDO;
+import com.example.digitalevidence.Models.Model;
+import com.example.digitalevidence.Views.DeviceView;
 import com.squareup.picasso.Picasso;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,17 +29,14 @@ import java.util.stream.Collectors;
 
 public class MobileActivity extends AppCompatActivity {
     // TODO : make urlNames and names a map
-    private static List<String> urlNames; // used for getting the urls
-    private static List<String> names; //phone names
-
-    private static List<ImageView> imageViews; // used for setting
-    private static List<TextView> textViews;
+    List<DeviceView> deviceViews;
 
 
     @Override
     @TargetApi(24) // to use java 8
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.view_device_info_layout);
         setContentView(R.layout.activity_mobile);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -45,8 +45,7 @@ public class MobileActivity extends AppCompatActivity {
         // Step 0 - declare instance of dynamohelper
         DynamoHelper dynamoHelper = new DynamoHelper(this);
         // Step 1 - init image views and text views
-        imageViews = getImageViews();
-        textViews = getTextViews();
+        deviceViews = getDeviceViews();
 
         // Step 2 - get all urls from dynamo helper (for mobile objects)
         Thread getAll = dynamoHelper.getAll(MobileDO.class);
@@ -81,27 +80,48 @@ public class MobileActivity extends AppCompatActivity {
 
     }
 
-
     @TargetApi(24) // to use java 8
     private Thread doAll (DynamoHelper dynamoHelper){
         return new Thread(new Runnable() {
             @Override
             public void run() {
-                List <MobileDO> mobiles = (List<MobileDO>)dynamoHelper.getModels();
-
-                names = mobiles.stream().map(MobileDO::getName).collect(Collectors.toList());
-                urlNames = mobiles.stream().map(MobileDO::getLink).collect(Collectors.toList());
-
+                List<Model> mobiles = (List<Model>) dynamoHelper.getModels();
+                // step 3 - set text
                 // Step 4 - set all urls to corresponding imageviews
-                setImageViews(urlNames, imageViews);
-                setTextViews(names, textViews);
+                setDeviceViews(mobiles, deviceViews);
             }
         });
     }
 
 
-    private void setImageViews(List<String> urlNames, List<ImageView> imageViews){
+    private void setDeviceViews(List<Model> models, List<DeviceView> deviceViews){
+        Handler uiHandler = new Handler(Looper.getMainLooper());
+        uiHandler.post(new Runnable(){
+            DeviceView dv;
+            @Override
+            public void run() {
+                for(int i = 0; i < 6; i++) {
+                    dv = deviceViews.get(i);
+                    Picasso.get().load(models.get(i).getLink()).into(dv.getImageView());
+                    dv.getTextView().setText(models.get(i).getName());
+                }
+            }});
+    }
 
+
+    private List<DeviceView> getDeviceViews(){
+        List<DeviceView> deviceViews = new ArrayList<>();
+        deviceViews.add((DeviceView)findViewById(R.id.DeviceView0));
+        deviceViews.add((DeviceView)findViewById(R.id.DeviceView1));
+        deviceViews.add((DeviceView)findViewById(R.id.DeviceView2));
+        deviceViews.add((DeviceView)findViewById(R.id.DeviceView3));
+        deviceViews.add((DeviceView)findViewById(R.id.DeviceView4));
+        deviceViews.add((DeviceView)findViewById(R.id.DeviceView5));
+
+        return deviceViews;
+    }
+    /*
+    private void setImageViews(List<String> urlNames, List<ImageView> imageViews){
         Handler uiHandler = new Handler(Looper.getMainLooper());
         uiHandler.post(new Runnable(){
             ImageView iv;
@@ -121,15 +141,19 @@ public class MobileActivity extends AppCompatActivity {
 
 
     // Description: returns a list of imagesViews
-    private List<ImageView> getImageViews(){
+    private List<ImageView> getImageViews(Context context, int DeviceViewSize){
         List<ImageView> imgV = new ArrayList<>();
-        imgV.add((ImageView)findViewById(R.id.imageView0));
-        imgV.add((ImageView)findViewById(R.id.imageView1));
-        imgV.add((ImageView)findViewById(R.id.imageView2));
-        imgV.add((ImageView)findViewById(R.id.imageView3));
-        imgV.add((ImageView)findViewById(R.id.imageView4));
-        imgV.add((ImageView)findViewById(R.id.imageView5));
-        imgV.add((ImageView)findViewById(R.id.imageView6));
+        for (int i = 0; i < DeviceViewSize; i++){
+            imgV.add(new ImageView(context));
+        }
+        return imgV;
+    }
+    // Description: returns a list of imagesViews
+    private List<ImageView> getImageViews(Context context, int DeviceViewSize){
+        List<ImageView> imgV = new ArrayList<>();
+        for (int i = 0; i < DeviceViewSize; i++){
+            imgV.add(new ImageView(context));
+        }
         return imgV;
     }
     private List<TextView> getTextViews() {
@@ -142,8 +166,10 @@ public class MobileActivity extends AppCompatActivity {
         txtV.add((TextView)findViewById(R.id.textView4));
         txtV.add((TextView)findViewById(R.id.textView5));
         txtV.add((TextView)findViewById(R.id.textView6));
+        txtV.add((TextView)findViewById(R.id.textView7));
         return txtV;
     }
 
+     */
 
 }

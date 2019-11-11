@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3251f53f-67e5-43e4-84ca-e91f6ff441ec" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/HelloWorldFunction/dependency-reduced-pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HelloWorldFunction/events/s3put.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BackendModules/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/src/main/java/com/example/digitalevidence/Views/DeviceView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/src/main/res/layout/view_device_info_layout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_appcompat_appcompat_1_0_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_appcompat_appcompat_1_0_2_aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_arch_core_core_runtime_2_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_arch_core_core_runtime_2_0_0_aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_asynclayoutinflater_asynclayoutinflater_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_asynclayoutinflater_asynclayoutinflater_1_0_0_aar.xml" afterDir="false" />
@@ -50,20 +51,8 @@
       <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_google_android_material_material_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_google_android_material_material_1_0_0_aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_squareup_picasso_picasso_2_71828_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_squareup_picasso_picasso_2_71828_aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_amazonaws_aws_lambda_java_core_1_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_amazonaws_aws_lambda_java_core_1_2_0.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelloWorldFunction/HelloWorld.iml" beforeDir="false" afterPath="$PROJECT_DIR$/HelloWorldFunction/HelloWorld.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelloWorldFunction/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/HelloWorldFunction/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelloWorldFunction/src/main/java/Models/MobileDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/HelloWorldFunction/src/main/java/Models/MobileDO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelloWorldFunction/src/main/java/helloworld/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/HelloWorldFunction/src/main/java/helloworld/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelloWorldFunction/src/test/java/helloworld/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/HelloWorldFunction/src/test/java/helloworld/AppTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelloWorldFunction/target/classes/Models/MobileDO.class" beforeDir="false" afterPath="$PROJECT_DIR$/HelloWorldFunction/target/classes/Models/MobileDO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelloWorldFunction/target/classes/Utility/Pair.class" beforeDir="false" afterPath="$PROJECT_DIR$/HelloWorldFunction/target/classes/Utility/Pair.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelloWorldFunction/target/classes/helloworld/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/HelloWorldFunction/target/classes/helloworld/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelloWorldFunction/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/HelloWorldFunction/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelloWorldFunction/target/surefire-reports/TEST-helloworld.AppTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/HelloWorldFunction/target/surefire-reports/TEST-helloworld.AppTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelloWorldFunction/target/surefire-reports/helloworld.AppTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/HelloWorldFunction/target/surefire-reports/helloworld.AppTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelloWorldFunction/target/test-classes/helloworld/AppTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/HelloWorldFunction/target/test-classes/helloworld/AppTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelloWorldFunction/events/s3put.json" beforeDir="false" afterPath="$PROJECT_DIR$/HelloWorldFunction/events/s3put.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Backendcd/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Backendcd/.idea/aws.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Backendcd/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
@@ -90,6 +79,11 @@
       <change beforePath="$PROJECT_DIR$/../SyncModule/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../SyncModule/HelloWorldFunction/HelloWorld.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../SyncModule/SyncModule.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/example/digitalevidence/MobileActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/example/digitalevidence/MobileActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/example/digitalevidence/Models/MobileDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/example/digitalevidence/Models/MobileDO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/example/digitalevidence/Models/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/example/digitalevidence/Models/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/layout/activity_mobile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/res/layout/activity_mobile.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled1/.idea/workspace.xml" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -121,7 +115,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/HelloWorldFunction/events/s3put.json" />
+    <property name="last_opened_file_path" value="$USER_HOME$/DesignPatternsInJava/Factories" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15820312" />
     <property name="project.structure.side.proportion" value="0.2" />
