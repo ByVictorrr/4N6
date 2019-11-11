@@ -23,15 +23,16 @@
         app:srcCompat="@android:drawable/ic_dialog_email" />
 
 
-    <androidx.core.widget.NestedScrollView
+    <ScrollView
         android:id="@+id/ScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <LinearLayout
-            android:id="@+id/LinearLayout"
+        <RelativeLayout
+            android:id="@+id/RelativeLayout"
             android:layout_width="fill_parent"
             android:layout_height="match_parent"
+            android:layout_gravity="center"
             android:orientation="horizontal">
 
 
@@ -95,9 +96,9 @@
                 android:layout_height="120dp"/>
                 -->
 
-        </LinearLayout>
+        </RelativeLayout>
 
-    </androidx.core.widget.NestedScrollView>
+    </ScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 

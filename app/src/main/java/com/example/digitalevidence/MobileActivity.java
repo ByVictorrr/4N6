@@ -18,9 +18,12 @@ import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
 import android.view.Display;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -33,30 +36,50 @@ import java.util.stream.Collectors;
 
 
 public class MobileActivity extends AppCompatActivity {
-    private LinearLayout linearLayout;
-    static int colCount = 0; // used to keep track of createDeviceView col count reset
+    private RelativeLayout relativeLayout;
+    private ScrollView scrollView;
+    static DeviceView previousDeviceView = null;
 
+    private int scrollByY; // used to get value of some how scrolled
 
     @Override
     @TargetApi(24) // to use java 8
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_device_info_layout);
         setContentView(R.layout.activity_mobile);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        relativeLayout = findViewById(R.id.RelativeLayout);
+        scrollView = findViewById(R.id.ScrollView);
 
-
-        linearLayout = findViewById(R.id.LinearLayout);
-
-
-        // Step 0 - declare instance of dynamohelper
         DynamoHelper dynamoHelper = new DynamoHelper(this);
-        // Step 1 - init image views and text views
+
+        /*
+        scrollView.setOnTouchListener(new View.OnTouchListener(){
+            float downY;
+            int totalY;
+            public boolean onTouch(View view, MotionEvent event){
+                float currentY;
+                switch (event.getAction()){
+                    case MotionEvent.ACTION_DOWN:
+                        downY = event.getY();
+                        break;
+                    case MotionEvent.ACTION_MOVE:
+                        currentY = event.getY();
+                        scrollByY = (int)(downY-currentY);
+
+                }
+
+                return true;
+            }});
+
+         */
+
 
         // Step 2 - get all urls from dynamo helper (for mobile objects)
-        Thread getAll = dynamoHelper.getAll(MobileDO.class);
+        Thread getAll = dynamoHelper.getAll();
 
         // Step 3 - Wait while threads are finishing and set urls images to background
         Thread doAll = doAll(dynamoHelper);
@@ -104,7 +127,6 @@ public class MobileActivity extends AppCompatActivity {
     }
 
 
-
     // Description: for dynamically creating views
     private void createDeviceView(Model model, int index){
 
@@ -114,24 +136,28 @@ public class MobileActivity extends AppCompatActivity {
         TextView textView = deviceView.getTextView();
 
         // Step 2-  use parent view to set device view
-        LinearLayout.LayoutParams parms = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-        // Step 3 - set margins for new device view // TODO
-        if (index== 1) {
-            parms.setMargins(10 * index, index * 10, index * 10, index * 10);
-            parms.gravity = 10 * index;
+        RelativeLayout.LayoutParams parms = new RelativeLayout.LayoutParams(
+                RelativeLayout.LayoutParams.MATCH_PARENT,
+                RelativeLayout.LayoutParams.WRAP_CONTENT
+        );
 
-            // Step 4 - set the parms for it
-            deviceView.setLayoutParams(parms);
-            // Step 5 - set the visibility
-            deviceView.setVisibility(deviceView.VISIBLE);
+        // Step 3 - set the contents of the views
+        deviceView.setName(model.getName());
+        deviceView.setImage(model.getLink());
 
+        // Step 4 - set id of device view
+        deviceView.setId(index);
 
-            // Step 6 - set the contents of the views
-            deviceView.setName(model.getName());
-            deviceView.setImage(model.getLink());
-
-            linearLayout.addView(deviceView);
+        // Step 4 - see if its passed the first deviceView
+        if (index > 0){
+            parms.addRule(RelativeLayout.BELOW, previousDeviceView.getId());
         }
+
+        relativeLayout.addView(deviceView, parms);
+
+        // Step 7 - assign device view as previous
+        previousDeviceView = deviceView;
+
     }
 
 }
