@@ -1,20 +1,14 @@
 package com.example.digitalevidence.Views;
 
-import android.annotation.TargetApi;
 import android.content.Context;
-import android.graphics.Canvas;
-import android.media.Image;
-import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.AttributeSet;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 import com.example.digitalevidence.Models.MobileDO;
 import com.example.digitalevidence.R;
 import com.squareup.picasso.Picasso;
@@ -54,12 +48,20 @@ public class DeviceView extends RelativeLayout{
     }
     public ImageView getImageView(){return image;}
     public TextView getTextView(){return name;}
-    public void setName(TextView view){
-        this.name = view;
-    }
-    public void setImage(ImageView view){
-        this.image = view;
+
+    public void setName(String name){
+        this.name.setText(name);
     }
 
+    public void setImage(String url){
+        Handler uiHandler = new Handler(Looper.getMainLooper());
+        uiHandler.post(new Runnable(){
+            DeviceView dv;
+            @Override
+            public void run() {
+                    Picasso.get().load(url).into(image);
+            }
+        });
+    }
 }
 

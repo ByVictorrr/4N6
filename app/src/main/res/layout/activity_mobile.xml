@@ -28,23 +28,41 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/LinearLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
+
+            <!--
             <com.example.digitalevidence.Views.DeviceView
                 android:id="@+id/DeviceView0"
                 class="com.example.digitalevidence.Views.DeviceView"
-                android:layout_marginRight="200dp"
                 android:layout_width="140dp"
-                android:layout_height="120dp"/>
+                android:layout_height="120dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="200dp"
+
+                android:layout_marginRight="200dp"
+
+                android:layout_marginTop="100dp"
+                android:layout_marginBottom="100dp"
+                android:scaleType="centerCrop" />
 
             <com.example.digitalevidence.Views.DeviceView
                 android:id="@+id/DeviceView1"
                 class="com.example.digitalevidence.Views.DeviceView"
-                android:layout_marginLeft="140dp"
                 android:layout_width="140dp"
-                android:layout_height="120dp"/>
+                android:layout_height="120dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+
+                android:layout_marginTop="200dp"
+
+                android:layout_marginBottom="100dp"
+                android:scaleType="centerCrop" />
 
             <com.example.digitalevidence.Views.DeviceView
                 android:id="@+id/DeviceView2"
@@ -75,9 +93,9 @@
                 android:layout_marginLeft="280dp"
                 android:layout_width="140dp"
                 android:layout_height="120dp"/>
+                -->
 
-
-        </RelativeLayout>
+        </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
