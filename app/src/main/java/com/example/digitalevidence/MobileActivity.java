@@ -1,38 +1,22 @@
 package com.example.digitalevidence;
 
 import android.annotation.TargetApi;
-import android.content.Context;
-import android.media.Image;
 import android.os.Bundle;
 
 import com.example.digitalevidence.Helpers.DynamoHelper;
-import com.example.digitalevidence.Models.MobileDO;
 import com.example.digitalevidence.Models.Model;
 import com.example.digitalevidence.Views.DeviceView;
-import com.squareup.picasso.Picasso;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.os.Handler;
-import android.os.Looper;
 import android.util.Log;
-import android.view.Display;
-import android.view.MotionEvent;
-import android.view.View;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
-import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Function;
-import java.util.stream.Collectors;
-
 
 
 public class MobileActivity extends AppCompatActivity {
@@ -40,7 +24,6 @@ public class MobileActivity extends AppCompatActivity {
     private ScrollView scrollView;
     public static DeviceView previousDeviceView;
 
-    private int scrollByY; // used to get value of some how scrolled
 
     @Override
     @TargetApi(24) // to use java 8
@@ -57,32 +40,13 @@ public class MobileActivity extends AppCompatActivity {
         DynamoHelper dynamoHelper = new DynamoHelper(this);
 
 
-        scrollView.setOnTouchListener(new View.OnTouchListener(){
-            float downY;
-            int totalY;
-            public boolean onTouch(View view, MotionEvent event){
-                float currentY;
-                switch (event.getAction()){
-                    case MotionEvent.ACTION_DOWN:
-                        downY = event.getY();
-                        break;
-                    case MotionEvent.ACTION_MOVE:
-                        currentY = event.getY();
-                        scrollByY = (int)(downY-currentY);
-
-                }
-
-                return true;
-            }});
-
-
-
         // Step 2 - get all urls from dynamo helper (for mobile objects)
         Thread getAll = dynamoHelper.getNItems(7);
 
         // Step 3 - Wait while threads are finishing and set urls images to background
         Thread doAll = doAll(dynamoHelper);
 
+        Thread getTwo = dynamoHelper.getNItems(2);
 
         Log.d("1", "try");
         try {
@@ -158,5 +122,6 @@ public class MobileActivity extends AppCompatActivity {
         previousDeviceView = deviceView;
 
     }
+
 
 }
