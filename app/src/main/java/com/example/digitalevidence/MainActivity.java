@@ -1,20 +1,12 @@
 package com.example.digitalevidence;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
-/*import com.amazonaws.mobile.client.AWSMobileClient;
-import com.amazonaws.mobile.client.AWSStartupHandler;
-import com.amazonaws.mobile.client.AWSStartupResult;
-import com.amazonaws.mobile.config.AWSConfiguration;
-import com.amazonaws.mobileconnectors.appsync.AWSAppSyncClient;*/
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -29,6 +21,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+        Button mobileBTN = (Button) findViewById(R.id.mobile_button);
+        mobileBTN.setOnClickListener(this);
+        Button computerBTN = (Button) findViewById(R.id.computer_button);
+        computerBTN.setOnClickListener(this);
+        Button storageBTN = (Button) findViewById(R.id.storage_button);
+        storageBTN.setOnClickListener(this);
+        Button gamingBTN = (Button) findViewById(R.id.gaming_button);
+        gamingBTN.setOnClickListener(this);
+        Button miscBTN = (Button) findViewById(R.id.misc_button);
+        miscBTN.setOnClickListener(this);
 
         /*Button mobileBTN = (Button) findViewById(R.id.mobile_button);
         mobileBTN.setOnClickListener(this);
@@ -59,28 +62,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.toolmain, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch(item.getItemId()) {
-            case R.id.navigation_fave:
-                //add the function to perform here
-                return(true);
-            case R.id.navigation_home:
-                //add the function to perform here
-                return(true);
-            case R.id.app_bar_search:
-                //add the function to perform here
-                return(true);
-        }
-        return(super.onOptionsItemSelected(item));
-    }
-
-    @Override
     public void onClick(View v) {
         Intent i;
         switch (v.getId()) {
@@ -107,6 +88,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         }
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.toolmain, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId()) {
+            case R.id.navigation_fave:
+                //add the function to perform here
+                return(true);
+            case R.id.navigation_home:
+                //add the function to perform here
+                return(true);
+            case R.id.app_bar_search:
+                //add the function to perform here
+                return(true);
+        }
+        return(super.onOptionsItemSelected(item));
+    }
+
+
 }
 
 

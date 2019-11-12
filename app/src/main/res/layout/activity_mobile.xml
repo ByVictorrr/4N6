@@ -7,316 +7,34 @@
     android:layout_height="match_parent"
     tools:context="com.example.digitalevidence.MobileActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:theme="@style/ToolbarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:menu="@menu/toolback" />
-
-    <TextView
-        android:id="@+id/toolbar_title"
-        style="@style/TextBoxBold"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
-        android:text="@string/title_mobile"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/toolbar" />
-
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabLayout"
+    <include
+        android:id="@+id/include3"
+        layout="@layout/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/title_compact">
-
-            <ImageView
-                android:id="@+id/imageView0"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:contentDescription="@string/title_brand"
-                app:layout_constraintBottom_toTopOf="@+id/imageView3"
-                app:layout_constraintEnd_toStartOf="@+id/imageView1"
-                app:layout_constraintTop_toBottomOf="@+id/tabLayout"
-                app:srcCompat="@drawable/apple" />
-
-            <ImageView
-                android:id="@+id/imageView1"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:contentDescription="@string/title_brand"
-                app:layout_constraintBottom_toTopOf="@+id/imageView4"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tabLayout"
-                app:srcCompat="@drawable/apple" />
-
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:contentDescription="@string/title_brand"
-                app:layout_constraintBottom_toTopOf="@+id/imageView5"
-                app:layout_constraintStart_toEndOf="@+id/imageView1"
-                app:layout_constraintTop_toBottomOf="@+id/tabLayout"
-                app:srcCompat="@drawable/apple" />
-
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:contentDescription="@string/title_brand"
-                app:layout_constraintBottom_toTopOf="@+id/imageView6"
-                app:layout_constraintEnd_toStartOf="@+id/imageView4"
-                app:layout_constraintTop_toBottomOf="@+id/imageView0"
-                app:srcCompat="@drawable/apple" />
-
-            <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:contentDescription="@string/title_brand"
-                app:layout_constraintBottom_toTopOf="@+id/imageView7"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView1"
-                app:srcCompat="@drawable/apple" />
-
-            <ImageView
-                android:id="@+id/imageView5"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:contentDescription="@string/title_brand"
-                app:layout_constraintBottom_toTopOf="@+id/imageView8"
-                app:layout_constraintStart_toEndOf="@+id/imageView4"
-                app:layout_constraintTop_toBottomOf="@+id/imageView2"
-                app:srcCompat="@drawable/apple" />
-
-            <ImageView
-                android:id="@+id/imageView6"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:contentDescription="@string/title_brand"
-                app:layout_constraintBottom_toTopOf="@+id/imageView9"
-                app:layout_constraintEnd_toStartOf="@+id/imageView7"
-                app:layout_constraintTop_toBottomOf="@+id/imageView3"
-                app:srcCompat="@drawable/apple" />
-
-            <ImageView
-                android:id="@+id/imageView7"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:contentDescription="@string/title_brand"
-                app:layout_constraintBottom_toTopOf="@+id/imageView10"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView4"
-                app:srcCompat="@drawable/apple" />
-
-            <ImageView
-                android:id="@+id/imageView8"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:contentDescription="@string/title_brand"
-                app:layout_constraintBottom_toTopOf="@+id/imageView11"
-                app:layout_constraintStart_toEndOf="@+id/imageView7"
-                app:layout_constraintTop_toBottomOf="@+id/imageView5"
-                app:srcCompat="@drawable/apple" />
-
-            <ImageView
-                android:id="@+id/imageView9"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:contentDescription="@string/title_brand"
-                app:layout_constraintBottom_toTopOf="@+id/nav"
-                app:layout_constraintStart_toEndOf="@+id/imageView10"
-                app:layout_constraintTop_toBottomOf="@+id/imageView8"
-                app:srcCompat="@drawable/apple" />
-
-            <ImageView
-                android:id="@+id/imageView10"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:contentDescription="@string/title_brand"
-                app:layout_constraintBottom_toTopOf="@+id/nav"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView7"
-                app:srcCompat="@drawable/apple" />
-
-            <ImageView
-                android:id="@+id/imageView11"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:contentDescription="@string/title_brand"
-                app:layout_constraintBottom_toTopOf="@+id/nav"
-                app:layout_constraintEnd_toStartOf="@+id/imageView10"
-                app:layout_constraintTop_toBottomOf="@+id/imageView6"
-                app:srcCompat="@drawable/apple" />
-
-        </com.google.android.material.tabs.TabItem>
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/title_detailed" >
-
-            <ImageView
-                android:id="@+id/imageView00"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:contentDescription="@string/title_brand"
-                app:layout_constraintBottom_toTopOf="@+id/imageView03"
-                app:layout_constraintEnd_toStartOf="@+id/imageView01"
-                app:layout_constraintTop_toBottomOf="@+id/tabLayout"
-                app:srcCompat="@drawable/iphonex" />
-
-            <ImageView
-                android:id="@+id/imageView01"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:contentDescription="@string/title_brand"
-                app:layout_constraintBottom_toTopOf="@+id/imageView04"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tabLayout"
-                app:srcCompat="@drawable/iphonex" />
-
-            <ImageView
-                android:id="@+id/imageView02"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:contentDescription="@string/title_brand"
-                app:layout_constraintBottom_toTopOf="@+id/imageView05"
-                app:layout_constraintStart_toEndOf="@+id/imageView01"
-                app:layout_constraintTop_toBottomOf="@+id/tabLayout"
-                app:srcCompat="@drawable/iphonex" />
-
-            <ImageView
-                android:id="@+id/imageView03"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:contentDescription="@string/title_brand"
-                app:layout_constraintBottom_toTopOf="@+id/imageView06"
-                app:layout_constraintEnd_toStartOf="@+id/imageView04"
-                app:layout_constraintTop_toBottomOf="@+id/imageView00"
-                app:srcCompat="@drawable/iphonex" />
-
-            <ImageView
-                android:id="@+id/imageView04"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:contentDescription="@string/title_brand"
-                app:layout_constraintBottom_toTopOf="@+id/imageView07"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView01"
-                app:srcCompat="@drawable/iphonex" />
-
-            <ImageView
-                android:id="@+id/imageView05"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:contentDescription="@string/title_brand"
-                app:layout_constraintBottom_toTopOf="@+id/imageView08"
-                app:layout_constraintStart_toEndOf="@+id/imageView04"
-                app:layout_constraintTop_toBottomOf="@+id/imageView02"
-                app:srcCompat="@drawable/iphonex" />
-
-            <ImageView
-                android:id="@+id/imageView06"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:contentDescription="@string/title_brand"
-                app:layout_constraintBottom_toTopOf="@+id/imageView09"
-                app:layout_constraintEnd_toStartOf="@+id/imageView07"
-                app:layout_constraintTop_toBottomOf="@+id/imageView03"
-                app:srcCompat="@drawable/iphonex" />
-
-            <ImageView
-                android:id="@+id/imageView07"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:contentDescription="@string/title_brand"
-                app:layout_constraintBottom_toTopOf="@+id/imageView010"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView04"
-                app:srcCompat="@drawable/iphonex" />
-
-            <ImageView
-                android:id="@+id/imageView08"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:contentDescription="@string/title_brand"
-                app:layout_constraintBottom_toTopOf="@+id/imageView011"
-                app:layout_constraintStart_toEndOf="@+id/imageView07"
-                app:layout_constraintTop_toBottomOf="@+id/imageView05"
-                app:srcCompat="@drawable/iphonex" />
-
-            <ImageView
-                android:id="@+id/imageView09"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:contentDescription="@string/title_brand"
-                app:layout_constraintBottom_toTopOf="@+id/nav"
-                app:layout_constraintStart_toEndOf="@+id/imageView010"
-                app:layout_constraintTop_toBottomOf="@+id/imageView08"
-                app:srcCompat="@drawable/iphonex" />
-
-            <ImageView
-                android:id="@+id/imageView010"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:contentDescription="@string/title_brand"
-                app:layout_constraintBottom_toTopOf="@+id/nav"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView07"
-                app:srcCompat="@drawable/iphonex" />
-
-            <ImageView
-                android:id="@+id/imageView011"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:contentDescription="@string/title_brand"
-                app:layout_constraintBottom_toTopOf="@+id/nav"
-                app:layout_constraintEnd_toStartOf="@+id/imageView010"
-                app:layout_constraintTop_toBottomOf="@+id/imageView06"
-                app:srcCompat="@drawable/iphonex" />
-
-        </com.google.android.material.tabs.TabItem>
-
-    </com.google.android.material.tabs.TabLayout>
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/nav"
-        style="@style/Navigation"
-        android:layout_width="wrap_content"
+    <include
+        android:id="@+id/include4"
+        layout="@layout/tabs"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include3" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/include2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/nav" />
+        app:layout_constraintTop_toBottomOf="@+id/include4" />
+
+    <include
+        android:id="@+id/include2"
+        layout="@layout/menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

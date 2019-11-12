@@ -18,6 +18,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MobileActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MOBILE" />
+
+                <category android:name="android.intent.category.LAUNCHERMOBILE" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MiscActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MISC" />
+
+                <category android:name="android.intent.category.LAUNCHERMISC" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

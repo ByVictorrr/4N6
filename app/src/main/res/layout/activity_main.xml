@@ -8,27 +8,7 @@
     app:layout_constraintVertical_chainStyle="spread"
     tools:context="com.example.digitalevidence.MainActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:theme="@style/ToolbarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:menu="@menu/toolmain" />
-
-    <TextView
-        android:id="@+id/toolbar_title"
-        style="@style/TextBoxBold"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
-        android:text="@string/app_name"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/toolbar" />
+    <include layout="@layout/toolbar" />
 
     <Button
         android:id="@+id/mobile_button"
@@ -85,14 +65,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gaming_button" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/nav"
-        style="@style/Navigation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/nav" />
+    <include layout="@layout/menu"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
