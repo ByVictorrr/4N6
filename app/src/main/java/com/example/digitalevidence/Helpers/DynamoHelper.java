@@ -1,18 +1,33 @@
 package com.example.digitalevidence.Helpers;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.Display;
 
 import com.amazonaws.mobile.client.AWSMobileClient;
 import com.amazonaws.mobile.config.AWSConfiguration;
+import com.amazonaws.mobileconnectors.dynamodbv2.document.Table;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMapper;
+import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBQueryExpression;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBScanExpression;
+import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBTable;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.PaginatedList;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
+import com.amazonaws.services.dynamodbv2.model.AttributeValue;
+import com.amazonaws.services.dynamodbv2.model.QueryRequest;
+import com.amazonaws.services.dynamodbv2.model.QueryResult;
+import com.amazonaws.services.dynamodbv2.model.ScanRequest;
+import com.amazonaws.services.dynamodbv2.model.ScanResult;
+import com.example.digitalevidence.MobileActivity;
 import com.example.digitalevidence.Models.MobileDO;
-import com.example.digitalevidence.Models.Model;
+import com.example.digitalevidence.Views.DeviceView;
 
+import java.text.AttributedCharacterIterator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import static com.example.digitalevidence.MobileActivity.previousDeviceView;
 
 public class DynamoHelper {
     private List<?> models; // list of data models (like moblileD0, ect..)
@@ -49,11 +64,40 @@ public class DynamoHelper {
 
     // TODO: find a way to queue the data so we can load N items and it will hold last place in dynamo
     // Maybe inroduce a new variable in dynamodb called id and rep the number
-    public Thread getNItems(int scrollLoc){
+    public Thread getNItems(int NItems){
 
         return new Thread(new Runnable() {
             @Override
             public void run() {
+
+                PaginatedList<MobileDO> list;
+                Map<String, String > attributeNames = new HashMap<>();
+                attributeNames.put("#name", "name");
+
+                String prevText;
+                if (previousDeviceView != null) {
+                    prevText = (String) previousDeviceView.getTextView().getText();
+                }else{
+                    prevText = "amazon_phone";
+                }
+
+
+
+                Map<String, AttributeValue> attributeValues = new HashMap<>();
+                attributeValues.put(":nameValue", new AttributeValue().withS(prevText));
+
+                ScanRequest scanRequest = new ScanRequest()
+                        .withTableName(MobileDO.TABLE_NAME)
+                        .withExpressionAttributeNames(attributeNames)
+                        .withFilterExpression("#name > :nameValue")
+                        .withExpressionAttributeValues(attributeValues);
+                List<Map<String, AttributeValue>> items;
+                try {
+                    ScanResult querynResult = dynamoDBClient.scan(scanRequest);
+                    items = querynResult.getItems();
+                }catch (Exception e){
+                    Log.d("help", e.getMessage());
+                }
 
             }
         });

@@ -11,6 +11,7 @@ import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBTable;
 public class MobileDO extends Model {
     private String _name;
     private String _link;
+    public final static String TABLE_NAME = "digitalforensics-mobilehub-1666815180-Mobile";
 
     @DynamoDBHashKey(attributeName = "name")
     @DynamoDBAttribute(attributeName = "name")

@@ -38,7 +38,7 @@ import java.util.stream.Collectors;
 public class MobileActivity extends AppCompatActivity {
     private RelativeLayout relativeLayout;
     private ScrollView scrollView;
-    static DeviceView previousDeviceView = null;
+    public static DeviceView previousDeviceView;
 
     private int scrollByY; // used to get value of some how scrolled
 
@@ -79,7 +79,7 @@ public class MobileActivity extends AppCompatActivity {
 
 
         // Step 2 - get all urls from dynamo helper (for mobile objects)
-        Thread getAll = dynamoHelper.getAll();
+        Thread getAll = dynamoHelper.getNItems(2);
 
         // Step 3 - Wait while threads are finishing and set urls images to background
         Thread doAll = doAll(dynamoHelper);
