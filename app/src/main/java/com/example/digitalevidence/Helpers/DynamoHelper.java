@@ -20,9 +20,13 @@ import com.amazonaws.services.dynamodbv2.model.ScanRequest;
 import com.amazonaws.services.dynamodbv2.model.ScanResult;
 import com.example.digitalevidence.MobileActivity;
 import com.example.digitalevidence.Models.MobileDO;
+import com.example.digitalevidence.Models.Model;
 import com.example.digitalevidence.Views.DeviceView;
 
+import java.lang.reflect.Array;
 import java.text.AttributedCharacterIterator;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -63,42 +67,66 @@ public class DynamoHelper {
 
 
     // TODO: find a way to queue the data so we can load N items and it will hold last place in dynamo
-    // Maybe inroduce a new variable in dynamodb called id and rep the number
-    public Thread getNItems(int NItems){
+    public Thread getNItems(final int NItems){
 
         return new Thread(new Runnable() {
             @Override
             public void run() {
 
-                PaginatedList<MobileDO> list;
-                Map<String, String > attributeNames = new HashMap<>();
-                attributeNames.put("#name", "name");
+                final int NAME = 0; // used for scan result indicators
+                final int LINK = 1; // used for scan result indicators
+                String prevText; // to compare lex graphically order
+                Map<String, String > attributeNames = new HashMap<>();// used for scan request builder
+                Map<String, AttributeValue> attributeValues = new HashMap<>(); // used for scan request builder
+                List<Map<String, AttributeValue>> items; // used for scan Request ret items
+                List<Model> models = new ArrayList<>(); // used to set the list
 
-                String prevText;
+                // Step 1 - check to see if the first is loaded
                 if (previousDeviceView != null) {
                     prevText = (String) previousDeviceView.getTextView().getText();
                 }else{
-                    prevText = "amazon_phone";
+                    prevText = "a";
                 }
 
-
-
-                Map<String, AttributeValue> attributeValues = new HashMap<>();
+                // Step 2 - add to the attribute names/values
+                attributeNames.put("#name", "name");
                 attributeValues.put(":nameValue", new AttributeValue().withS(prevText));
 
+                // Step 3 - build up the scanner for the query
                 ScanRequest scanRequest = new ScanRequest()
                         .withTableName(MobileDO.TABLE_NAME)
                         .withExpressionAttributeNames(attributeNames)
                         .withFilterExpression("#name > :nameValue")
                         .withExpressionAttributeValues(attributeValues);
-                List<Map<String, AttributeValue>> items;
-                try {
-                    ScanResult querynResult = dynamoDBClient.scan(scanRequest);
-                    items = querynResult.getItems();
-                }catch (Exception e){
-                    Log.d("help", e.getMessage());
-                }
 
+                // Step 4 - set the limit of how many items ret
+                scanRequest.setLimit(NItems);
+                ScanResult querynResult = dynamoDBClient.scan(scanRequest);
+                // Step  5 - get all the items in a list of maps
+                items = querynResult.getItems();
+                // Step 6 - iterate throw the items
+                for (Map<String, AttributeValue> item: items) {
+
+                    // Step  7 - get items (i.e link and name)
+                    //AttributeValue [] attributeValuess = (AttributeValue[]) (item.values().toArray());
+
+                    // Step 8 - allocate space for a mobileDO
+                    MobileDO mobileDO = new MobileDO();
+                    for(int i = 0; i < item.values().toArray().length; i++) {
+
+                        AttributeValue attributeValue = (AttributeValue) ((item.values().toArray())[i]);
+                        String val = attributeValue.getS();
+                        if (i == NAME) {
+                            mobileDO.setName(val);
+                        } else {
+                            mobileDO.setLink(val);
+                        }
+                    }
+                    //  step 9 - add that model to the models
+                    models.add(mobileDO);
+                }
+                // Step 10 - add all the new items in models
+                setModels(models);
             }
         });
     }

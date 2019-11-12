@@ -56,7 +56,7 @@ public class MobileActivity extends AppCompatActivity {
 
         DynamoHelper dynamoHelper = new DynamoHelper(this);
 
-        /*
+
         scrollView.setOnTouchListener(new View.OnTouchListener(){
             float downY;
             int totalY;
@@ -75,11 +75,10 @@ public class MobileActivity extends AppCompatActivity {
                 return true;
             }});
 
-         */
 
 
         // Step 2 - get all urls from dynamo helper (for mobile objects)
-        Thread getAll = dynamoHelper.getNItems(2);
+        Thread getAll = dynamoHelper.getNItems(7);
 
         // Step 3 - Wait while threads are finishing and set urls images to background
         Thread doAll = doAll(dynamoHelper);

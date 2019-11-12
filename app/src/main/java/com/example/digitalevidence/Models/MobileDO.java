@@ -13,6 +13,11 @@ public class MobileDO extends Model {
     private String _link;
     public final static String TABLE_NAME = "digitalforensics-mobilehub-1666815180-Mobile";
 
+    public MobileDO(){}
+    public MobileDO(String _name, String _link){
+        this._name =_name;
+        this._link = _link;
+    }
     @DynamoDBHashKey(attributeName = "name")
     @DynamoDBAttribute(attributeName = "name")
     public String getName() {
