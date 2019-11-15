@@ -1,68 +1,67 @@
 package com.example.digitalevidence.Helpers;
 
+import android.annotation.TargetApi;
 import android.content.Context;
-import android.util.Log;
-import android.view.Display;
 
 import com.amazonaws.mobile.client.AWSMobileClient;
 import com.amazonaws.mobile.config.AWSConfiguration;
-import com.amazonaws.mobileconnectors.dynamodbv2.document.Table;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMapper;
-import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBQueryExpression;
-import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBScanExpression;
-import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBTable;
-import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.PaginatedList;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
-import com.amazonaws.services.dynamodbv2.model.QueryRequest;
-import com.amazonaws.services.dynamodbv2.model.QueryResult;
 import com.amazonaws.services.dynamodbv2.model.ScanRequest;
 import com.amazonaws.services.dynamodbv2.model.ScanResult;
-import com.example.digitalevidence.MobileActivity;
 import com.example.digitalevidence.Models.MobileDO;
 import com.example.digitalevidence.Models.Model;
-import com.example.digitalevidence.Views.DeviceView;
 
-import java.lang.reflect.Array;
-import java.text.AttributedCharacterIterator;
-import java.util.ArrayList;
-import java.util.Collection;
+import java.util.Comparator;
+import java.util.Dictionary;
 import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.List;
 import java.util.Map;
+import java.util.PriorityQueue;
+import java.util.Queue;
 
-import static com.example.digitalevidence.MobileActivity.previousDeviceView;
 
+// Description: One DynamoHelper per activity
 public class DynamoHelper {
-    private List<?> models; // list of data models (like moblileD0, ect..)
-    private static CredentialHelper credentialHelper; //helper for all the functions
+    private Queue<Model> modelsPending; // list of data modelsPending (like moblileD0, ect..)
+    private Class modelClass; // to indicate what data object were working with
+    private String tableName;
+    public static Model previousModel;
+
+
     private static DynamoDBMapper dynamoDBMapper;
+    private static CredentialHelper credentialHelper; //helper for all the functions
     private static AmazonDynamoDBClient dynamoDBClient;
 
-    public DynamoHelper(Context context) {
+
+    // Description: Used to determine to what data object to reference in getNitems
+    private static Dictionary<Class, Model> mapClassToModel;
+    static {
+        mapClassToModel = new Hashtable<>();
+        //mapClassToModel.put(ComputerDO.class, new ComputerDO());
+        //mapClassToModel.put(MiscDO.class, new MiscDO());
+        //mapClassToModel.put(StorageDO.class, new StorageDO());
+        mapClassToModel.put(MobileDO.class, new MobileDO());
+
+    }
+
+    //
+    @TargetApi(24)
+    public DynamoHelper(Context context, Class classType, String tableName) {
         // step 1 - set credential Helper for specific activity
         credentialHelper = new CredentialHelper(context);
-        // Step 2 - set inThread to False
+        // Step 2 - see what activity were in
+        modelClass = classType;
+        this.tableName = tableName;
 
         // Step 3 - configure all connections to Aws
         AWSConfiguration configuration = AWSMobileClient.getInstance().getConfiguration();
         this.dynamoDBClient = new AmazonDynamoDBClient(credentialHelper.getCredentialsProvider());
         this.dynamoDBMapper= DynamoDBMapper.builder().dynamoDBClient(dynamoDBClient).awsConfiguration(configuration).build();
+        this.modelsPending = new PriorityQueue<>(Comparator.comparing(Model::getName)); // sort by name alphabetic
 
-    }
-
-
-    //Description: returns a list of models given an activity (context) and a type (model, ex: would be mobileD0)
-    public Thread getAll() {
-        // Step 1 - notify outside world that were in a thread
-        return new Thread(new Runnable() {
-            public void run() {
-                // Step 2 - retrieve all items
-                PaginatedList<MobileDO> list = dynamoDBMapper.scan(MobileDO.class, new DynamoDBScanExpression());
-                setModels(list);
-                // step 3 - notify that were are going out
-            }
-        });
     }
 
 
@@ -79,11 +78,15 @@ public class DynamoHelper {
                 Map<String, String > attributeNames = new HashMap<>();// used for scan request builder
                 Map<String, AttributeValue> attributeValues = new HashMap<>(); // used for scan request builder
                 List<Map<String, AttributeValue>> items; // used for scan Request ret items
-                List<Model> models = new ArrayList<>(); // used to set the list
+
+
+
+                // TODO: change queue to dequeu so we can get last priority = previous model
+
 
                 // Step 1 - check to see if the first is loaded
-                if (previousDeviceView != null) {
-                    prevText = (String) previousDeviceView.getTextView().getText();
+                if (previousModel != null) {
+                    prevText = previousModel.getName();
                 }else{
                     prevText = "a";
                 }
@@ -94,7 +97,7 @@ public class DynamoHelper {
 
                 // Step 3 - build up the scanner for the query
                 ScanRequest scanRequest = new ScanRequest()
-                        .withTableName(MobileDO.TABLE_NAME)
+                        .withTableName(tableName)
                         .withExpressionAttributeNames(attributeNames)
                         .withFilterExpression("#name > :nameValue")
                         .withExpressionAttributeValues(attributeValues);
@@ -107,52 +110,34 @@ public class DynamoHelper {
                 // Step 6 - iterate throw the items
                 for (Map<String, AttributeValue> item: items) {
 
-                    // Step  7 - get items (i.e link and name)
-                    //AttributeValue [] attributeValuess = (AttributeValue[]) (item.values().toArray());
+                    // Step 8 - allocate space for a model
+                    Model modelDO = mapClassToModel.get(modelClass);
 
-                    // Step 8 - allocate space for a mobileDO
-                    MobileDO mobileDO = new MobileDO();
                     for(int i = 0; i < item.values().toArray().length; i++) {
 
                         AttributeValue attributeValue = (AttributeValue) ((item.values().toArray())[i]);
                         String val = attributeValue.getS();
                         if (i == NAME) {
-                            mobileDO.setName(val);
+                            modelDO.setName(val);
                         } else {
-                            mobileDO.setLink(val);
+                            modelDO.setLink(val);
                         }
                     }
-                    //  step 9 - add that model to the models
-                    models.add(mobileDO);
+                    //  step 9 - add that model to the modelsPending
+                    modelsPending.add(modelDO);
                 }
-                // Step 10 - add all the new items in models
-                setModels(models);
+                //previousModel = modelsPending.element("hi");
             }
         });
     }
 
-//=================================Setters/Getters==================================================\\
 
 
-    public static CredentialHelper getCredentialHelper() {
-        return credentialHelper;
+
+    public Queue<Model> getModelsPending() {
+        return modelsPending;
     }
 
 
-    public static DynamoDBMapper getDynamoDBMapper() {
-        return dynamoDBMapper;
-    }
-
-    public void setModels(List<?> models) {
-        this.models = models;
-    }
-
-    public List<?> getModels() {
-        return models;
-    }
-
-
-
-//==================================================================================================\\
 
 }

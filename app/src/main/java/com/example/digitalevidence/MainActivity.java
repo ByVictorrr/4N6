@@ -52,7 +52,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button miscBTN = (Button) findViewById(R.id.misc_button);
         miscBTN.setOnClickListener(this);
 
-        ScrollView scrollView = findViewById(R.id.ScrollView);
     }
 
     @Override

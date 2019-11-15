@@ -1,105 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
 
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MobileActivity">
 
-
-    <include
-        android:id="@+id/include"
-        layout="@layout/content_mobile"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_anchorGravity="center" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
-
-
-    <ScrollView
-        android:id="@+id/ScrollView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <RelativeLayout
-            android:id="@+id/RelativeLayout"
-            android:layout_width="fill_parent"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/RecyclerView"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:orientation="horizontal">
+            android:layout_above="@+id/item_progress_bar"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"/>
 
 
-            <!--
-            <com.example.digitalevidence.Views.DeviceView
-                android:id="@+id/DeviceView0"
-                class="com.example.digitalevidence.Views.DeviceView"
-                android:layout_width="140dp"
-                android:layout_height="120dp"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginLeft="200dp"
+            <ProgressBar
+                android:id="@+id/item_progress_bar"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:visibility="gone" />
 
-                android:layout_marginRight="200dp"
 
-                android:layout_marginTop="100dp"
-                android:layout_marginBottom="100dp"
-                android:scaleType="centerCrop" />
-
-            <com.example.digitalevidence.Views.DeviceView
-                android:id="@+id/DeviceView1"
-                class="com.example.digitalevidence.Views.DeviceView"
-                android:layout_width="140dp"
-                android:layout_height="120dp"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentRight="true"
-
-                android:layout_marginTop="200dp"
-
-                android:layout_marginBottom="100dp"
-                android:scaleType="centerCrop" />
-
-            <com.example.digitalevidence.Views.DeviceView
-                android:id="@+id/DeviceView2"
-                class="com.example.digitalevidence.Views.DeviceView"
-                android:layout_marginLeft="280dp"
-                android:layout_width="140dp"
-                android:layout_height="120dp"/>
-
-            <com.example.digitalevidence.Views.DeviceView
-                android:id="@+id/DeviceView3"
-                class="com.example.digitalevidence.Views.DeviceView"
-                android:layout_marginTop="120dp"
-                android:layout_marginLeft="140dp"
-                android:layout_width="140dp"
-                android:layout_height="120dp"/>
-
-            <com.example.digitalevidence.Views.DeviceView
-                android:id="@+id/DeviceView4"
-                class="com.example.digitalevidence.Views.DeviceView"
-                android:layout_marginTop="120dp"
-                android:layout_width="140dp"
-                android:layout_height="120dp"/>
-
-            <com.example.digitalevidence.Views.DeviceView
-                android:id="@+id/DeviceView5"
-                class="com.example.digitalevidence.Views.DeviceView"
-                android:layout_marginTop="120dp"
-                android:layout_marginLeft="280dp"
-                android:layout_width="140dp"
-                android:layout_height="120dp"/>
-                -->
-
-        </RelativeLayout>
-
-    </ScrollView>
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
-
+    </RelativeLayout>
+</layout>
 
 
