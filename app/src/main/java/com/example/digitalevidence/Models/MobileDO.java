@@ -1,5 +1,6 @@
 package com.example.digitalevidence.Models;
 
+import androidx.annotation.NonNull;
 import androidx.transition.Visibility;
 
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBAttribute;
@@ -8,7 +9,7 @@ import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBTable;
 
 @DynamoDBTable(tableName = "digitalforensics-mobilehub-1666815180-Mobile")
 
-public class MobileDO extends Model {
+public class MobileDO extends Model implements Cloneable{
     private String _name;
     private String _link;
     public final static String TABLE_NAME = "digitalforensics-mobilehub-1666815180-Mobile";
@@ -36,6 +37,12 @@ public class MobileDO extends Model {
         this._link = _link;
     }
 
+    @NonNull
+    @Override
+    public Object clone() {
+        MobileDO clone = new MobileDO(this._name, this._link);
+        return clone;
+    }
 }
 
 

@@ -8,12 +8,15 @@ import com.amazonaws.mobile.config.AWSConfiguration;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMapper;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
+import com.amazonaws.services.dynamodbv2.model.QueryResult;
 import com.amazonaws.services.dynamodbv2.model.ScanRequest;
 import com.amazonaws.services.dynamodbv2.model.ScanResult;
 import com.example.digitalevidence.Models.MobileDO;
 import com.example.digitalevidence.Models.Model;
 
+import java.util.ArrayDeque;
 import java.util.Comparator;
+import java.util.Deque;
 import java.util.Dictionary;
 import java.util.HashMap;
 import java.util.Hashtable;
@@ -25,10 +28,11 @@ import java.util.Queue;
 
 // Description: One DynamoHelper per activity
 public class DynamoHelper {
-    private Queue<Model> modelsPending; // list of data modelsPending (like moblileD0, ect..)
+    private Deque<Model> modelsPending; // list of data modelsPending (like moblileD0, ect..)
     private Class modelClass; // to indicate what data object were working with
     private String tableName;
-    public static Model previousModel;
+    public  Model previousModel;
+    private ScanResult queryResult; // used to get prev
 
 
     private static DynamoDBMapper dynamoDBMapper;
@@ -53,17 +57,17 @@ public class DynamoHelper {
         // step 1 - set credential Helper for specific activity
         credentialHelper = new CredentialHelper(context);
         // Step 2 - see what activity were in
-        modelClass = classType;
+        this.modelClass = classType;
         this.tableName = tableName;
 
         // Step 3 - configure all connections to Aws
         AWSConfiguration configuration = AWSMobileClient.getInstance().getConfiguration();
         this.dynamoDBClient = new AmazonDynamoDBClient(credentialHelper.getCredentialsProvider());
         this.dynamoDBMapper= DynamoDBMapper.builder().dynamoDBClient(dynamoDBClient).awsConfiguration(configuration).build();
-        this.modelsPending = new PriorityQueue<>(Comparator.comparing(Model::getName)); // sort by name alphabetic
-
+        this.modelsPending = new ArrayDeque<>();
     }
 
+    private int count = 0;
 
     // TODO: find a way to queue the data so we can load N items and it will hold last place in dynamo
     public Thread getNItems(final int NItems){
@@ -81,16 +85,14 @@ public class DynamoHelper {
 
 
 
-                // TODO: change queue to dequeu so we can get last priority = previous model
-
-
                 // Step 1 - check to see if the first is loaded
-                if (previousModel != null) {
-                    prevText = previousModel.getName();
+                if (queryResult != null) {
+                    prevText =(String)((AttributeValue)(queryResult.getLastEvaluatedKey().values().toArray()[NAME])).getS();
                 }else{
-                    prevText = "a";
+                    prevText = "z*";
                 }
 
+                count++;
                 // Step 2 - add to the attribute names/values
                 attributeNames.put("#name", "name");
                 attributeValues.put(":nameValue", new AttributeValue().withS(prevText));
@@ -99,19 +101,20 @@ public class DynamoHelper {
                 ScanRequest scanRequest = new ScanRequest()
                         .withTableName(tableName)
                         .withExpressionAttributeNames(attributeNames)
-                        .withFilterExpression("#name > :nameValue")
+                        .withFilterExpression("#name <> :nameValue")
                         .withExpressionAttributeValues(attributeValues);
 
                 // Step 4 - set the limit of how many items ret
                 scanRequest.setLimit(NItems);
-                ScanResult querynResult = dynamoDBClient.scan(scanRequest);
+                queryResult = dynamoDBClient.scan(scanRequest);
                 // Step  5 - get all the items in a list of maps
-                items = querynResult.getItems();
+                items = queryResult.getItems();
                 // Step 6 - iterate throw the items
                 for (Map<String, AttributeValue> item: items) {
 
                     // Step 8 - allocate space for a model
-                    Model modelDO = mapClassToModel.get(modelClass);
+                    MobileDO modelDO = new MobileDO();
+                    //Model modelDO = (Model)(mapClassToModel.get(modelClass);
 
                     for(int i = 0; i < item.values().toArray().length; i++) {
 
@@ -126,7 +129,8 @@ public class DynamoHelper {
                     //  step 9 - add that model to the modelsPending
                     modelsPending.add(modelDO);
                 }
-                //previousModel = modelsPending.element("hi");
+                // Step 10 - set last to be previous model
+                //previousModel =  modelsPending.peekLast();
             }
         });
     }
@@ -134,10 +138,8 @@ public class DynamoHelper {
 
 
 
-    public Queue<Model> getModelsPending() {
+    public Deque<Model> getModelsPending() {
         return modelsPending;
     }
-
-
 
 }

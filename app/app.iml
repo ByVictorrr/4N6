@@ -126,6 +126,7 @@
     <orderEntry type="library" name="Gradle: com.google.code.findbugs:jsr305:3.0.1@jar" level="project" />
     <orderEntry type="library" name="Gradle: org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: org.eclipse.paho:org.eclipse.paho.android.service:1.1.1@jar" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.commons:commons-lang3:3.6@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.amazonaws:aws-android-sdk-appsync-api:2.9.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: javax.annotation:jsr250-api:1.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.databinding:databinding-adapters:3.5.1@aar" level="project" />

@@ -28,6 +28,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Deque;
 import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Queue;
@@ -66,23 +67,23 @@ public class MobileActivity extends AppCompatActivity {
         this.dynamoHelper = new DynamoHelper(this, MobileDO.class, MobileDO.TABLE_NAME);
 
 
-        loadAndSet();
+        loadAndSet(1);
         activityMobileBinding.RecyclerView.addOnScrollListener(new EndlessRecyclerViewScrollListener(linearLayoutManager){
             @Override
             public void onLoadMore(int page, int totalItemsCount, RecyclerView view) {
                 // Triggered only when new data needs to be appended to the list
                 // Add whatever code is needed to append new items to the bottom of the list
-                loadAndSet();
+                loadAndSet(3);
             }
         });
         //================================================\\
 
 
     }
-    private void loadAndSet(){
+    private void loadAndSet(int item_to_load){
         // Triggered only when new data needs to be appended to the list
         // Add whatever code is needed to append new items to the bottom of the list
-        Thread getAll = dynamoHelper.getNItems(2);
+        Thread getAll = dynamoHelper.getNItems(item_to_load);
         // Step 3 - Wait while threads are finishing and set urls images to background
         Thread doAll =  addDataToList();
         // step 4 -
@@ -103,9 +104,9 @@ public class MobileActivity extends AppCompatActivity {
         return new Thread(new Runnable() {
             @Override
             public void run() {
-                Queue<Model> pending = dynamoHelper.getModelsPending();
+                Deque<Model> pending = dynamoHelper.getModelsPending();
                 while(pending.size() > 0) {
-                    models.add(dynamoHelper.getModelsPending().poll());
+                    models.add(pending.pollFirst());
                     loadedItems++;
                 }
                 customAdapter.notifyDataSetChanged();
