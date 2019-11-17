@@ -8,12 +8,9 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
-import com.example.digitalevidence.R;
 
 public class DetailedFragment extends Fragment {
-
     private static final String TAG = "Detailed";
-
     private PageViewModel pageViewModel;
 
     public DetailedFragment() {

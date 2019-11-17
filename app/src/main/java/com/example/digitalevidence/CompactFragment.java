@@ -10,9 +10,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 public class CompactFragment extends Fragment {
-
     private static final String TAG = "Compact";
-
     private PageViewModel pageViewModel;
 
     public CompactFragment() {

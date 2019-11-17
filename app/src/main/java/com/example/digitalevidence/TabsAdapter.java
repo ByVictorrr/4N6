@@ -1,6 +1,6 @@
 package com.example.digitalevidence;
-
 import android.content.Context;
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import androidx.fragment.app.Fragment;
@@ -8,10 +8,9 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 public class TabsAdapter extends FragmentPagerAdapter {
-
     @StringRes
     private static final int[] TAB_TITLES =
-            new int[] { R.string.title_compact, R.string.title_detailed };
+            new int[] { R.string.tab_compact, R.string.tab_detailed };
     private final Context mContext;
 
     public TabsAdapter(Context context, FragmentManager fm) {
@@ -19,6 +18,7 @@ public class TabsAdapter extends FragmentPagerAdapter {
         mContext = context;
     }
 
+    @NonNull
     @Override
     public Fragment getItem(int position) {
         switch (position) {
@@ -26,9 +26,8 @@ public class TabsAdapter extends FragmentPagerAdapter {
                 return CompactFragment.newInstance();
             case 1:
                 return DetailedFragment.newInstance();
-            default:
-                return null;
         }
+        return CompactFragment.newInstance();
     }
 
     @Nullable

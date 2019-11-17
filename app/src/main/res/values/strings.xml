@@ -3,10 +3,8 @@
 
     <string name="title_profile">Profile</string>
     <string name="title_help">Help</string>
-    <string name="title_back">Back</string>
     <string name="title_edit">Edit</string>
-
-    <string name="title_fave">Favorites</string>
+    <string name="title_favorites">Favorites</string>
     <string name="title_home">Home</string>
     <string name="title_search">Search</string>
     <string name="title_mobile">Mobile</string>
@@ -15,16 +13,14 @@
     <string name="title_gaming">Gaming</string>
     <string name="title_misc">Misc</string>
 
-    <string name="title_compact">Compact</string>
-    <string name="title_detailed">Detailed</string>
-    <string name="title_brand">Brand</string>
-    <string name="title_releasedate">Release Date</string>
-    <string name="title_alphabetical">Alphabetical</string>
-    <string name="title_content">Content</string>
+    <string name="tab_compact">Compact</string>
+    <string name="tab_detailed">Detailed</string>
+    <string name="tab_brand">Brand</string>
+    <string name="tab_releasedate">Release Date</string>
+    <string name="tab_alphabetical">Alphabetical</string>
+    <string name="tab_content">Content</string>
 
     <string name="button_next">Next</string>
     <string name="button_finish">Finish</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

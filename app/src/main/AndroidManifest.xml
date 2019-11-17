@@ -11,6 +11,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".BaseActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.BASE" />
+
+                <category android:name="android.intent.category.LAUNCHERBASE" />
+            </intent-filter>
+        </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,11 +32,60 @@
                 <category android:name="android.intent.category.LAUNCHERMOBILE" />
             </intent-filter>
         </activity>
+        <activity android:name=".ComputerActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.COMPUTER" />
+
+                <category android:name="android.intent.category.LAUNCHERCOMPUTER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".StorageActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.STORAGE" />
+
+                <category android:name="android.intent.category.LAUNCHERSTORAGE" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".GamingActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.GAMING" />
+
+                <category android:name="android.intent.category.LAUNCHERGAMING" />
+            </intent-filter>
+        </activity>
         <activity android:name=".MiscActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MISC" />
 
                 <category android:name="android.intent.category.LAUNCHERMISC" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".FavoritesActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.FAVORITES" />
+
+                <category android:name="android.intent.category.LAUNCHERFAVORITES" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".SearchActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+
+                <category android:name="android.intent.category.LAUNCHERSEARCH" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ProfileActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.PROFILE" />
+
+                <category android:name="android.intent.category.LAUNCHERPROFILE" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".HelpActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.HELP" />
+
+                <category android:name="android.intent.category.LAUNCHERHELP" />
             </intent-filter>
         </activity>
     </application>

@@ -1,37 +1,22 @@
 package com.example.digitalevidence;
 import android.os.Bundle;
-
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.widget.Toolbar;
-import androidx.appcompat.app.AppCompatActivity;
+import android.widget.TextView;
 import androidx.viewpager.widget.ViewPager;
-
 import com.google.android.material.tabs.TabLayout;
 
-public class MobileActivity extends AppCompatActivity {
-
+public class MobileActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mobile);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        TextView textView = findViewById(R.id.toolbar_title);
+        textView.setText(R.string.title_mobile);
 
         TabsAdapter tabsPagerAdapter = new TabsAdapter(this, getSupportFragmentManager());
-
         ViewPager viewPager = findViewById(R.id.viewPager);
         viewPager.setAdapter(tabsPagerAdapter);
-
         TabLayout tabs = findViewById(R.id.tabLayout);
         tabs.setupWithViewPager(viewPager);
     }
-
-    @Override
-    public boolean onSupportNavigateUp() {
-        onBackPressed();
-        return true;
-    }
-
 }
