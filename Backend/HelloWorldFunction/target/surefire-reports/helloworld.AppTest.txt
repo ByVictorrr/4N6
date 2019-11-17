@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: helloworld.AppTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.66 sec <<< FAILURE! - in helloworld.AppTest
+successfulResponse(helloworld.AppTest)  Time elapsed: 0.626 sec  <<< ERROR!
+java.lang.NullPointerException
+	at helloworld.AppTest.successfulResponse(AppTest.java:12)
+

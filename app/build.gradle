@@ -1,15 +1,28 @@
 apply plugin: 'com.android.application'
 
 android {
+
+    compileOptions{
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+
+    // for data binding
+    dataBinding.enabled = true
+
+
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.example.digitalevidence"
-        minSdkVersion 15
+        minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+
     }
     buildTypes {
         release {
@@ -18,6 +31,8 @@ android {
         }
     }
 }
+
+
 
 dependencies {
     //implementation 'com.android.support:design:28.0.0'
@@ -31,8 +46,21 @@ dependencies {
     implementation 'com.amazonaws:aws-android-sdk-core:2.6.+'
     implementation 'com.amazonaws:aws-android-sdk-ddb:2.6.+'
     implementation 'com.amazonaws:aws-android-sdk-ddb-document:2.6.+'
-    implementation 'com.amazonaws:aws-android-sdk-ddb-mapper:2.6.+'
     implementation 'com.amazonaws:aws-android-sdk-s3:2.6.+'
+    implementation 'com.squareup.picasso:picasso:2.71828'
 
+    implementation('com.amazonaws:aws-android-sdk-mobile-client:2.7.+@aar') { transitive = true }
+    implementation 'com.amazonaws:aws-android-sdk-ddb-mapper:2.7.+'
 
+    //AppSync SDK
+    implementation 'com.amazonaws:aws-android-sdk-appsync:2.8.+'
+    implementation 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.0'
+    implementation 'org.eclipse.paho:org.eclipse.paho.android.service:1.1.1'
+    implementation 'org.apache.commons:commons-lang3:3.6'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
+    implementation 'androidx.gridlayout:gridlayout:1.0.0'
+
+//    implementation 'com.android.support:multidex:1.0.3'
+//For the drop-in UI also:
 }

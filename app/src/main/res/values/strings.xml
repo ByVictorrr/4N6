@@ -1,15 +1,26 @@
 <resources>
+    <string name="app_name">Digital Evidence</string>
 
     <string name="title_profile">Profile</string>
-    <string name="app_name">Digital Evidence</string>
     <string name="title_help">Help</string>
-
-    <string name="title_fave">Favorites</string>
+    <string name="title_edit">Edit</string>
+    <string name="title_favorites">Favorites</string>
     <string name="title_home">Home</string>
     <string name="title_search">Search</string>
-    <string name="title_activity_mobile">MobileActivity</string>
-    <string name="title_activity_computer">ComputerActivity</string>
-    <string name="title_activity_storage">StorageActivity</string>
-    <string name="title_activity_misc">MiscActivity</string>
+    <string name="title_mobile">Mobile</string>
+    <string name="title_computer">Computer</string>
+    <string name="title_storage">Storage</string>
+    <string name="title_gaming">Gaming</string>
+    <string name="title_misc">Misc</string>
+
+    <string name="tab_compact">Compact</string>
+    <string name="tab_detailed">Detailed</string>
+    <string name="tab_brand">Brand</string>
+    <string name="tab_releasedate">Release Date</string>
+    <string name="tab_alphabetical">Alphabetical</string>
+    <string name="tab_content">Content</string>
+
+    <string name="button_next">Next</string>
+    <string name="button_finish">Finish</string>
 
 </resources>

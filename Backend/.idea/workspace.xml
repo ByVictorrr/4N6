@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3251f53f-67e5-43e4-84ca-e91f6ff441ec" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../BackendModules/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/src/main/java/com/example/digitalevidence/Views/DeviceView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/src/main/res/layout/view_device_info_layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_appcompat_appcompat_1_0_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_appcompat_appcompat_1_0_2_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_arch_core_core_runtime_2_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_arch_core_core_runtime_2_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_asynclayoutinflater_asynclayoutinflater_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_asynclayoutinflater_asynclayoutinflater_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_cardview_cardview_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_cardview_cardview_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_constraintlayout_constraintlayout_1_1_3_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_constraintlayout_constraintlayout_1_1_3_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_coordinatorlayout_coordinatorlayout_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_coordinatorlayout_coordinatorlayout_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_core_core_1_0_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_core_core_1_0_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_cursoradapter_cursoradapter_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_cursoradapter_cursoradapter_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_customview_customview_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_customview_customview_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_documentfile_documentfile_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_documentfile_documentfile_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_drawerlayout_drawerlayout_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_drawerlayout_drawerlayout_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_exifinterface_exifinterface_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_exifinterface_exifinterface_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_fragment_fragment_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_fragment_fragment_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_interpolator_interpolator_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_interpolator_interpolator_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_legacy_legacy_support_core_ui_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_legacy_legacy_support_core_ui_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_legacy_legacy_support_core_utils_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_legacy_legacy_support_core_utils_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_2_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_2_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_core_2_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_core_2_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_lifecycle_lifecycle_runtime_2_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_lifecycle_lifecycle_runtime_2_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_2_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_2_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_loader_loader_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_loader_loader_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_localbroadcastmanager_localbroadcastmanager_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_localbroadcastmanager_localbroadcastmanager_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_print_print_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_print_print_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_recyclerview_recyclerview_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_recyclerview_recyclerview_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_slidingpanelayout_slidingpanelayout_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_slidingpanelayout_slidingpanelayout_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_swiperefreshlayout_swiperefreshlayout_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_swiperefreshlayout_swiperefreshlayout_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_test_core_1_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_test_core_1_1_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_test_espresso_espresso_core_3_1_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_test_espresso_espresso_core_3_1_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_test_espresso_espresso_idling_resource_3_1_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_test_espresso_espresso_idling_resource_3_1_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_test_ext_junit_1_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_test_ext_junit_1_1_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_test_monitor_1_1_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_test_monitor_1_1_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_test_runner_1_1_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_test_runner_1_1_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_transition_transition_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_transition_transition_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_1_0_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_1_0_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_animated_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_animated_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_versionedparcelable_versionedparcelable_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_versionedparcelable_versionedparcelable_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_viewpager_viewpager_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_viewpager_viewpager_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_amazonaws_aws_android_sdk_auth_core_2_15_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_amazonaws_aws_android_sdk_auth_core_2_15_2_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_amazonaws_aws_android_sdk_auth_core_2_7_7_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_amazonaws_aws_android_sdk_auth_core_2_7_7_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_amazonaws_aws_android_sdk_auth_ui_2_15_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_amazonaws_aws_android_sdk_auth_ui_2_15_2_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_amazonaws_aws_android_sdk_auth_userpools_2_15_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_amazonaws_aws_android_sdk_auth_userpools_2_15_2_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_amazonaws_aws_android_sdk_mobile_client_2_15_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_amazonaws_aws_android_sdk_mobile_client_2_15_2_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_amazonaws_aws_android_sdk_mobile_client_2_7_7_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_amazonaws_aws_android_sdk_mobile_client_2_7_7_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_google_android_material_material_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_google_android_material_material_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_squareup_picasso_picasso_2_71828_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_squareup_picasso_picasso_2_71828_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelloWorldFunction/events/s3put.json" beforeDir="false" afterPath="$PROJECT_DIR$/HelloWorldFunction/events/s3put.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backendcd/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backendcd/.idea/aws.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backendcd/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backendcd/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backendcd/.idea/libraries/Maven__com_amazonaws_aws_lambda_java_core_1_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backendcd/.idea/libraries/Maven__junit_junit_4_12.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backendcd/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backendcd/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backendcd/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backendcd/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backendcd/Backendcd.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backendcd/HelloWorldFunction/HelloWorld.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DynamoDBLocal/DynamoDBLocal.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DynamoDBLocal/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SyncModule/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SyncModule/.idea/aws.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SyncModule/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SyncModule/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SyncModule/.idea/libraries/Maven__com_amazonaws_aws_lambda_java_core_1_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SyncModule/.idea/libraries/Maven__junit_junit_4_12.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SyncModule/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SyncModule/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SyncModule/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SyncModule/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SyncModule/HelloWorldFunction/HelloWorld.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SyncModule/SyncModule.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/example/digitalevidence/MobileActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/example/digitalevidence/MobileActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/example/digitalevidence/Models/MobileDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/example/digitalevidence/Models/MobileDO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/example/digitalevidence/Models/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/example/digitalevidence/Models/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/layout/activity_mobile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/res/layout/activity_mobile.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled1/.idea/workspace.xml" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1TJq9wjUqvIZ86LuIxQZSO60CmP" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/DesignPatternsInJava/Factories" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15820312" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/HelloWorldFunction/src/main/java" />
+      <recent name="$PROJECT_DIR$/HelloWorldFunction/src/main/java/S3DynamoUpdate" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="AWS Lambda.[Local] HelloWorldFunction">
+    <configuration name="[Local] HelloWorldFunction" type="aws.lambda" factoryName="Local" nameIsGenerated="true">
+      <option name="credentialProviderId" value="profile:4N6" />
+      <option name="regionId" value="us-east-2" />
+      <option name="environmentVariables">
+        <map />
+      </option>
+      <option name="handler" />
+      <option name="logicalFunctionName" value="HelloWorldFunction" />
+      <option name="memorySize" value="128" />
+      <option name="runtime" />
+      <option name="templateFile" value="$PROJECT_DIR$/template.yaml" />
+      <option name="timeout" value="300" />
+      <option name="useTemplate" value="true" />
+      <option name="input" value="$PROJECT_DIR$/HelloWorldFunction/events/s3put.json" />
+      <option name="inputIsFile" value="true" />
+      <sam>
+        <option name="additionalBuildArgs" value="" />
+        <option name="additionalLocalArgs" value="" />
+        <option name="buildInContainer" value="false" />
+        <option name="dockerNetwork" value="" />
+        <option name="skipImagePull" value="false" />
+      </sam>
+      <method v="2" />
+    </configuration>
+    <configuration name="[Remote] s3ToDynamodb" type="aws.lambda" factoryName="Remote" nameIsGenerated="true">
+      <option name="credentialProviderId" value="profile:4N6" />
+      <option name="regionId" value="us-east-2" />
+      <option name="functionName" value="s3ToDynamodb" />
+      <option name="input" value="{&#10;  &quot;Records&quot;: [&#10;    {&#10;      &quot;eventVersion&quot;: &quot;2.0&quot;,&#10;      &quot;eventSource&quot;: &quot;aws:s3&quot;,&#10;      &quot;awsRegion&quot;: &quot;{region}&quot;,&#10;      &quot;eventTime&quot;: &quot;1970-01-01T00:00:00Z&quot;,&#10;      &quot;eventName&quot;: &quot;ObjectCreated:Put&quot;,&#10;      &quot;userIdentity&quot;: {&#10;        &quot;principalId&quot;: &quot;EXAMPLE&quot;&#10;      },&#10;      &quot;requestParameters&quot;: {&#10;        &quot;sourceIPAddress&quot;: &quot;127.0.0.1&quot;&#10;      },&#10;      &quot;responseElements&quot;: {&#10;        &quot;x-amz-request-id&quot;: &quot;EXAMPLE123456789&quot;,&#10;        &quot;x-amz-id-2&quot;: &quot;EXAMPLE123/5678abcdefghijklambdaisawesome/mnopqrstuvwxyzABCDEFGH&quot;&#10;      },&#10;      &quot;s3&quot;: {&#10;        &quot;s3SchemaVersion&quot;: &quot;1.0&quot;,&#10;        &quot;configurationId&quot;: &quot;testConfigRule&quot;,&#10;        &quot;bucket&quot;: {&#10;          &quot;name&quot;: &quot;sourcebucket&quot;,&#10;          &quot;ownerIdentity&quot;: {&#10;            &quot;principalId&quot;: &quot;EXAMPLE&quot;&#10;          },&#10;          &quot;arn&quot;: &quot;arn:{partition}:s3:::mybucket&quot;&#10;        },&#10;        &quot;object&quot;: {&#10;          &quot;key&quot;: &quot;HappyFace.jpg&quot;,&#10;          &quot;size&quot;: 1024,&#10;          &quot;eTag&quot;: &quot;0123456789abcdef0123456789abcdef&quot;,&#10;          &quot;sequencer&quot;: &quot;0A1B2C3D4E5F678901&quot;&#10;        }&#10;      }&#10;    }&#10;  ]&#10;}" />
+      <option name="inputIsFile" value="false" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="AWS Lambda.[Local] HelloWorldFunction" />
+      <item itemvalue="AWS Lambda.[Remote] s3ToDynamodb" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3251f53f-67e5-43e4-84ca-e91f6ff441ec" name="Default Changelist" comment="" />
+      <created>1573188397982</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1573188397982</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/HelloWorldFunction/src/test/java/helloworld/AppTest.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/HelloWorldFunction/src/main/java/helloworld/App.java</url>
+          <line>114</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/HelloWorldFunction/src/main/java/helloworld/App.java</url>
+          <line>93</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/HelloWorldFunction/src/main/java/helloworld/App.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

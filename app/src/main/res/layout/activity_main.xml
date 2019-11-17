@@ -1,112 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    app:layout_constraintVertical_chainStyle="spread"
     tools:context="com.example.digitalevidence.MainActivity">
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/navigationBarTop"
+    <include
+        android:id="@+id/include3"
+        layout="@layout/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.25"
-        android:background="@color/colorNavBack"
-        app:itemIconTint="@color/navigationcolors"
-        app:itemTextColor="@color/navigationcolors"
-        app:layout_constraintBottom_toTopOf="parent"
-        app:menu="@menu/naviagtionbartop" />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.5" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/mobile_button"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_gravity="center"
-        android:layout_weight="1"
+        android:layout_height="75dp"
         android:background="@drawable/mobile_button"
         app:layout_constraintBottom_toTopOf="@+id/computer_button"
-        app:layout_constraintStart_toStartOf="@+id/computer_button" />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.5" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include3" />
 
     <Button
         android:id="@+id/computer_button"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_gravity="center"
+        android:layout_height="75dp"
         android:background="@drawable/computers_button"
         app:layout_constraintBottom_toTopOf="@+id/storage_button"
-        app:layout_constraintStart_toStartOf="@+id/storage_button" />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.5" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mobile_button" />
 
     <Button
         android:id="@+id/storage_button"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_gravity="center"
+        android:layout_height="75dp"
         android:background="@drawable/storage_button"
         app:layout_constraintBottom_toTopOf="@+id/gaming_button"
-        app:layout_constraintStart_toStartOf="@+id/gaming_button" />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.5" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/computer_button" />
 
     <Button
         android:id="@+id/gaming_button"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_gravity="center"
+        android:layout_height="75dp"
         android:background="@drawable/gaming_button"
         app:layout_constraintBottom_toTopOf="@+id/misc_button"
-        app:layout_constraintStart_toStartOf="@+id/misc_button" />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.5" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/storage_button" />
 
     <Button
         android:id="@+id/misc_button"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_gravity="center"
+        android:layout_height="75dp"
         android:background="@drawable/misc_button"
-        app:layout_constraintBottom_toTopOf="@+id/navigationBar"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/include2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gaming_button" />
 
-    <Space
+    <include
+        android:id="@+id/include2"
+        layout="@layout/nav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1" />
+        app:layout_constraintBottom_toBottomOf="parent" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/navigationBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.25"
-        android:background="@color/colorNavBack"
-        app:itemIconTint="@color/navigationcolors"
-        app:itemTextColor="@color/navigationcolors"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:menu="@menu/navigationbar" />
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
