@@ -12,6 +12,7 @@ import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBTable;
 public class MobileDO extends Model implements Cloneable{
     private String _name;
     private String _link;
+    public static final MODEL_TYPE TYPE = MODEL_TYPE.MOBILE;
     public final static String TABLE_NAME = "digitalforensics-mobilehub-1666815180-Mobile";
 
     public MobileDO(){}

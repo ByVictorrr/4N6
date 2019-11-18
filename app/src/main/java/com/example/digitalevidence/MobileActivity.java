@@ -4,9 +4,11 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.os.Bundle;
 
+import com.apollographql.apollo.api.Query;
 import com.example.digitalevidence.Helpers.DynamoHelper;
 import com.example.digitalevidence.LazyLoaders.CustomAdapter;
 import com.example.digitalevidence.LazyLoaders.EndlessRecyclerViewScrollListener;
+import com.example.digitalevidence.Models.MODEL_TYPE;
 import com.example.digitalevidence.Models.MobileDO;
 import com.example.digitalevidence.Models.Model;
 import com.example.digitalevidence.databinding.ActivityMobileBinding;
@@ -64,7 +66,7 @@ public class MobileActivity extends AppCompatActivity {
         //==================================================\\
 
 
-        this.dynamoHelper = new DynamoHelper(this, MobileDO.class, MobileDO.TABLE_NAME);
+        this.dynamoHelper = new DynamoHelper(this, MODEL_TYPE.MOBILE, MobileDO.TABLE_NAME);
 
 
         loadAndSet(1);
@@ -72,12 +74,10 @@ public class MobileActivity extends AppCompatActivity {
             @Override
             public void onLoadMore(int page, int totalItemsCount, RecyclerView view) {
                 // Triggered only when new data needs to be appended to the list
-                // Add whatever code is needed to append new items to the bottom of the list
-                loadAndSet(3);
+                // Add whatever code is needed to append new items to the bottom of the list=
+                loadAndSet(2);
             }
         });
-        //================================================\\
-
 
     }
     private void loadAndSet(int item_to_load){
@@ -104,9 +104,9 @@ public class MobileActivity extends AppCompatActivity {
         return new Thread(new Runnable() {
             @Override
             public void run() {
-                Deque<Model> pending = dynamoHelper.getModelsPending();
+                Queue<Model> pending = dynamoHelper.getModelsPending();
                 while(pending.size() > 0) {
-                    models.add(pending.pollFirst());
+                    models.add(pending.poll());
                     loadedItems++;
                 }
                 customAdapter.notifyDataSetChanged();
