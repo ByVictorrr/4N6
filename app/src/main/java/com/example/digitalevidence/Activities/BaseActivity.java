@@ -11,7 +11,7 @@ import androidx.appcompat.widget.Toolbar;
 import com.example.digitalevidence.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class BaseActivity extends AppCompatActivity {
+abstract public class BaseActivity extends AppCompatActivity {
     Menu menu;
     String className = this.getClass().getSimpleName();
 
@@ -88,4 +88,9 @@ public class BaseActivity extends AppCompatActivity {
         onBackPressed();
         return true;
     }
+
+
+
+    abstract public void loadAndSet(int item_to_load);
+
 }

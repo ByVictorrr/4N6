@@ -13,4 +13,6 @@ public class HelpActivity extends BaseActivity {
         TextView textView = findViewById(R.id.toolbar_title);
         textView.setText(R.string.title_help);
     }
+
+    public void loadAndSet(int item_to_load){}
 }

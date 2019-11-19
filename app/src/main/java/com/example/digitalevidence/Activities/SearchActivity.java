@@ -44,4 +44,6 @@ public class SearchActivity extends BaseActivity {
             }
         });
     }
+
+    public void loadAndSet(int item_to_load){}
 }

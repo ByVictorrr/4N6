@@ -18,7 +18,6 @@ public class TabsAdapter extends FragmentPagerAdapter {
     private final Context mContext;
 
     public TabsAdapter(Context context, FragmentManager fm) {
-        //super(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         super(fm);
         mContext = context;
     }

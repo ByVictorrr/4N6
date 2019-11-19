@@ -66,4 +66,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 break;
         }
     }
+
+    public void loadAndSet(int item_to_load){}
 }

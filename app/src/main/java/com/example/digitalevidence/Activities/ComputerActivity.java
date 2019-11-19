@@ -22,4 +22,6 @@ public class ComputerActivity extends BaseActivity {
         TabLayout tabs = findViewById(R.id.tabLayout);
         tabs.setupWithViewPager(viewPager);
     }
+
+    public void loadAndSet(int item_to_load){}
 }

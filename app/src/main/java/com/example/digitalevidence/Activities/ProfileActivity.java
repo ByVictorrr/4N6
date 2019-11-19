@@ -13,4 +13,6 @@ public class ProfileActivity extends BaseActivity {
         TextView textView = findViewById(R.id.toolbar_title);
         textView.setText(R.string.title_profile);
     }
+
+    public void loadAndSet(int item_to_load){}
 }

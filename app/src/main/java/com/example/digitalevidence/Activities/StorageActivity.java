@@ -13,4 +13,6 @@ public class StorageActivity extends BaseActivity {
         TextView textView = findViewById(R.id.toolbar_title);
         textView.setText(R.string.title_storage);
     }
+
+    public void loadAndSet(int item_to_load){}
 }

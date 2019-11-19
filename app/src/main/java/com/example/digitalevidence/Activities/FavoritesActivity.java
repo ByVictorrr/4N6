@@ -44,4 +44,6 @@ public class FavoritesActivity extends BaseActivity {
             }
         });
     }
+
+    public void loadAndSet(int item_to_load){}
 }
