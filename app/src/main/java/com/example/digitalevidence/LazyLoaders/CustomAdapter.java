@@ -12,6 +12,8 @@ import com.example.digitalevidence.Models.Model;
 import com.example.digitalevidence.R;
 import com.squareup.picasso.Picasso;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder> {
@@ -29,8 +31,12 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        Model model = myList.get(position);
-        holder.setDevice(model);
+        Model left = myList.get(position);
+        Model middle = myList.get(position+1);
+        Model right = myList.get(position+2);
+        holder.setLMDevice(left);
+        holder.setMDevice(middle);
+        holder.setRMDevice(right);
     }
 
     @Override
@@ -41,22 +47,46 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
     class ViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView name;
-        private ImageView image;
+        private final int LEFTMOST = 0
+                , MIDDLE = 1
+                , RIGHMOST = 2;
+
+        private List<TextView> textViews = new ArrayList<>();
+        private List<ImageView> imageViews = new ArrayList<>();
 
         ViewHolder(View itemView) {
             super(itemView);
-            name = itemView.findViewById(R.id.name);
-            image = itemView.findViewById(R.id.image);
+            textViews.add(itemView.findViewById(R.id.name0));
+            imageViews.add(itemView.findViewById(R.id.imageView0));
+            textViews.add(itemView.findViewById(R.id.name1));
+            imageViews.add(itemView.findViewById(R.id.imageView1));
+            textViews.add(itemView.findViewById(R.id.name2));
+            imageViews.add(itemView.findViewById(R.id.imageView2));
+
         }
 
-        public void setDevice(Model mobileDO) {
-            name.setText(mobileDO.getName());
-            Picasso.get().load(mobileDO.getLink()).into(image);
+
+        public void setLMDevice(Model mobileDO) {
+            textViews.get(LEFTMOST).setText(mobileDO.getName());
+            Picasso.get().load(mobileDO.getLink()).into(imageViews.get(LEFTMOST));
         }
+
+        public void setMDevice(Model mobileDO) {
+            textViews.get(MIDDLE).setText(mobileDO.getName());
+            Picasso.get().load(mobileDO.getLink()).into(imageViews.get(MIDDLE));
+        }
+        public void setRMDevice(Model mobileDO) {
+            textViews.get(RIGHMOST).setText(mobileDO.getName());
+            Picasso.get().load(mobileDO.getLink()).into(imageViews.get(RIGHMOST));
+        }
+
+        /*
         public void setName(String name){
-            this.name.setText(name);
+            this.name[0].setText(name);
         }
+
+         */
+
 
     }
 }
