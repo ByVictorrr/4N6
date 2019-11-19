@@ -76,12 +76,11 @@ public class DetailedFragment extends Fragment{
 
 
 
-
-        mobileActivity.loadAndSet(3);
+        mobileActivity.loadAndSet(6);
         recyclerView.addOnScrollListener( new EndlessRecyclerViewScrollListener(layoutManager){
             @Override
             public void onLoadMore(int page, int totalItemsCount, RecyclerView view) {
-                mobileActivity.loadAndSet(3);
+                mobileActivity.loadAndSet(6);
             }
         });
 

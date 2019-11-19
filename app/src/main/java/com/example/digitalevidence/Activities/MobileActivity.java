@@ -31,7 +31,6 @@ public class MobileActivity extends BaseActivity {
 
     //=================Lazy layout===================================\\
     // in order to enable data binding: parent xml must be layout
-    private ActivityMobileBinding activityMobileBinding;
     private List<Model> models;
     public CustomAdapter customAdapter;
     private int loadedItems = 0;
@@ -44,44 +43,14 @@ public class MobileActivity extends BaseActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        /////////casssidy stuff//////////////
         TabsAdapter tabsPagerAdapter = new TabsAdapter(this, getSupportFragmentManager());
         ViewPager viewPager = findViewById(R.id.viewPager);
         viewPager.setAdapter(tabsPagerAdapter);
         TabLayout tabs = findViewById(R.id.tabLayout);
         tabs.setupWithViewPager(viewPager);
 
-
-
-
-        //=================init of Lazy layout=====================\\
-        //activityMobileBinding = DataBindingUtil.setContentView(this, R.layout.activity_mobile);
-
-        //LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        //linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        //activityMobileBinding.RecyclerView.setLayoutManager(linearLayoutManager);
-        //activityMobileBinding.RecyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
-        //models = new ArrayList<>();
-        //customAdapter = new CustomAdapter(models);
-        //activityMobileBinding.RecyclerView.setAdapter(customAdapter);
-        //==================================================\\
-
-
         this.dynamoHelper = new DynamoHelper(this, MODEL_TYPE.MOBILE, MobileDO.TABLE_NAME);
 
-
-        /*
-        loadAndSet(1);
-        activityMobileBinding.RecyclerView.addOnScrollListener(new EndlessRecyclerViewScrollListener(linearLayoutManager){
-            @Override
-            public void onLoadMore(int page, int totalItemsCount, RecyclerView view) {
-                // Triggered only when new data needs to be appended to the list
-                // Add whatever code is needed to append new items to the bottom of the list=
-                loadAndSet(2);
-            }
-        });
-
-         */
     }
     public void loadAndSet(int item_to_load){
         // Triggered only when new data needs to be appended to the list

@@ -1,5 +1,6 @@
 package com.example.digitalevidence.LazyLoaders;
 
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,12 +13,15 @@ import com.example.digitalevidence.Models.Model;
 import com.example.digitalevidence.R;
 import com.squareup.picasso.Picasso;
 
+import org.w3c.dom.Text;
+
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder> {
     private List<Model> myList;
+    private static int counter = 0;
 
     public CustomAdapter(List<Model> myList) {
         this.myList = myList;
@@ -31,13 +35,27 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        Model left = myList.get(position);
-        Model middle = myList.get(position+1);
-        Model right = myList.get(position+2);
-        holder.setLMDevice(left);
-        holder.setMDevice(middle);
-        holder.setRMDevice(right);
+        final int ROWS = 2,
+                COLS = 3;
+
+        if(position != 0){
+
+            counter = 0;
+        }else{
+            counter = position+6;
+        }
+        // TODO: FIX 
+        Model model;
+        for (int i = 0; i < ROWS; i++) {
+            for (int j = 0; j < COLS; j++) {
+                if(counter < myList.size()) {
+                    model = myList.get(counter + i + j);
+                    holder.setDevice(model, i, j);
+                }
+            }
+        }
     }
+
 
     @Override
     public int getItemCount() {
@@ -51,42 +69,42 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
                 , MIDDLE = 1
                 , RIGHMOST = 2;
 
-        private List<TextView> textViews = new ArrayList<>();
-        private List<ImageView> imageViews = new ArrayList<>();
+        private final int ROW0 = 0
+                    , ROW1=1;
+
+        private TextView [][]textViews = new TextView[2][3];
+        private ImageView [][]imageViews = new ImageView[2][3];
 
         ViewHolder(View itemView) {
             super(itemView);
-            textViews.add(itemView.findViewById(R.id.name0));
-            imageViews.add(itemView.findViewById(R.id.imageView0));
-            textViews.add(itemView.findViewById(R.id.name1));
-            imageViews.add(itemView.findViewById(R.id.imageView1));
-            textViews.add(itemView.findViewById(R.id.name2));
-            imageViews.add(itemView.findViewById(R.id.imageView2));
+
+
+            //=====================ROW0====================================\\
+            imageViews[ROW0][LEFTMOST] = itemView.findViewById(R.id.imageView0);
+            textViews[ROW0][LEFTMOST] = itemView.findViewById(R.id.name0);
+
+            imageViews[ROW0][MIDDLE] = itemView.findViewById(R.id.imageView1);
+            textViews[ROW0][MIDDLE] = itemView.findViewById(R.id.name1);
+
+            imageViews[ROW0][RIGHMOST] = itemView.findViewById(R.id.imageView2);
+            textViews[ROW0][RIGHMOST] = itemView.findViewById(R.id.name2);
+            //=====================ROW1====================================\\
+            imageViews[ROW1][LEFTMOST] = itemView.findViewById(R.id.imageView3);
+            textViews[ROW1][LEFTMOST] = itemView.findViewById(R.id.name3);
+            imageViews[ROW1][MIDDLE] = itemView.findViewById(R.id.imageView4);
+            textViews[ROW1][MIDDLE] = itemView.findViewById(R.id.name4);
+
+            imageViews[ROW1][RIGHMOST] = itemView.findViewById(R.id.imageView5);
+            textViews[ROW1][RIGHMOST] = itemView.findViewById(R.id.name5);
+
 
         }
 
 
-        public void setLMDevice(Model mobileDO) {
-            textViews.get(LEFTMOST).setText(mobileDO.getName());
-            Picasso.get().load(mobileDO.getLink()).into(imageViews.get(LEFTMOST));
+
+        public void setDevice(Model model, int row, int col){
+           textViews[row][col].setText(model.getName());
+            Picasso.get().load(model.getLink()).into(imageViews[row][col]);
         }
-
-        public void setMDevice(Model mobileDO) {
-            textViews.get(MIDDLE).setText(mobileDO.getName());
-            Picasso.get().load(mobileDO.getLink()).into(imageViews.get(MIDDLE));
-        }
-        public void setRMDevice(Model mobileDO) {
-            textViews.get(RIGHMOST).setText(mobileDO.getName());
-            Picasso.get().load(mobileDO.getLink()).into(imageViews.get(RIGHMOST));
-        }
-
-        /*
-        public void setName(String name){
-            this.name[0].setText(name);
-        }
-
-         */
-
-
     }
 }
