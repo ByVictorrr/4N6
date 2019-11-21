@@ -5,7 +5,7 @@
     android:id="@+id/layout_gaming"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.digitalevidence.GamingActivity">
+    tools:context="com.example.digitalevidence.activities.GamingActivity">
 
     <include
         android:id="@+id/include3"

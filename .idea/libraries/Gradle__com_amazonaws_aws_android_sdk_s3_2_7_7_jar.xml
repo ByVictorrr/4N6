@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Gradle: com.amazonaws:aws-android-sdk-s3:2.7.7@jar">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/com.amazonaws/aws-android-sdk-s3/2.7.7/cebbcd9084bdfc0564143fd7b5e23b2aac364181/aws-android-sdk-s3-2.7.7.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.amazonaws/aws-android-sdk-s3/2.7.7/cebbcd9084bdfc0564143fd7b5e23b2aac364181/aws-android-sdk-s3-2.7.7.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/com.amazonaws/aws-android-sdk-s3/2.7.7/8f31db4c00a2e7390b35c5da74d23db11da94811/aws-android-sdk-s3-2.7.7-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.amazonaws/aws-android-sdk-s3/2.7.7/8f31db4c00a2e7390b35c5da74d23db11da94811/aws-android-sdk-s3-2.7.7-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/com.amazonaws/aws-android-sdk-s3/2.7.7/bc9e8ec720b0829c73857d9b075c117b97194f7a/aws-android-sdk-s3-2.7.7-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.amazonaws/aws-android-sdk-s3/2.7.7/bc9e8ec720b0829c73857d9b075c117b97194f7a/aws-android-sdk-s3-2.7.7-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

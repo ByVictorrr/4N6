@@ -5,7 +5,7 @@
     android:id="@+id/layout_computer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.digitalevidence.ComputerActivity">
+    tools:context="com.example.digitalevidence.activities.ComputerActivity">
 
     <include
         android:id="@+id/include3"

@@ -5,7 +5,7 @@
     android:id="@+id/layout_storage"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.digitalevidence.StorageActivity">
+    tools:context="com.example.digitalevidence.activities.StorageActivity">
 
     <include
         android:id="@+id/include3"
