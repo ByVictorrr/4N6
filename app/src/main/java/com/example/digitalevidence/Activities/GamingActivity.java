@@ -4,8 +4,11 @@ import android.widget.TextView;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.digitalevidence.Adapters.TabsAdapter;
+import com.example.digitalevidence.Models.Model;
 import com.example.digitalevidence.R;
 import com.google.android.material.tabs.TabLayout;
+
+import java.util.List;
 
 public class GamingActivity extends BaseActivity {
     @Override
@@ -24,4 +27,6 @@ public class GamingActivity extends BaseActivity {
     }
 
     public void loadAndSet(int item_to_load){}
+    public void setModels(List<Model> models){}
+
 }

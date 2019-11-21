@@ -8,8 +8,11 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.example.digitalevidence.Models.Model;
 import com.example.digitalevidence.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.util.List;
 
 abstract public class BaseActivity extends AppCompatActivity {
     Menu menu;
@@ -93,4 +96,5 @@ abstract public class BaseActivity extends AppCompatActivity {
 
     abstract public void loadAndSet(int item_to_load);
 
+    public void setModels(List<Model> models){}
 }

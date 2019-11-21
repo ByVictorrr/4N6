@@ -2,10 +2,13 @@ package com.example.digitalevidence.Activities;
 import android.os.Bundle;
 
 import com.example.digitalevidence.Adapters.TabsAdapter;
+import com.example.digitalevidence.Models.Model;
 import com.example.digitalevidence.R;
 import com.google.android.material.tabs.TabLayout;
 import androidx.viewpager.widget.ViewPager;
 import android.widget.TextView;
+
+import java.util.List;
 
 public class ComputerActivity extends BaseActivity {
     @Override
@@ -24,4 +27,5 @@ public class ComputerActivity extends BaseActivity {
     }
 
     public void loadAndSet(int item_to_load){}
+    public void setModels(List<Model> models){}
 }

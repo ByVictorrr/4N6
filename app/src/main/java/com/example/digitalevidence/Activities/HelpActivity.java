@@ -2,7 +2,10 @@ package com.example.digitalevidence.Activities;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.example.digitalevidence.Models.Model;
 import com.example.digitalevidence.R;
+
+import java.util.List;
 
 public class HelpActivity extends BaseActivity {
     @Override
@@ -15,4 +18,6 @@ public class HelpActivity extends BaseActivity {
     }
 
     public void loadAndSet(int item_to_load){}
+    public void setModels(List<Model> models){}
+
 }

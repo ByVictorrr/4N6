@@ -5,8 +5,11 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 
+import com.example.digitalevidence.Models.Model;
 import com.example.digitalevidence.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.util.List;
 
 public class FavoritesActivity extends BaseActivity {
     @Override
@@ -46,4 +49,6 @@ public class FavoritesActivity extends BaseActivity {
     }
 
     public void loadAndSet(int item_to_load){}
+
+    public void setModels(List<Model> models){}
 }

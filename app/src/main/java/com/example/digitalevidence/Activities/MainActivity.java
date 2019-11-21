@@ -9,7 +9,10 @@ import android.widget.TextView;
 import com.amazonaws.mobile.client.AWSMobileClient;
 import com.amazonaws.mobile.client.AWSStartupHandler;
 import com.amazonaws.mobile.client.AWSStartupResult;
+import com.example.digitalevidence.Models.Model;
 import com.example.digitalevidence.R;
+
+import java.util.List;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
     @Override
@@ -68,4 +71,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     }
 
     public void loadAndSet(int item_to_load){}
+
+    public void setModels(List<Model> models){}
 }
