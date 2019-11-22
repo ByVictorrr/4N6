@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="6" >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:layout_constraintHorizontal_bias="0.5">
+
+        <TextView
+            style="@style/TextBoxBold"
+            android:id="@+id/device_title"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="@string/device_title"
+            app:layout_constraintStart_toEndOf="@+id/device_image"
+            app:layout_constraintTop_toTopOf="@+id/device_image" />
+
+        <ImageView
+            android:id="@+id/device_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:contentDescription="@string/tab_brand"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/iphonex" />
+
+        <TextView
+            style="@style/TextBox"
+            android:id="@+id/description_releasedate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/description_releasedate"
+            app:layout_constraintBottom_toBottomOf="@+id/device_image"
+            app:layout_constraintStart_toEndOf="@+id/device_image" />
+
+        <TextView
+            style="@style/TextBox"
+            android:id="@+id/description_dimensions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/description_dimensions"
+            app:layout_constraintBottom_toTopOf="@+id/description_releasedate"
+            app:layout_constraintStart_toEndOf="@+id/device_image" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

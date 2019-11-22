@@ -65,7 +65,6 @@ public class DynamoHelper {
         this.modelsPending = new PriorityQueue<>(Comparator.comparing(Model::getName));
     }
 
-    // TODO: find a way to queue the data so we can load N items and it will hold last place in dynamo
     public Thread getNItems(final int NItems){
         return new Thread(new Runnable() {
             @Override

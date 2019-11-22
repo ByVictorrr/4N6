@@ -20,6 +20,10 @@
     <string name="tab_alphabetical">Alphabetical</string>
     <string name="tab_content">Content</string>
 
+    <string name="device_title">Device Title</string>
+    <string name="description_releasedate">Release Date: </string>
+    <string name="description_dimensions">Dimensions: </string>
+
     <string name="button_next">Next</string>
     <string name="button_finish">Finish</string>
 

@@ -1,9 +1,11 @@
 package com.example.digitalevidence.fragments;
+
 import android.annotation.TargetApi;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -19,15 +21,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 @TargetApi(23)
-public class DetailedFragment extends Fragment {
+public class DeviceListFragment extends Fragment {
     private BaseActivity activity;
     private final int COLS = 1;
 
-    public DetailedFragment() {
+    public DeviceListFragment() {
         // Required empty public constructor
     }
-    public static DetailedFragment newInstance() {
-        return new DetailedFragment();
+    public static DeviceListFragment newInstance() {
+        return new DeviceListFragment();
     }
 
     @Override
@@ -37,7 +39,7 @@ public class DetailedFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_detailed, container, false);
+        View root = inflater.inflate(R.layout.fragment_devicelist, container, false);
         RecyclerView recyclerView = root.findViewById(R.id.RecyclerView);
 
         GridLayoutManager layoutManager = new GridLayoutManager(getActivity(), COLS);
@@ -51,11 +53,11 @@ public class DetailedFragment extends Fragment {
 
         activity.setModels(models);
 
-        activity.loadAndSet(3);
+        activity.loadAndSet(2);
         EndlessRecyclerViewScrollListener endlessRecyclerViewScrollListener =  new EndlessRecyclerViewScrollListener(layoutManager){
             @Override
             public void onLoadMore(int page, int totalItemsCount, RecyclerView view) {
-                activity.loadAndSet(3);
+                activity.loadAndSet(2);
             }
         };
 
