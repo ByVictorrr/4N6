@@ -5,7 +5,7 @@ import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBHashKey;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBTable;
 
 @DynamoDBTable(tableName = "digitalforensics-mobilehub-1666815180-Mobile")
-public class MobileDO extends Model implements Cloneable{
+public class MobileDO {
     private String _name;
     private String _link;
     public static final MODEL_TYPE TYPE = MODEL_TYPE.MOBILE;

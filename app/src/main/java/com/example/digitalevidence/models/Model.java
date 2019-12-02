@@ -6,6 +6,9 @@ abstract public class Model{
     abstract public void setName(final String _name);
     abstract public String getLink();
     abstract public void setLink(final String _link);
+    abstract public String getBrand();
+    abstract public void setBrand(final String _brand);
+
 
     @NonNull
     @Override

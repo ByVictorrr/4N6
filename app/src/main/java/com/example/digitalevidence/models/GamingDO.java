@@ -4,7 +4,7 @@ import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBHashKey;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBTable;
 
 @DynamoDBTable(tableName = "digitalforensics-mobilehub-1666815180-Gaming")
-public class GamingDO extends Model{
+public class GamingDO {
     private String _name;
     private String _link;
 
