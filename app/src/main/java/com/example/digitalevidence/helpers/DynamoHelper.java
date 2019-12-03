@@ -78,7 +78,8 @@ public class DynamoHelper {
             this.dynamoDBClient = new AmazonDynamoDBClient(credentialHelper.getCredentialsProvider());
             this.dynamoDBMapper = DynamoDBMapper.builder().dynamoDBClient(dynamoDBClient).awsConfiguration(configuration).build();
         }
-        this.modelsPending = new LinkedList<>();
+        //this.modelsPending = new LinkedList<>();
+        this.modelsPending = new PriorityQueue<Model>(Comparator.comparing(Model::getBrand));
     }
 
     private String prev;

@@ -52,11 +52,11 @@ public class DetailedFragment extends Fragment {
 
         activity.setModels(pairList);
 
-        activity.loadAndSet(6);
+        activity.loadAndSet(9);
         EndlessRecyclerViewScrollListener endlessRecyclerViewScrollListener =  new EndlessRecyclerViewScrollListener(layoutManager){
             @Override
             public void onLoadMore(int page, int totalItemsCount, RecyclerView view) {
-                activity.loadAndSet(6);
+                activity.loadAndSet(9);
             }
         };
 
