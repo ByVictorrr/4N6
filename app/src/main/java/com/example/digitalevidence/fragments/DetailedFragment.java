@@ -1,6 +1,7 @@
 package com.example.digitalevidence.fragments;
 import android.annotation.TargetApi;
 import android.os.Bundle;
+import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,17 +46,17 @@ public class DetailedFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
 
         activity = (BaseActivity) getActivity();
-        List<Model> models = new ArrayList<>();
-        DetailedFragmentAdapter detailedFragmentAdapter = new DetailedFragmentAdapter(models);
+        List<Pair<String, List<Model>>> pairList = new ArrayList<>();
+        DetailedFragmentAdapter detailedFragmentAdapter = new DetailedFragmentAdapter(pairList);
         recyclerView.setAdapter(detailedFragmentAdapter);
 
-        activity.setModels(models);
+        activity.setModels(pairList);
 
-        activity.loadAndSet(4);
+        activity.loadAndSet(6);
         EndlessRecyclerViewScrollListener endlessRecyclerViewScrollListener =  new EndlessRecyclerViewScrollListener(layoutManager){
             @Override
             public void onLoadMore(int page, int totalItemsCount, RecyclerView view) {
-                activity.loadAndSet(4);
+                activity.loadAndSet(6);
             }
         };
 

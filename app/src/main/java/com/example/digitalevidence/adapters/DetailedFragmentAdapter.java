@@ -1,4 +1,5 @@
 package com.example.digitalevidence.adapters;
+import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,9 +15,9 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 public class DetailedFragmentAdapter extends RecyclerView.Adapter<DetailedFragmentAdapter.ViewHolder> {
-    private static List<Model> myList;
+    private List<Pair<String, List<Model>>> myList;
 
-    public DetailedFragmentAdapter(List<Model> myList) {
+    public DetailedFragmentAdapter(List<Pair<String, List<Model>>> myList) {
         this.myList = myList;
     }
 
@@ -29,8 +30,8 @@ public class DetailedFragmentAdapter extends RecyclerView.Adapter<DetailedFragme
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        Model model = myList.get(position);
-        holder.setDevices(model);
+        Pair<String, List<Model>> stringListPair = myList.get(position);
+        holder.setDevices(stringListPair.second);
     }
 
     @Override
@@ -52,11 +53,16 @@ public class DetailedFragmentAdapter extends RecyclerView.Adapter<DetailedFragme
             imageView2 = itemView.findViewById(R.id.imageView2);
         }
 
-        private void setDevices(Model model) {
-            this.button.setText(model.getName());
-            Picasso.get().load(model.getLink()).into(this.imageView0);
-            Picasso.get().load(model.getLink()).into(this.imageView1);
-            Picasso.get().load(model.getLink()).into(this.imageView2);
+        private void setDevices(List<Model> list) {
+            final int LEFT = 0, MIDDLE = 1, RIGHT = 2;
+
+            String brand = list.get(LEFT).getBrand();
+            this.button.setText(brand);
+            if (list.size() > 2) {
+                Picasso.get().load(list.get(LEFT).getLink()).into(this.imageView0);
+                Picasso.get().load(list.get(MIDDLE).getLink()).into(this.imageView1);
+                Picasso.get().load(list.get(RIGHT).getLink()).into(this.imageView2);
+            }
         }
     }
 }

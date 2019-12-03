@@ -2,6 +2,7 @@ package com.example.digitalevidence.fragments;
 
 import android.annotation.TargetApi;
 import android.os.Bundle;
+import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,11 +48,12 @@ public class DeviceListFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
 
         activity = (BaseActivity) getActivity();
-        List<Model> models = new ArrayList<>();
-        DetailedFragmentAdapter detailedFragmentAdapter = new DetailedFragmentAdapter(models);
+
+        List<Pair<String, List<Model>>> pairList = new ArrayList<>();
+        DetailedFragmentAdapter detailedFragmentAdapter = new DetailedFragmentAdapter(pairList);
         recyclerView.setAdapter(detailedFragmentAdapter);
 
-        activity.setModels(models);
+        activity.setModels(pairList);
 
         activity.loadAndSet(2);
         EndlessRecyclerViewScrollListener endlessRecyclerViewScrollListener =  new EndlessRecyclerViewScrollListener(layoutManager){

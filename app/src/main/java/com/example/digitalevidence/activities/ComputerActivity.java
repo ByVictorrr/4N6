@@ -8,6 +8,8 @@ import com.example.digitalevidence.models.Model;
 import com.example.digitalevidence.R;
 import com.google.android.material.tabs.TabLayout;
 import androidx.viewpager.widget.ViewPager;
+
+import android.util.Pair;
 import android.widget.TextView;
 
 import java.util.List;
@@ -63,7 +65,6 @@ public class ComputerActivity extends BaseActivity {
         });
     }
 
-    public void setModels(List<Model> models){
-        this.models = models;
-    }
+
+    public void setModels(Pair<String, List<Model>> brandModels){}
 }

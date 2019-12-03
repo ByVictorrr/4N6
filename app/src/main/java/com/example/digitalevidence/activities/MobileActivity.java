@@ -20,8 +20,7 @@ import java.util.Queue;
 
 public class MobileActivity extends BaseActivity {
     private DynamoHelper dynamoHelper;
-    private List<Model> models;
-    private Pair<String, List<Model>> brandModels;
+    private List<Pair<String, List<Model>>> brandModels;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +40,6 @@ public class MobileActivity extends BaseActivity {
 
         // Utilize Items Labeled Mobile from DynamoDB
         this.dynamoHelper = new DynamoHelper(this, MODEL_TYPE.MOBILE, MobileTableDO.TABLE_NAME);
-        this.brandModels = new Pair<>(new String(), new ArrayList<>()); // for brand selection
     }
 
     public void loadAndSet(int item_to_load){
@@ -64,23 +62,25 @@ public class MobileActivity extends BaseActivity {
             public void run() {
                 Queue<Model> pending = dynamoHelper.getModelsPending();
                 Model polled;
+                int size;
                 while(pending.size() > 0) {
                     polled = pending.poll();
                     // Case 1 - one of prev pulls was the same brand
-                    if (brandModels.first.equals(polled.getBrand())){
-                        brandModels.second.add(polled);
+                    if ((size = brandModels.size()) > 0 && brandModels.get(size-1).first.equals(polled.getBrand())){
+                        brandModels.get(size-1).second.add(polled);
                     }else{
-                        List<Model> models = Arrays.asList(polled);
+                        List<Model> models = new ArrayList<>();
+                        models.add(polled);
                         String brand =  polled.getBrand();
-                        brandModels = new Pair<>(brand, models);
+                        Pair<String, List<Model>> newPair = new Pair<>(brand, models);
+                        brandModels.add(newPair);
                     }
-                    models.add(polled);
                 }
             }
         });
     }
 
-    public void setModels(List<Model> models){
-        this.models = models;
+    public void setModels(List<Pair<String, List<Model>>> brandModels){
+        this.brandModels = brandModels;
     }
 }

@@ -1,5 +1,6 @@
 package com.example.digitalevidence.activities;
 import android.content.Intent;
+import android.util.Pair;
 import android.view.Menu;
 import android.view.MenuItem;
 import androidx.annotation.LayoutRes;
@@ -95,6 +96,5 @@ abstract public class BaseActivity extends AppCompatActivity {
     }
 
     abstract public void loadAndSet(int item_to_load);
-
-    public void setModels(List<Model> models){}
+    public void setModels(List<Pair<String, List<Model>>> brandModels){}
 }

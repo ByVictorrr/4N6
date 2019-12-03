@@ -2,6 +2,7 @@ package com.example.digitalevidence.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Pair;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -73,5 +74,5 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     public void loadAndSet(int item_to_load){}
 
-    public void setModels(List<Model> models){}
+    public void setModels(Pair<String, List<Model>> brandModels){}
 }

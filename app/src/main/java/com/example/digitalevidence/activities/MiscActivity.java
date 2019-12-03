@@ -1,5 +1,6 @@
 package com.example.digitalevidence.activities;
 import android.os.Bundle;
+import android.util.Pair;
 import android.widget.TextView;
 import androidx.viewpager.widget.ViewPager;
 import com.example.digitalevidence.adapters.TabsAdapter;
@@ -63,7 +64,6 @@ public class MiscActivity extends BaseActivity {
         });
     }
 
-    public void setModels(List<Model> models){
-        this.models = models;
-    }
+
+    public void setModels(Pair<String, List<Model>> brandModels){}
 }
