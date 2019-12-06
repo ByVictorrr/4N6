@@ -8,6 +8,10 @@ abstract public class Model{
     abstract public void setLink(final String _link);
     abstract public String getBrand();
     abstract public void setBrand(final String _brand);
+    abstract public String getReleaseDate();
+    abstract public void setReleaseDate(final String _releasedate);
+    abstract public String getDimensions();
+    abstract public void setDimensions(final String _dimensions);
 
 
     @NonNull

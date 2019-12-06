@@ -97,4 +97,5 @@ abstract public class BaseActivity extends AppCompatActivity {
 
     abstract public void loadAndSet(int item_to_load);
     public void setModels(List<Pair<String, List<Model>>> brandModels){}
+    public void setObjects(List<List<Model>> brandObjects){}
 }

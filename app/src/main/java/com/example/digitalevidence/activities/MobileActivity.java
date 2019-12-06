@@ -3,7 +3,7 @@ import android.os.Bundle;
 import android.util.Pair;
 import android.widget.TextView;
 import androidx.viewpager.widget.ViewPager;
-import com.example.digitalevidence.adapters.TabsAdapter;
+import com.example.digitalevidence.adapters.ModelTabsAdapter;
 import com.example.digitalevidence.helpers.DynamoHelper;
 import com.example.digitalevidence.adapters.DetailedFragmentAdapter;
 import com.example.digitalevidence.models.MODEL_TYPE;
@@ -32,7 +32,7 @@ public class MobileActivity extends BaseActivity {
         textView.setText(R.string.title_mobile);
 
         // Tabs
-        TabsAdapter tabsPagerAdapter = new TabsAdapter(this, getSupportFragmentManager());
+        ModelTabsAdapter tabsPagerAdapter = new ModelTabsAdapter(this, getSupportFragmentManager());
         ViewPager viewPager = findViewById(R.id.viewPager);
         viewPager.setAdapter(tabsPagerAdapter);
         TabLayout tabs = findViewById(R.id.tabLayout);
