@@ -1,5 +1,7 @@
 package com.example.digitalevidence.activities;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.TextView;
 import androidx.viewpager.widget.ViewPager;
 import com.example.digitalevidence.adapters.TabsAdapter;
@@ -52,6 +54,8 @@ public class MobileActivity extends BaseActivity {
         }
     }
 
+
+
     private Thread addDataToList(){
         return new Thread(new Runnable() {
             @Override
@@ -63,6 +67,23 @@ public class MobileActivity extends BaseActivity {
             }
         });
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent i;
+        switch(item.getItemId()) {
+            case R.id.profile:
+                i = new Intent(this, ProfileActivity.class);
+                startActivity(i);
+                return(true);
+            case R.id.help:
+                i = new Intent(this, HelpMobileActivity.class);
+                startActivity(i);
+                return(true);
+        }
+        return(super.onOptionsItemSelected(item));
+    }
+
 
     public void setModels(List<Model> models){
         this.models = models;
