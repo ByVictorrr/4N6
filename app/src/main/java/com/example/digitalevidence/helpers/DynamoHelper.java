@@ -24,6 +24,7 @@ import java.util.Queue;
 import java.util.List;
 import java.util.Map;
 import java.util.PriorityQueue;
+import java.util.Set;
 
 // Description: One DynamoHelper per activity
 public class DynamoHelper {
@@ -96,36 +97,46 @@ public class DynamoHelper {
                 Condition hashkeycond = new Condition();
 
                 // Set Limit of Items Returned
-                    scanRequest = scanRequest
-                            .withTableName(tableName)
-                            .withLimit(NItems)
-                            .withExclusiveStartKey(lastKeyEvaluated)
-                            .withConsistentRead(true);
+                scanRequest = scanRequest
+                        .withTableName(tableName)
+                        .withLimit(NItems)
+                        .withExclusiveStartKey(lastKeyEvaluated)
+                        .withConsistentRead(true);
 
 
-                    scanResult = dynamoDBClient.scan(scanRequest);
-                    //queryResult = dynamoDBClient.query(queryRequest);
+                scanResult = dynamoDBClient.scan(scanRequest);
+                //queryResult = dynamoDBClient.query(queryRequest);
 
-                    //lastKeyEvaluated = scanResult.getLastEvaluatedKey();
-                    lastKeyEvaluated = queryRequest.getExclusiveStartKey();
-
-                // Put Items in a List
+                //lastKeyEvaluated = scanResult.getLastEvaluatedKey(); lastKeyEvaluated = queryRequest.getExclusiveStartKey(); // Put Items in a List
                 items = scanResult.getItems();
 
-                // Go Through and Allocate Each Items
-                for (Map<String, AttributeValue> item: items) {
-                    Model modelDO = mapClassToModel(type);
+                // Make a
 
-                    for(int i = 0; i < item.values().toArray().length; i++) {
+
+                // Go Through and Allocate Each Items
+                for (Map<String, AttributeValue> item : items) {
+                    Model modelDO = new MobileTableDO();
+
+                    for (int i = 0; i < item.values().toArray().length; i++) {
                         AttributeValue attributeValue = (AttributeValue) ((item.values().toArray())[i]);
+
+                        Set<String> strings = item.keySet();
                         String val = attributeValue.getS();
-                        if (i == NAME) {
-                            modelDO.setName(val);
-                        } else if (i == LINK){
+
+
+                        if (i == 2) {
+                            modelDO.setReleaseDate(val);
+                        } else if (i == 0) {
                             modelDO.setLink(val);
-                        }else{
+                        } else if (i == 1) {
+                            modelDO.setName(val);
+                        } else if (i == 3) {
                             modelDO.setBrand(val);
+                        } else if (i == 4) {
+                            modelDO.setDimensions(val);
                         }
+
+
                     }
 
                     modelsPending.add(modelDO);
