@@ -1,5 +1,6 @@
 package com.example.digitalevidence.activities;
 import android.os.Bundle;
+import android.util.Pair;
 import android.widget.TextView;
 import com.example.digitalevidence.models.Model;
 import com.example.digitalevidence.R;
@@ -19,5 +20,6 @@ public class HelpActivity extends BaseActivity {
 
     public void loadAndSet(int item_to_load){}
 
-    public void setModels(List<Model> models){}
+
+    public void setModels(Pair<String, List<Model>> brandModels){}
 }

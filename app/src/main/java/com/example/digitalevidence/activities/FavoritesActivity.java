@@ -1,6 +1,7 @@
 package com.example.digitalevidence.activities;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Pair;
 import android.view.MenuItem;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -50,5 +51,5 @@ public class FavoritesActivity extends BaseActivity {
 
     public void loadAndSet(int item_to_load){}
 
-    public void setModels(List<Model> models){}
+    public void setModels(Pair<String, List<Model>> brandModels){}
 }

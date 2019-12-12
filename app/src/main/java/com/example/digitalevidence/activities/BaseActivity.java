@@ -1,5 +1,6 @@
 package com.example.digitalevidence.activities;
 import android.content.Intent;
+import android.util.Pair;
 import android.view.Menu;
 import android.view.MenuItem;
 import androidx.annotation.LayoutRes;
@@ -11,6 +12,7 @@ import com.example.digitalevidence.models.Model;
 import com.example.digitalevidence.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 abstract public class BaseActivity extends AppCompatActivity {
@@ -95,6 +97,8 @@ abstract public class BaseActivity extends AppCompatActivity {
     }
 
     abstract public void loadAndSet(int item_to_load);
+    public void setModels(List<Pair<String, List<Model>>> brandModels){}
+    public void setlistLists(List<List<Model>> brandObjects){}
 
-    public void setModels(List<Model> models){}
+
 }

@@ -4,18 +4,27 @@ import android.content.Context;
 import com.amazonaws.mobile.client.AWSMobileClient;
 import com.amazonaws.mobile.config.AWSConfiguration;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMapper;
+import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBQueryExpression;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
+import com.amazonaws.services.dynamodbv2.model.ComparisonOperator;
+import com.amazonaws.services.dynamodbv2.model.Condition;
+import com.amazonaws.services.dynamodbv2.model.QueryRequest;
+import com.amazonaws.services.dynamodbv2.model.QueryResult;
 import com.amazonaws.services.dynamodbv2.model.ScanRequest;
 import com.amazonaws.services.dynamodbv2.model.ScanResult;
 import com.example.digitalevidence.models.MODEL_TYPE;
 import com.example.digitalevidence.models.MobileDO;
+import com.example.digitalevidence.models.MobileTableDO;
 import com.example.digitalevidence.models.Model;
 import java.util.Comparator;
+import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Queue;
 import java.util.List;
 import java.util.Map;
 import java.util.PriorityQueue;
+import java.util.Set;
 
 // Description: One DynamoHelper per activity
 public class DynamoHelper {
@@ -26,6 +35,12 @@ public class DynamoHelper {
     private ScanRequest scanRequest = new ScanRequest().withConsistentRead(true);
     private Map<String, AttributeValue> lastKeyEvaluated = null;
 
+
+    //======================================
+    private QueryRequest queryRequest = new QueryRequest().withConsistentRead(true);
+    private QueryResult queryResult;
+
+
     private static DynamoDBMapper dynamoDBMapper;
     private static AmazonDynamoDBClient dynamoDBClient;
 
@@ -34,16 +49,16 @@ public class DynamoHelper {
         Model model = null;
         switch (type){
             case MOBILE:
-                model = new MobileDO();
+                model = new MobileTableDO();
                 break;
             case COMPUTER:
-                model = new MobileDO();
+                model = new MobileTableDO();
                 break;
             case MISC:
-                model = new MobileDO();
+                model = new MobileTableDO();
                 break;
             case STORAGE:
-                model = new MobileDO();
+                model = new MobileTableDO();
                 break;
         }
         return model;
@@ -59,11 +74,16 @@ public class DynamoHelper {
         this.tableName = tableName;
 
         // Configure All Connections to AWS
-        AWSConfiguration configuration = AWSMobileClient.getInstance().getConfiguration();
-        this.dynamoDBClient = new AmazonDynamoDBClient(credentialHelper.getCredentialsProvider());
-        this.dynamoDBMapper= DynamoDBMapper.builder().dynamoDBClient(dynamoDBClient).awsConfiguration(configuration).build();
-        this.modelsPending = new PriorityQueue<>(Comparator.comparing(Model::getName));
+        if (dynamoDBClient == null || dynamoDBMapper == null) {
+            AWSConfiguration configuration = AWSMobileClient.getInstance().getConfiguration();
+            this.dynamoDBClient = new AmazonDynamoDBClient(credentialHelper.getCredentialsProvider());
+            this.dynamoDBMapper = DynamoDBMapper.builder().dynamoDBClient(dynamoDBClient).awsConfiguration(configuration).build();
+        }
+        //this.modelsPending = new LinkedList<>();
+        this.modelsPending = new PriorityQueue<Model>(Comparator.comparing(Model::getBrand));
     }
+
+    private String prev;
 
     public Thread getNItems(final int NItems){
         return new Thread(new Runnable() {
@@ -71,33 +91,52 @@ public class DynamoHelper {
             public void run() {
                 final int NAME = 0;
                 final int LINK = 1;
+
                 List<Map<String, AttributeValue>> items;
 
+                Condition hashkeycond = new Condition();
+
                 // Set Limit of Items Returned
-                    scanRequest = scanRequest
-                            .withTableName(tableName)
-                            .withLimit(NItems)
-                            .withExclusiveStartKey(lastKeyEvaluated)
-                            .withConsistentRead(true);
+                scanRequest = scanRequest
+                        .withTableName(tableName)
+                        .withLimit(NItems)
+                        .withExclusiveStartKey(lastKeyEvaluated)
+                        .withConsistentRead(true);
 
-                    scanResult = dynamoDBClient.scan(scanRequest);
-                    lastKeyEvaluated = scanResult.getLastEvaluatedKey();
 
-                // Put Items in a List
+                scanResult = dynamoDBClient.scan(scanRequest);
+                //queryResult = dynamoDBClient.query(queryRequest);
+
+                //lastKeyEvaluated = scanResult.getLastEvaluatedKey(); lastKeyEvaluated = queryRequest.getExclusiveStartKey(); // Put Items in a List
                 items = scanResult.getItems();
 
-                // Go Through and Allocate Each Items
-                for (Map<String, AttributeValue> item: items) {
-                    Model modelDO = mapClassToModel(type);
+                // Make a
 
-                    for(int i = 0; i < item.values().toArray().length; i++) {
+
+                // Go Through and Allocate Each Items
+                for (Map<String, AttributeValue> item : items) {
+                    Model modelDO = new MobileTableDO();
+
+                    for (int i = 0; i < item.values().toArray().length; i++) {
                         AttributeValue attributeValue = (AttributeValue) ((item.values().toArray())[i]);
+
+                        Set<String> strings = item.keySet();
                         String val = attributeValue.getS();
-                        if (i == NAME) {
-                            modelDO.setName(val);
-                        } else {
+
+
+                        if (i == 2) {
+                            modelDO.setReleaseDate(val);
+                        } else if (i == 0) {
                             modelDO.setLink(val);
+                        } else if (i == 1) {
+                            modelDO.setName(val);
+                        } else if (i == 3) {
+                            modelDO.setBrand(val);
+                        } else if (i == 4) {
+                            modelDO.setDimensions(val);
                         }
+
+
                     }
 
                     modelsPending.add(modelDO);

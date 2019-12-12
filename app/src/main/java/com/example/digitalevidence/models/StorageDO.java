@@ -4,7 +4,7 @@ import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBHashKey;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBTable;
 
 @DynamoDBTable(tableName = "digitalforensics-mobilehub-1666815180-Storage")
-public class StorageDO extends Model{
+public class StorageDO{
     private String _name;
     private String _link;
 

@@ -2,6 +2,7 @@ package com.example.digitalevidence.fragments;
 
 import android.annotation.TargetApi;
 import android.os.Bundle;
+import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.digitalevidence.R;
 import com.example.digitalevidence.activities.BaseActivity;
+import com.example.digitalevidence.adapters.AlphabeticalFragmentAdapter;
 import com.example.digitalevidence.adapters.DetailedFragmentAdapter;
 import com.example.digitalevidence.helpers.EndlessRecyclerViewScrollListener;
 import com.example.digitalevidence.models.Model;
@@ -21,15 +23,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 @TargetApi(23)
-public class DeviceListFragment extends Fragment {
+public class AlphabeticalFragment extends Fragment {
     private BaseActivity activity;
     private final int COLS = 1;
 
-    public DeviceListFragment() {
+    public AlphabeticalFragment() {
         // Required empty public constructor
     }
-    public static DeviceListFragment newInstance() {
-        return new DeviceListFragment();
+    public static AlphabeticalFragment newInstance() {
+        return new AlphabeticalFragment();
     }
 
     @Override
@@ -47,11 +49,11 @@ public class DeviceListFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
 
         activity = (BaseActivity) getActivity();
-        List<Model> models = new ArrayList<>();
-        DetailedFragmentAdapter detailedFragmentAdapter = new DetailedFragmentAdapter(models);
-        recyclerView.setAdapter(detailedFragmentAdapter);
+        List<List<Model>> listList = new ArrayList<>();
+        AlphabeticalFragmentAdapter alphabeticalFragmentAdapter = new AlphabeticalFragmentAdapter(listList);
+        recyclerView.setAdapter(alphabeticalFragmentAdapter);
 
-        activity.setModels(models);
+        activity.setlistLists(listList);
 
         activity.loadAndSet(2);
         EndlessRecyclerViewScrollListener endlessRecyclerViewScrollListener =  new EndlessRecyclerViewScrollListener(layoutManager){
