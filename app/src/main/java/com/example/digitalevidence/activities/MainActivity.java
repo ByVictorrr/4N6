@@ -71,6 +71,21 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 break;
         }
     }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent i;
+        switch(item.getItemId()) {
+            case R.id.profile:
+                i = new Intent(this, ProfileActivity.class);
+                startActivity(i);
+                return(true);
+            case R.id.help:
+                i = new Intent(this, HelpMainActivity.class);
+                startActivity(i);
+                return(true);
+        }
+        return(super.onOptionsItemSelected(item));
+    }
 
     public void loadAndSet(int item_to_load){}
 
