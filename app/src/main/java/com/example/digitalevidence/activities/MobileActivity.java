@@ -21,7 +21,7 @@ import java.util.Queue;
 public class MobileActivity extends BaseActivity {
     private DynamoHelper dynamoHelper;
     private List<Pair<String, List<Model>>> brandModels;
-
+    private List<List<Model>> listlist;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +38,7 @@ public class MobileActivity extends BaseActivity {
         TabLayout tabs = findViewById(R.id.tabLayout);
         tabs.setupWithViewPager(viewPager);
 
+        brandModels = new ArrayList<>();
         // Utilize Items Labeled Mobile from DynamoDB
         this.dynamoHelper = new DynamoHelper(this, MODEL_TYPE.MOBILE, MobileTableDO.TABLE_NAME);
     }
@@ -74,12 +75,16 @@ public class MobileActivity extends BaseActivity {
                         String brand =  polled.getBrand();
                         Pair<String, List<Model>> newPair = new Pair<>(brand, models);
                         brandModels.add(newPair);
+                        listlist.add(models);
                     }
                 }
             }
         });
     }
 
+    public void setlistLists(List<List<Model>> brandObjects){
+        this.listlist = brandObjects;
+    }
     public void setModels(List<Pair<String, List<Model>>> brandModels){
         this.brandModels = brandModels;
     }
