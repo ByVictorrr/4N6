@@ -19,6 +19,7 @@ import java.util.List;
 
 public class CompactFragment extends Fragment {
     private static final String TAG = "Compact";
+    private final int COLS = 3;
     private final List<String> BRANDS = Arrays.asList(
             "https://digitalforensics-userfiles-mobilehub-1666815180.s3.us-east-2.amazonaws.com/public/Mobile/Brands/apple.png",
             "https://digitalforensics-userfiles-mobilehub-1666815180.s3.us-east-2.amazonaws.com/public/Mobile/Brands/Samsung_Logo.png",
@@ -49,17 +50,13 @@ public class CompactFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_compact, container, false);
-        //final TextView textView = root.findViewById(R.id.section_label);
-        final int COLS = 3;
-
         RecyclerView recyclerView = root.findViewById(R.id.RecyclerView);
+
         GridLayoutManager layoutManager = new GridLayoutManager(getActivity(), COLS);
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-
         recyclerView.setLayoutManager(layoutManager);
 
         CompactFragmentAdapter compactFragmentAdapter = new CompactFragmentAdapter(BRANDS);
-
         recyclerView.setAdapter(compactFragmentAdapter);
 
         EndlessRecyclerViewScrollListener endlessRecyclerViewScrollListener = new EndlessRecyclerViewScrollListener(layoutManager) {

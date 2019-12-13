@@ -80,10 +80,10 @@ abstract public class BaseActivity extends AppCompatActivity {
                 i = new Intent(this, ProfileActivity.class);
                 startActivity(i);
                 return(true);
-            case R.id.help:
+            /*case R.id.help:
                 i = new Intent(this, HelpActivity.class);
                 startActivity(i);
-                return(true);
+                return(true);*/
         }
         return(super.onOptionsItemSelected(item));
     }

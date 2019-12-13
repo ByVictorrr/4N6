@@ -42,7 +42,6 @@ public class CompactFragmentAdapter extends RecyclerView.Adapter<CompactFragment
         ViewHolder(View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.imageView);
-
         }
 
         private void setBrand(String url) {

@@ -1,17 +1,21 @@
 package com.example.digitalevidence.activities;
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import com.amazonaws.mobile.client.AWSMobileClient;
 import com.amazonaws.mobile.client.AWSStartupHandler;
 import com.amazonaws.mobile.client.AWSStartupResult;
 import com.example.digitalevidence.R;
-
-import java.util.List;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
     @Override
@@ -80,9 +84,18 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 startActivity(i);
                 return(true);
             case R.id.help:
-                i = new Intent(this, HelpMainActivity.class);
-                startActivity(i);
-                return(true);
+                Dialog dialog = new Dialog(this){
+                    @Override
+                    public boolean onTouchEvent(MotionEvent event) {
+                        // Tap anywhere to close
+                        this.dismiss();
+                        return true;
+                    }
+                };
+                dialog.setContentView(R.layout.activity_help_main);
+                dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                dialog.show();
         }
         return(super.onOptionsItemSelected(item));
     }

@@ -57,6 +57,7 @@ public class DetailedFragmentAdapter extends RecyclerView.Adapter<DetailedFragme
 
             String brand = list.get(LEFT).getBrand();
             this.button.setText(brand);
+
             if (list.size() > 2) {
                 Picasso.get().load(list.get(LEFT).getLink()).into(this.imageView0);
                 Picasso.get().load(list.get(MIDDLE).getLink()).into(this.imageView1);

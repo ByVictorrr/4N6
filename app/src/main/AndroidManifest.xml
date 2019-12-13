@@ -14,89 +14,77 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity
-            android:name=".activities.HelpMobileActivity"
-            android:theme="@style/Theme.Transparent"></activity>
-        <activity
-            android:name=".activities.HelpMainActivity"
-            android:theme="@style/Theme.Transparent" />
+
         <activity android:name=".activities.BaseActivity">
             <intent-filter>
                 <action android:name="android.intent.action.BASE" />
-
-                <category android:name="android.intent.category.LAUNCHERBASE" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".activities.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".activities.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <activity android:name=".activities.MobileActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MOBILE" />
-
-                <category android:name="android.intent.category.LAUNCHERMOBILE" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".activities.ComputerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.COMPUTER" />
-
-                <category android:name="android.intent.category.LAUNCHERCOMPUTER" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".activities.StorageActivity">
             <intent-filter>
                 <action android:name="android.intent.action.STORAGE" />
-
-                <category android:name="android.intent.category.LAUNCHERSTORAGE" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".activities.GamingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.GAMING" />
-
-                <category android:name="android.intent.category.LAUNCHERGAMING" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".activities.MiscActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MISC" />
-
-                <category android:name="android.intent.category.LAUNCHERMISC" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".activities.FavoritesActivity">
             <intent-filter>
                 <action android:name="android.intent.action.FAVORITES" />
-
-                <category android:name="android.intent.category.LAUNCHERFAVORITES" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".activities.SearchActivity">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
-
-                <category android:name="android.intent.category.LAUNCHERSEARCH" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".activities.ProfileActivity">
             <intent-filter>
                 <action android:name="android.intent.action.PROFILE" />
-
-                <category android:name="android.intent.category.LAUNCHERPROFILE" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.HelpActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.HELP" />
 
-                <category android:name="android.intent.category.LAUNCHERHELP" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>

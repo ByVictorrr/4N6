@@ -2,7 +2,7 @@
     <string name="app_name">Digital Evidence</string>
 
     <string name="title_profile">Profile</string>
-    <string name="title_help">Help</string>
+
     <string name="title_edit">Edit</string>
     <string name="title_favorites">Favorites</string>
     <string name="title_home">Home</string>
@@ -12,6 +12,32 @@
     <string name="title_storage">Storage</string>
     <string name="title_gaming">Gaming</string>
     <string name="title_misc">Misc</string>
+
+    <string name="title_help">Help</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="help_main">
+        Help\n
+        \n
+        To get started you can:\n
+        1. Tap an image to explore devices in that category.\n
+        2. Search by device if you know what you\'re looking for.\n
+        3. Go to your Favorites to see your starred devices.
+    </string>
+    <string name="help_models">
+        Help\n
+        \n
+        1. Switch between tabs to toggle a preview of each company\'s top devices\n
+        2. Select a company to see a full list of their devices.
+    </string>
+    <string name="help_objects">
+        Help\n
+        \n
+        1. Sort devices by Release Date or Alphabetical using the tabs.\n
+        2. Click the \'i\' to see identifyiing markers for each device.\n
+        3. Select a device to begin recording collection steps.
+    </string>
 
     <string name="tab_compact">Compact</string>
     <string name="tab_detailed">Detailed</string>
