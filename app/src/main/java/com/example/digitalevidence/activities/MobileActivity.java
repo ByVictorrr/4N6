@@ -1,20 +1,19 @@
 package com.example.digitalevidence.activities;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Pair;
+import android.view.MenuItem;
 import android.widget.TextView;
 import androidx.viewpager.widget.ViewPager;
 import com.example.digitalevidence.adapters.ModelTabsAdapter;
 import com.example.digitalevidence.helpers.DynamoHelper;
-import com.example.digitalevidence.adapters.DetailedFragmentAdapter;
 import com.example.digitalevidence.models.MODEL_TYPE;
-import com.example.digitalevidence.models.MobileDO;
 import com.example.digitalevidence.models.MobileTableDO;
 import com.example.digitalevidence.models.Model;
 import com.example.digitalevidence.R;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Queue;
 
@@ -22,6 +21,7 @@ public class MobileActivity extends BaseActivity {
     private DynamoHelper dynamoHelper;
     private List<Pair<String, List<Model>>> brandModels;
     private List<List<Model>> listlist;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,6 +81,7 @@ public class MobileActivity extends BaseActivity {
             }
         });
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         Intent i;
@@ -100,6 +101,7 @@ public class MobileActivity extends BaseActivity {
     public void setlistLists(List<List<Model>> brandObjects){
         this.listlist = brandObjects;
     }
+
     public void setModels(List<Pair<String, List<Model>>> brandModels){
         this.brandModels = brandModels;
     }

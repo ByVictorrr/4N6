@@ -19,7 +19,5 @@ public class HelpActivity extends BaseActivity {
     }
 
     public void loadAndSet(int item_to_load){}
-
-
     public void setModels(Pair<String, List<Model>> brandModels){}
 }

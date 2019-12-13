@@ -11,8 +11,6 @@ import androidx.appcompat.widget.Toolbar;
 import com.example.digitalevidence.models.Model;
 import com.example.digitalevidence.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import java.util.ArrayList;
 import java.util.List;
 
 abstract public class BaseActivity extends AppCompatActivity {
@@ -99,6 +97,4 @@ abstract public class BaseActivity extends AppCompatActivity {
     abstract public void loadAndSet(int item_to_load);
     public void setModels(List<Pair<String, List<Model>>> brandModels){}
     public void setlistLists(List<List<Model>> brandObjects){}
-
-
 }

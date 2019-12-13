@@ -52,4 +52,3 @@ public class ReleaseDateFragmentAdapter extends RecyclerView.Adapter<ReleaseDate
         }
     }
 }
-

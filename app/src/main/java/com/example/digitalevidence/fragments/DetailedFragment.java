@@ -27,6 +27,7 @@ public class DetailedFragment extends Fragment {
     public DetailedFragment() {
         // Required empty public constructor
     }
+
     public static DetailedFragment newInstance() {
         return new DetailedFragment();
     }

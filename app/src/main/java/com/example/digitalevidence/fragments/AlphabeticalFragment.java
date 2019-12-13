@@ -2,7 +2,6 @@ package com.example.digitalevidence.fragments;
 
 import android.annotation.TargetApi;
 import android.os.Bundle;
-import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.digitalevidence.R;
 import com.example.digitalevidence.activities.BaseActivity;
 import com.example.digitalevidence.adapters.AlphabeticalFragmentAdapter;
-import com.example.digitalevidence.adapters.DetailedFragmentAdapter;
 import com.example.digitalevidence.helpers.EndlessRecyclerViewScrollListener;
 import com.example.digitalevidence.models.Model;
 
@@ -30,6 +28,7 @@ public class AlphabeticalFragment extends Fragment {
     public AlphabeticalFragment() {
         // Required empty public constructor
     }
+
     public static AlphabeticalFragment newInstance() {
         return new AlphabeticalFragment();
     }
@@ -59,7 +58,7 @@ public class AlphabeticalFragment extends Fragment {
         EndlessRecyclerViewScrollListener endlessRecyclerViewScrollListener =  new EndlessRecyclerViewScrollListener(layoutManager){
             @Override
             public void onLoadMore(int page, int totalItemsCount, RecyclerView view) {
-                activity.loadAndSet(2);
+                activity.loadAndSet(3);
             }
         };
 

@@ -4,7 +4,6 @@ import android.content.Context;
 import com.amazonaws.mobile.client.AWSMobileClient;
 import com.amazonaws.mobile.config.AWSConfiguration;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMapper;
-import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBQueryExpression;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 import com.amazonaws.services.dynamodbv2.model.ComparisonOperator;
@@ -14,12 +13,9 @@ import com.amazonaws.services.dynamodbv2.model.QueryResult;
 import com.amazonaws.services.dynamodbv2.model.ScanRequest;
 import com.amazonaws.services.dynamodbv2.model.ScanResult;
 import com.example.digitalevidence.models.MODEL_TYPE;
-import com.example.digitalevidence.models.MobileDO;
 import com.example.digitalevidence.models.MobileTableDO;
 import com.example.digitalevidence.models.Model;
 import java.util.Comparator;
-import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.Queue;
 import java.util.List;
 import java.util.Map;
@@ -35,11 +31,8 @@ public class DynamoHelper {
     private ScanRequest scanRequest = new ScanRequest().withConsistentRead(true);
     private Map<String, AttributeValue> lastKeyEvaluated = null;
 
-
-    //======================================
     private QueryRequest queryRequest = new QueryRequest().withConsistentRead(true);
     private QueryResult queryResult;
-
 
     private static DynamoDBMapper dynamoDBMapper;
     private static AmazonDynamoDBClient dynamoDBClient;
@@ -93,7 +86,6 @@ public class DynamoHelper {
                 final int LINK = 1;
 
                 List<Map<String, AttributeValue>> items;
-
                 Condition hashkeycond = new Condition();
 
                 // Set Limit of Items Returned
@@ -103,15 +95,10 @@ public class DynamoHelper {
                         .withExclusiveStartKey(lastKeyEvaluated)
                         .withConsistentRead(true);
 
-
                 scanResult = dynamoDBClient.scan(scanRequest);
                 //queryResult = dynamoDBClient.query(queryRequest);
-
                 //lastKeyEvaluated = scanResult.getLastEvaluatedKey(); lastKeyEvaluated = queryRequest.getExclusiveStartKey(); // Put Items in a List
                 items = scanResult.getItems();
-
-                // Make a
-
 
                 // Go Through and Allocate Each Items
                 for (Map<String, AttributeValue> item : items) {
@@ -123,22 +110,22 @@ public class DynamoHelper {
                         Set<String> strings = item.keySet();
                         String val = attributeValue.getS();
 
-
                         if (i == 2) {
                             modelDO.setReleaseDate(val);
-                        } else if (i == 0) {
+                        }
+                        else if (i == 0) {
                             modelDO.setLink(val);
-                        } else if (i == 1) {
+                        }
+                        else if (i == 1) {
                             modelDO.setName(val);
-                        } else if (i == 3) {
+                        }
+                        else if (i == 3) {
                             modelDO.setBrand(val);
-                        } else if (i == 4) {
+                        }
+                        else if (i == 4) {
                             modelDO.setDimensions(val);
                         }
-
-
                     }
-
                     modelsPending.add(modelDO);
                 }
             }

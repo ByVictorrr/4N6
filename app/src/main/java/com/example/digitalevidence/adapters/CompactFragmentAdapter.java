@@ -50,4 +50,3 @@ public class CompactFragmentAdapter extends RecyclerView.Adapter<CompactFragment
         }
     }
 }
-

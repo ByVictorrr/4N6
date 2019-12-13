@@ -51,7 +51,6 @@ public class ReleaseDateFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_compact, container, false);
-        //final TextView textView = root.findViewById(R.id.section_label);
         final int COLS = 3;
 
         RecyclerView recyclerView = root.findViewById(R.id.RecyclerView);

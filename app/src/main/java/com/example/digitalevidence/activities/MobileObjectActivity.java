@@ -1,13 +1,11 @@
 package com.example.digitalevidence.activities;
 
 import android.os.Bundle;
-import android.util.Pair;
 import android.widget.TextView;
 
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.digitalevidence.R;
-import com.example.digitalevidence.adapters.ModelTabsAdapter;
 import com.example.digitalevidence.adapters.ObjectTabsAdapter;
 import com.example.digitalevidence.helpers.DynamoHelper;
 import com.example.digitalevidence.models.MODEL_TYPE;

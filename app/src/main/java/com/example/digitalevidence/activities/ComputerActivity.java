@@ -3,7 +3,6 @@ import android.os.Bundle;
 import com.example.digitalevidence.adapters.ModelTabsAdapter;
 import com.example.digitalevidence.helpers.DynamoHelper;
 import com.example.digitalevidence.models.MODEL_TYPE;
-import com.example.digitalevidence.models.MobileDO;
 import com.example.digitalevidence.models.MobileTableDO;
 import com.example.digitalevidence.models.Model;
 import com.example.digitalevidence.R;

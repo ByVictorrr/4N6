@@ -1,10 +1,8 @@
 package com.example.digitalevidence.adapters;
 
-import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -26,13 +24,13 @@ public class AlphabeticalFragmentAdapter extends RecyclerView.Adapter<Alphabetic
 
     @NonNull
     @Override
-    public AlphabeticalFragmentAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.devicelist_fragment_item, parent, false);
-        return new AlphabeticalFragmentAdapter.ViewHolder(view);
+        return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(AlphabeticalFragmentAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, int position) {
         List<Model> stringObject = myList.get(position);
         holder.setDevices(stringObject);
     }
