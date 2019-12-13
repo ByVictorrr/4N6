@@ -81,6 +81,21 @@ public class MobileActivity extends BaseActivity {
             }
         });
     }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent i;
+        switch(item.getItemId()) {
+            case R.id.profile:
+                i = new Intent(this, ProfileActivity.class);
+                startActivity(i);
+                return(true);
+            case R.id.help:
+                i = new Intent(this, HelpMobileActivity.class);
+                startActivity(i);
+                return(true);
+        }
+        return(super.onOptionsItemSelected(item));
+    }
 
     public void setlistLists(List<List<Model>> brandObjects){
         this.listlist = brandObjects;
