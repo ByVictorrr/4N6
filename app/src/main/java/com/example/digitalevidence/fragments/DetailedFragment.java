@@ -52,7 +52,6 @@ public class DetailedFragment extends Fragment {
         recyclerView.setAdapter(detailedFragmentAdapter);
 
         activity.setModels(pairList);
-
         activity.loadAndSet(9);
         EndlessRecyclerViewScrollListener endlessRecyclerViewScrollListener =  new EndlessRecyclerViewScrollListener(layoutManager){
             @Override
@@ -62,9 +61,7 @@ public class DetailedFragment extends Fragment {
         };
 
         recyclerView.addOnScrollListener(endlessRecyclerViewScrollListener);
-
         layoutManager.setMeasuredDimension(Integer.MAX_VALUE, Integer.MAX_VALUE);
-
         return root;
     }
 }
