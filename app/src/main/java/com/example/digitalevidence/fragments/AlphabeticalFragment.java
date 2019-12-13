@@ -53,7 +53,7 @@ public class AlphabeticalFragment extends Fragment {
         AlphabeticalFragmentAdapter alphabeticalFragmentAdapter = new AlphabeticalFragmentAdapter(listList);
         recyclerView.setAdapter(alphabeticalFragmentAdapter);
 
-        activity.setObjects(listList);
+        activity.setlistLists(listList);
 
         activity.loadAndSet(2);
         EndlessRecyclerViewScrollListener endlessRecyclerViewScrollListener =  new EndlessRecyclerViewScrollListener(layoutManager){
