@@ -16,7 +16,7 @@ android {
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.example.digitalevidence"
-        minSdkVersion 21
+        minSdkVersion 23
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -61,6 +61,16 @@ dependencies {
     implementation 'androidx.gridlayout:gridlayout:1.0.0'
     implementation 'com.arasthel:spannedgridlayoutmanager:3.0.2'
 
-//    implementation 'com.android.support:multidex:1.0.3'
-//For the drop-in UI also:
+
+    // Mobile Client for initializing the SDK
+    implementation ('com.amazonaws:aws-android-sdk-mobile-client:2.7.+@aar') { transitive = true }
+
+    // Cognito UserPools for SignIn
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation ('com.amazonaws:aws-android-sdk-auth-userpools:2.7.+@aar') { transitive = true }
+
+    // Sign in UI Library
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation ('com.amazonaws:aws-android-sdk-auth-ui:2.7.+@aar') { transitive = true }
+
 }

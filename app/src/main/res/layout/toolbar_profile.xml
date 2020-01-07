@@ -21,6 +21,12 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/include3" />
 
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/apple" />
+
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"
         android:layout_width="match_parent"

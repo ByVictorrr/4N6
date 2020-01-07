@@ -32,56 +32,56 @@
         <activity android:name=".activities.MobileActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MOBILE" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
         <activity android:name=".activities.ComputerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.COMPUTER" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
         <activity android:name=".activities.StorageActivity">
             <intent-filter>
                 <action android:name="android.intent.action.STORAGE" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
         <activity android:name=".activities.GamingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.GAMING" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
         <activity android:name=".activities.MiscActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MISC" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
         <activity android:name=".activities.FavoritesActivity">
             <intent-filter>
                 <action android:name="android.intent.action.FAVORITES" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
         <activity android:name=".activities.SearchActivity">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
         <activity android:name=".activities.ProfileActivity">
             <intent-filter>
                 <action android:name="android.intent.action.PROFILE" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
