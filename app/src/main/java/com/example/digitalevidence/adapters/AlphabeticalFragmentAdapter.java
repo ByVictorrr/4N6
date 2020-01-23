@@ -10,15 +10,15 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.digitalevidence.R;
-import com.example.digitalevidence.models.Model;
+import com.example.digitalevidence.models.devices.Device;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 public class AlphabeticalFragmentAdapter extends RecyclerView.Adapter<AlphabeticalFragmentAdapter.ViewHolder> {
-    private List<List<Model>> myList;
+    private List<List<Device>> myList;
 
-    public AlphabeticalFragmentAdapter(List<List<Model>> myList) {
+    public AlphabeticalFragmentAdapter(List<List<Device>> myList) {
         this.myList = myList;
     }
 
@@ -31,7 +31,7 @@ public class AlphabeticalFragmentAdapter extends RecyclerView.Adapter<Alphabetic
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        List<Model> stringObject = myList.get(position);
+        List<Device> stringObject = myList.get(position);
         holder.setDevices(stringObject);
     }
 
@@ -54,7 +54,7 @@ public class AlphabeticalFragmentAdapter extends RecyclerView.Adapter<Alphabetic
             textView2 = itemView.findViewById(R.id.textView2);
         }
 
-        private void setDevices(List<Model> list) {
+        private void setDevices(List<Device> list) {
             String NAME = list.get(0).getName();
             String RELEASEDATE = list.get(0).getReleaseDate();
             String DIMENSIONS = list.get(0).getDimensions();

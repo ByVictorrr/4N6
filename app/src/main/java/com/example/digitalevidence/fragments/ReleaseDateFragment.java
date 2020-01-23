@@ -14,9 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.digitalevidence.R;
 import com.example.digitalevidence.activities.BaseActivity;
 import com.example.digitalevidence.adapters.AlphabeticalFragmentAdapter;
-import com.example.digitalevidence.adapters.ReleaseDateFragmentAdapter;
+import com.example.digitalevidence.models.devices.Device;
 import com.example.digitalevidence.helpers.EndlessRecyclerViewScrollListener;
-import com.example.digitalevidence.models.Model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,16 +48,16 @@ public class ReleaseDateFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
 
         activity = (BaseActivity) getActivity();
-        List<List<Model>> listList = new ArrayList<>();
+        List<List<Device>> listList = new ArrayList<>();
         AlphabeticalFragmentAdapter alphabeticalFragmentAdapter = new AlphabeticalFragmentAdapter(listList);
         recyclerView.setAdapter(alphabeticalFragmentAdapter);
 
-        activity.setlistLists(listList);
-        activity.loadAndSet(2);
+        //activity.setlistLists(listList);
+        //activity.loadAndSet(2);
         EndlessRecyclerViewScrollListener endlessRecyclerViewScrollListener =  new EndlessRecyclerViewScrollListener(layoutManager){
             @Override
             public void onLoadMore(int page, int totalItemsCount, RecyclerView view) {
-                activity.loadAndSet(3);
+                //activity.loadAndSet(3);
             }
         };
 

@@ -1,4 +1,5 @@
 package com.example.digitalevidence.adapters;
+import android.annotation.TargetApi;
 import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,16 +8,19 @@ import android.widget.Button;
 import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import com.example.digitalevidence.models.Model;
+
+import com.example.digitalevidence.models.Brand;
+import com.example.digitalevidence.models.devices.Device;
 import com.example.digitalevidence.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class DetailedFragmentAdapter extends RecyclerView.Adapter<DetailedFragmentAdapter.ViewHolder> {
-    private List<Pair<String, List<Model>>> myList;
+    private List<Brand> myList;
 
-    public DetailedFragmentAdapter(List<Pair<String, List<Model>>> myList) {
+    public DetailedFragmentAdapter(List<Brand> myList) {
         this.myList = myList;
     }
 
@@ -27,10 +31,12 @@ public class DetailedFragmentAdapter extends RecyclerView.Adapter<DetailedFragme
         return new ViewHolder(view);
     }
 
+    @TargetApi(24)
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        Pair<String, List<Model>> stringListPair = myList.get(position);
-        holder.setDevices(stringListPair.second);
+        Brand brand = myList.get(position);
+        List<Device> devices = brand.getDevices().stream().collect(Collectors.toList());
+        holder.setDevices(brand.getName(),devices);
     }
 
     @Override
@@ -52,10 +58,9 @@ public class DetailedFragmentAdapter extends RecyclerView.Adapter<DetailedFragme
             imageView2 = itemView.findViewById(R.id.imageView2);
         }
 
-        private void setDevices(List<Model> list) {
+        private void setDevices(String brand, List<Device> list) {
             final int LEFT = 0, MIDDLE = 1, RIGHT = 2;
 
-            String brand = list.get(LEFT).getBrand();
             this.button.setText(brand);
 
             if (list.size() > 2) {

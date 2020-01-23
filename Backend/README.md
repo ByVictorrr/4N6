@@ -56,7 +56,7 @@ If the previous command ran successfully you should now be able to hit the follo
 ...
 Events:
     HelloWorld:
-        Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+        Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-device/blob/master/versions/2016-10-31.md#api
         Properties:
             Path: /hello
             Method: get
@@ -98,7 +98,7 @@ sam deploy \
     --capabilities CAPABILITY_IAM
 ```
 
-> **See [Serverless Application Model (SAM) HOWTO Guide](https://github.com/awslabs/serverless-application-model/blob/master/HOWTO.md) for more details in how to get started.**
+> **See [Serverless Application Model (SAM) HOWTO Guide](https://github.com/awslabs/serverless-application-device/blob/master/HOWTO.md) for more details in how to get started.**
 
 After deployment is complete you can run the following command to retrieve the API Gateway Endpoint URL:
 

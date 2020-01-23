@@ -1,138 +1,115 @@
 package com.example.digitalevidence.helpers;
 import android.annotation.TargetApi;
 import android.content.Context;
-import com.amazonaws.mobile.client.AWSMobileClient;
-import com.amazonaws.mobile.config.AWSConfiguration;
-import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMapper;
+import com.amazonaws.auth.CognitoCachingCredentialsProvider;
+import com.amazonaws.regions.Region;
+import com.amazonaws.regions.Regions;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
-import com.amazonaws.services.dynamodbv2.model.ComparisonOperator;
-import com.amazonaws.services.dynamodbv2.model.Condition;
-import com.amazonaws.services.dynamodbv2.model.QueryRequest;
-import com.amazonaws.services.dynamodbv2.model.QueryResult;
 import com.amazonaws.services.dynamodbv2.model.ScanRequest;
-import com.amazonaws.services.dynamodbv2.model.ScanResult;
-import com.example.digitalevidence.models.MODEL_TYPE;
-import com.example.digitalevidence.models.MobileTableDO;
-import com.example.digitalevidence.models.Model;
+import com.example.digitalevidence.models.Brand;
+import com.example.digitalevidence.models.devices.Device;
+
+import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.List;
 import java.util.Map;
-import java.util.PriorityQueue;
-import java.util.Set;
+import java.util.stream.Collectors;
 
-// Description: One DynamoHelper per activity
 public class DynamoHelper {
-    private Queue<Model> modelsPending; // list of data modelsPending (like moblileD0, ect..)
-    private MODEL_TYPE type;
-    private String tableName;
-    private ScanResult scanResult; // used to get prev
-    private ScanRequest scanRequest = new ScanRequest().withConsistentRead(true);
-    private Map<String, AttributeValue> lastKeyEvaluated = null;
 
-    private QueryRequest queryRequest = new QueryRequest().withConsistentRead(true);
-    private QueryResult queryResult;
-
-    private static DynamoDBMapper dynamoDBMapper;
+    private static DynamoHelper instance;
+    private static ScanRequest scanRequest;
     private static AmazonDynamoDBClient dynamoDBClient;
 
-    // Used to Determine what Data Object Referenced in getNitems()
-    public Model mapClassToModel(MODEL_TYPE type){
-        Model model = null;
-        switch (type){
-            case MOBILE:
-                model = new MobileTableDO();
-                break;
-            case COMPUTER:
-                model = new MobileTableDO();
-                break;
-            case MISC:
-                model = new MobileTableDO();
-                break;
-            case STORAGE:
-                model = new MobileTableDO();
-                break;
+    private Queue<Brand> brandsPending;
+
+    public static DynamoHelper getInstance(Context context) {
+        if (instance == null) {
+            instance = new DynamoHelper(context);
         }
-        return model;
+        return instance;
     }
 
     @TargetApi(24)
-    public DynamoHelper(Context context, MODEL_TYPE type, String tableName) {
-        // Set Credential Helper for Activity
-        CredentialHelper credentialHelper = new CredentialHelper(context);
+    private DynamoHelper(Context context) {
+        // Initialize the Amazon Cognito credentials provider
+        CognitoCachingCredentialsProvider credentialsProvider = new CognitoCachingCredentialsProvider(
+                context,
+                "us-west-2:66e0d23a-4c2c-46eb-ad73-b1174813e1b5", // Identity pool ID
+                Regions.US_WEST_2 // Region
+        );
 
-        // Find Activity Located In
-        this.type = type;
-        this.tableName = tableName;
+        scanRequest=new ScanRequest().withConsistentRead(true);
+        this.dynamoDBClient = new AmazonDynamoDBClient(credentialsProvider);
+        this.dynamoDBClient.setRegion(Region.getRegion(Regions.US_WEST_2));
+        this.brandsPending = new PriorityQueue(Comparator.comparing(Brand::getName));
 
-        // Configure All Connections to AWS
-        if (dynamoDBClient == null || dynamoDBMapper == null) {
-            AWSConfiguration configuration = AWSMobileClient.getInstance().getConfiguration();
-            this.dynamoDBClient = new AmazonDynamoDBClient(credentialHelper.getCredentialsProvider());
-            this.dynamoDBMapper = DynamoDBMapper.builder().dynamoDBClient(dynamoDBClient).awsConfiguration(configuration).build();
-        }
-        //this.modelsPending = new LinkedList<>();
-        this.modelsPending = new PriorityQueue<Model>(Comparator.comparing(Model::getBrand));
+
     }
 
-    private String prev;
 
-    public Thread getNItems(final int NItems){
-        return new Thread(new Runnable() {
+    public Thread fetchBrands(final String TABLE_NAME, final Integer loadNum){
+        return new Thread(new Runnable(){
             @Override
             public void run() {
-                final int NAME = 0;
-                final int LINK = 1;
-
                 List<Map<String, AttributeValue>> items;
-                Condition hashkeycond = new Condition();
 
-                // Set Limit of Items Returned
                 scanRequest = scanRequest
-                        .withTableName(tableName)
-                        .withLimit(NItems)
-                        .withExclusiveStartKey(lastKeyEvaluated)
+                        .withTableName(TABLE_NAME)
+                        .withLimit(loadNum)
                         .withConsistentRead(true);
 
-                scanResult = dynamoDBClient.scan(scanRequest);
-                //queryResult = dynamoDBClient.query(queryRequest);
-                //lastKeyEvaluated = scanResult.getLastEvaluatedKey(); lastKeyEvaluated = queryRequest.getExclusiveStartKey(); // Put Items in a List
-                items = scanResult.getItems();
+                items = dynamoDBClient
+                        .scan(scanRequest)
+                        .getItems();
 
                 // Go Through and Allocate Each Items
                 for (Map<String, AttributeValue> item : items) {
-                    Model modelDO = new MobileTableDO();
-
-                    for (int i = 0; i < item.values().toArray().length; i++) {
-                        AttributeValue attributeValue = (AttributeValue) ((item.values().toArray())[i]);
-
-                        Set<String> strings = item.keySet();
-                        String val = attributeValue.getS();
-
-                        if (i == 2) {
-                            modelDO.setReleaseDate(val);
-                        }
-                        else if (i == 0) {
-                            modelDO.setLink(val);
-                        }
-                        else if (i == 1) {
-                            modelDO.setName(val);
-                        }
-                        else if (i == 3) {
-                            modelDO.setBrand(val);
-                        }
-                        else if (i == 4) {
-                            modelDO.setDimensions(val);
-                        }
-                    }
-                    modelsPending.add(modelDO);
+                    Brand brand = new Brand();
+                    parseBrand(item, brand);
+                    brandsPending.add(brand);
                 }
+
             }
         });
     }
 
-    public Queue<Model> getModelsPending() {
-        return modelsPending;
+
+    @TargetApi(24)
+    void parseBrand(Map<String, AttributeValue> src, Brand des){
+        final Integer NAME=0, LINK=1, DIMENSIONS=2, DATE_RELEASED=3;
+
+        Object[] objects = src.values().toArray();
+        List<Device> deviceList = new ArrayList<>();
+
+        String brandName = ((AttributeValue)(objects[0])).getS();
+        String link;
+        AttributeValue attributeValue = (AttributeValue) (objects[1]);
+
+        List<AttributeValue> devices = attributeValue.getL();
+        link = devices.get(0).getS();
+
+        for(AttributeValue mess_device: devices.get(1).getL()){
+            List<AttributeValue>  attributes = mess_device.getL();
+            List<String> s_attributes = new ArrayList<>();
+            for(AttributeValue attribute: attributes){
+                s_attributes.add(attribute.getS());
+            }
+            Device device = new Device(s_attributes.get(NAME),
+                    s_attributes.get(LINK),
+                    s_attributes.get(DATE_RELEASED),
+                    s_attributes.get(DIMENSIONS)
+            );
+            deviceList.add(device);
+        }
+
+        des.setDevices(deviceList.stream().collect(Collectors.toSet()));
+        des.setName(brandName);
+        des.setLink(link);
     }
+    public Queue<Brand> getBrandsPending(){return this.brandsPending;}
+
 }

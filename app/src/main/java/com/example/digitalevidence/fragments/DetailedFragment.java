@@ -12,16 +12,18 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.digitalevidence.R;
 import com.example.digitalevidence.activities.BaseActivity;
+import com.example.digitalevidence.activities.MobileActivity;
 import com.example.digitalevidence.adapters.DetailedFragmentAdapter;
+import com.example.digitalevidence.models.Brand;
+import com.example.digitalevidence.models.devices.Device;
 import com.example.digitalevidence.helpers.EndlessRecyclerViewScrollListener;
-import com.example.digitalevidence.models.Model;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @TargetApi(23)
 public class DetailedFragment extends Fragment {
-    private BaseActivity activity;
+    private MobileActivity activity;
     private final int COLS = 1;
 
     public DetailedFragment() {
@@ -46,17 +48,17 @@ public class DetailedFragment extends Fragment {
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
 
-        activity = (BaseActivity) getActivity();
-        List<Pair<String, List<Model>>> pairList = new ArrayList<>();
-        DetailedFragmentAdapter detailedFragmentAdapter = new DetailedFragmentAdapter(pairList);
+        activity = (MobileActivity) getActivity();
+        List<Brand> brands = new ArrayList<>();
+        DetailedFragmentAdapter detailedFragmentAdapter = new DetailedFragmentAdapter(brands);
         recyclerView.setAdapter(detailedFragmentAdapter);
 
-        activity.setModels(pairList);
-        activity.loadAndSet(9);
+        activity.setBrands(brands);
+        activity.LoadBrands(4);
         EndlessRecyclerViewScrollListener endlessRecyclerViewScrollListener =  new EndlessRecyclerViewScrollListener(layoutManager){
             @Override
             public void onLoadMore(int page, int totalItemsCount, RecyclerView view) {
-                activity.loadAndSet(9);
+                activity.LoadBrands(4);
             }
         };
 

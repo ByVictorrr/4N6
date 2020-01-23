@@ -5,7 +5,6 @@ import android.util.Pair;
 import android.view.MenuItem;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
-import com.example.digitalevidence.models.Model;
 import com.example.digitalevidence.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -49,6 +48,4 @@ public class FavoritesActivity extends BaseActivity {
         });
     }
 
-    public void loadAndSet(int item_to_load){}
-    public void setModels(Pair<String, List<Model>> brandModels){}
 }

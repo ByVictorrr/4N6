@@ -1,4 +1,5 @@
 package com.example.digitalevidence.activities;
+import android.annotation.TargetApi;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
@@ -10,28 +11,37 @@ import android.view.MotionEvent;
 import android.view.WindowManager;
 import android.widget.TextView;
 import androidx.viewpager.widget.ViewPager;
+
 import com.example.digitalevidence.adapters.ModelTabsAdapter;
 import com.example.digitalevidence.helpers.DynamoHelper;
-import com.example.digitalevidence.models.MODEL_TYPE;
-import com.example.digitalevidence.models.MobileTableDO;
-import com.example.digitalevidence.models.Model;
+import com.example.digitalevidence.models.Brand;
 import com.example.digitalevidence.R;
 import com.google.android.material.tabs.TabLayout;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Queue;
 
 public class MobileActivity extends BaseActivity {
     private DynamoHelper dynamoHelper;
-    private List<Pair<String, List<Model>>> brandModels;
+    private final String TABLE_NAME = "digitaln-mobilehub-2069871194-MobileBrands";
+    private List<Brand> brands;
+
+    @TargetApi(24)
+    public void setBrands(List<Brand> brands){
+        //this.brands = brands.stream().collect(Collectors.toSet());
+        this.brands=brands;
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mobile);
 
-        // Toolbar
+        //this.brands = new HashSet<>();
+        this.dynamoHelper = DynamoHelper.getInstance(this);
+
+            // Toolbar
         TextView textView = findViewById(R.id.toolbar_title);
         textView.setText(R.string.title_mobile);
 
@@ -42,44 +52,32 @@ public class MobileActivity extends BaseActivity {
         TabLayout tabs = findViewById(R.id.tabLayout);
         tabs.setupWithViewPager(viewPager);
 
-        // Utilize Items Labeled Mobile from DynamoDB
-        this.dynamoHelper = new DynamoHelper(this, MODEL_TYPE.MOBILE, MobileTableDO.TABLE_NAME);
     }
 
-    public void loadAndSet(int item_to_load){
-        Thread getAll = dynamoHelper.getNItems(item_to_load);
-        Thread doAll = addDataToList();
+    // Maybe pass dynamohelper through
+    public void LoadBrands(final Integer loadNum){
+        Thread fetchBrands = dynamoHelper.fetchBrands(TABLE_NAME, loadNum);
+        Thread displayBrands = setBrands(dynamoHelper);
         try {
-            getAll.start();
-            getAll.join();
-            doAll.start();
-            doAll.join();
+            fetchBrands.start();
+            fetchBrands.join();
+            displayBrands.start();
+            displayBrands.join();
         }
         catch (Exception e) {
             e.getLocalizedMessage();
         }
     }
 
-    private Thread addDataToList(){
+    private Thread setBrands(DynamoHelper helper){
         return new Thread(new Runnable() {
             @Override
             public void run() {
-                Queue<Model> pending = dynamoHelper.getModelsPending();
-                Model polled;
-                int size;
-                while(pending.size() > 0) {
+                Queue<Brand> pending = helper.getBrandsPending();
+                Brand polled;
+                while( pending.size() > 0 ) {
                     polled = pending.poll();
-                    // Case 1 - one of prev pulls was the same brand
-                    if ((size = brandModels.size()) > 0 && brandModels.get(size-1).first.equals(polled.getBrand())){
-                        brandModels.get(size-1).second.add(polled);
-                    }
-                    else{
-                        List<Model> models = new ArrayList<>();
-                        models.add(polled);
-                        String brand =  polled.getBrand();
-                        Pair<String, List<Model>> newPair = new Pair<>(brand, models);
-                        brandModels.add(newPair);
-                    }
+                    brands.add(polled);
                 }
             }
         });
@@ -90,7 +88,7 @@ public class MobileActivity extends BaseActivity {
         Intent i;
         switch(item.getItemId()) {
             case R.id.profile:
-                i = new Intent(this, ProfileActivity.class);
+                i = new Intent(this, MobileActivity.class);
                 startActivity(i);
                 return(true);
             case R.id.help:
@@ -110,7 +108,4 @@ public class MobileActivity extends BaseActivity {
         return(super.onOptionsItemSelected(item));
     }
 
-    public void setModels(List<Pair<String, List<Model>>> brandModels){
-        this.brandModels = brandModels;
-    }
 }

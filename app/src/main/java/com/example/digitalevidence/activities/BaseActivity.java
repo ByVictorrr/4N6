@@ -1,6 +1,5 @@
 package com.example.digitalevidence.activities;
 import android.content.Intent;
-import android.util.Pair;
 import android.view.Menu;
 import android.view.MenuItem;
 import androidx.annotation.LayoutRes;
@@ -8,10 +7,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import com.example.digitalevidence.models.Model;
 import com.example.digitalevidence.R;
+import com.example.digitalevidence.helpers.DynamoHelper;
+import com.example.digitalevidence.models.Brand;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 import java.util.List;
+import java.util.Queue;
 
 abstract public class BaseActivity extends AppCompatActivity {
     Menu menu;
@@ -94,7 +96,9 @@ abstract public class BaseActivity extends AppCompatActivity {
         return true;
     }
 
-    abstract public void loadAndSet(int item_to_load);
-    public void setModels(List<Pair<String, List<Model>>> brandModels){}
-    public void setlistLists(List<List<Model>> brandObjects){}
+
+
+
+
+
 }
