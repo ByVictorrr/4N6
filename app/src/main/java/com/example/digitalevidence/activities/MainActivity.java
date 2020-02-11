@@ -14,6 +14,8 @@ import android.widget.TextView;
 import com.amazonaws.mobile.client.AWSMobileClient;
 import com.amazonaws.mobile.client.AWSStartupHandler;
 import com.amazonaws.mobile.client.AWSStartupResult;
+import com.amazonaws.mobile.client.Callback;
+import com.amazonaws.mobile.client.UserStateDetails;
 import com.example.digitalevidence.R;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
@@ -21,7 +23,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
         // Toolbar
         TextView textView = findViewById(R.id.toolbar_title);
@@ -52,8 +53,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         Intent i;
         switch(item.getItemId()) {
             case R.id.profile:
-                i = new Intent(this,
-                         MobileActivity.class);
+                i = new Intent(this, ProfileActivity.class);
                 startActivity(i);
                 return(true);
             case R.id.help:

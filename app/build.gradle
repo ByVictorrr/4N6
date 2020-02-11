@@ -73,4 +73,15 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation ('com.amazonaws:aws-android-sdk-auth-ui:2.7.+@aar') { transitive = true }
 
+
+
+
+    //////////////////////////////////////////////////////////////
+
+    //For AWSMobileClient only:
+    implementation 'com.amazonaws:aws-android-sdk-mobile-client:2.15.+'
+
+    //For the drop-in UI also:
+    implementation 'com.amazonaws:aws-android-sdk-auth-userpools:2.15.+'
+    implementation 'com.amazonaws:aws-android-sdk-auth-ui:2.15.+'
 }
