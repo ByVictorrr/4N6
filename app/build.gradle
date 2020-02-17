@@ -81,7 +81,9 @@ dependencies {
     //For AWSMobileClient only:
     implementation 'com.amazonaws:aws-android-sdk-mobile-client:2.15.+'
 
-    //For the drop-in UI also:
+    //  for user pools
     implementation 'com.amazonaws:aws-android-sdk-auth-userpools:2.15.+'
+
+    //For the drop-in UI also:d
     implementation 'com.amazonaws:aws-android-sdk-auth-ui:2.15.+'
 }

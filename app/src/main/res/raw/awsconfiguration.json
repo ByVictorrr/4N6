@@ -1,26 +1,46 @@
 {
-  "UserAgent": "MobileHub/1.0",
-  "Version": "1.0",
-  "CredentialsProvider": {
-    "CognitoIdentity": {
-      "Default": {
-        "PoolId": "us-west-2:66e0d23a-4c2c-46eb-ad73-b1174813e1b5",
-        "Region": "us-west-2"
-      }
+    "UserAgent": "aws-amplify-cli/0.1.0",
+    "Version": "0.1.0",
+    "IdentityManager": {
+        "Default": {}
+    },
+    "CredentialsProvider": {
+        "CognitoIdentity": {
+            "Default": {
+                "PoolId": "us-west-2:66e0d23a-4c2c-46eb-ad73-b1174813e1b5",
+                "Region": "us-west-2"
+            }
+        }
+    },
+    "CognitoUserPool": {
+        "Default": {
+            "PoolId": "us-west-2_5PCpiNkJH",
+            "AppClientId": "5ifujuo4094brqfon41bnvv9pm",
+            "AppClientSecret": "15dduj3v42k8mcp1galr6fkje4q5rft9fhatsl6ej3i8r6vq3s0o",
+            "Region": "us-west-2"
+        }
+    },
+    "Auth": {
+        "Default": {
+            "authenticationFlowType": "USER_SRP_AUTH"
+        }
+    },
+    "ContentManager": {
+        "Default": {
+            "Bucket": "digitaln-hosting-mobilehub-2069871194",
+            "Region": "us-west-2",
+            "CloudFrontURL": "https://d2mjob3pvsg5on.cloudfront.net"
+        }
+    },
+    "PinpointAnalytics": {
+        "Default": {
+            "AppId": "f8afac2ad67a4b11bd8814543134c85f",
+            "Region": "us-east-1"
+        }
+    },
+    "PinpointTargeting": {
+        "Default": {
+            "Region": "us-east-1"
+        }
     }
-  },
-  "IdentityManager": {
-    "Default": {}
-  },
-  "PinpointAnalytics": {
-    "Default": {
-      "AppId": "f8afac2ad67a4b11bd8814543134c85f",
-      "Region": "us-east-1"
-    }
-  },
-  "PinpointTargeting": {
-    "Default": {
-      "Region": "us-east-1"
-    }
-  }
 }

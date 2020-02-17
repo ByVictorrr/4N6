@@ -18,14 +18,14 @@
         <activity android:name=".activities.BaseActivity">
             <intent-filter>
                 <action android:name="android.intent.action.BASE" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
         <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
@@ -44,6 +44,10 @@
         </activity>
 
         <activity android:name=".activities.ProfileActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.PROFILE" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
     </application>
