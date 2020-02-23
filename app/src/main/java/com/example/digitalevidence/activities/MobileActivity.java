@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.util.Pair;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.WindowManager;
@@ -14,7 +13,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.example.digitalevidence.adapters.ModelTabsAdapter;
 import com.example.digitalevidence.helpers.DynamoHelper;
-import com.example.digitalevidence.models.Brand;
+import com.example.digitalevidence.models.Manufacturer;
 import com.example.digitalevidence.R;
 import com.google.android.material.tabs.TabLayout;
 
@@ -24,12 +23,13 @@ import java.util.Queue;
 public class MobileActivity extends BaseActivity {
     private DynamoHelper dynamoHelper;
     private final String TABLE_NAME = "digitaln-mobilehub-2069871194-MobileBrands";
-    private List<Brand> brands;
+    public static final Integer LOAD_COUNT = 4;
+    private List<Manufacturer> manufacturers;
 
     @TargetApi(24)
-    public void setBrands(List<Brand> brands){
-        //this.brands = brands.stream().collect(Collectors.toSet());
-        this.brands=brands;
+    public void setManufacturers(List<Manufacturer> manufacturers){
+        //this.manufacturers = manufacturers.stream().collect(Collectors.toSet());
+        this.manufacturers = manufacturers;
 
     }
 
@@ -38,8 +38,8 @@ public class MobileActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mobile);
 
-        //this.brands = new HashSet<>();
-        this.dynamoHelper = DynamoHelper.getInstance(this);
+        //this.manufacturers = new HashSet<>();
+        this.dynamoHelper = DynamoHelper.getInstance(this, TABLE_NAME, LOAD_COUNT);
 
             // Toolbar
         TextView textView = findViewById(R.id.toolbar_title);
@@ -55,8 +55,8 @@ public class MobileActivity extends BaseActivity {
     }
 
     // Maybe pass dynamohelper through
-    public void LoadBrands(final Integer loadNum){
-        Thread fetchBrands = dynamoHelper.fetchBrands(TABLE_NAME, loadNum);
+    public void LoadBrands(){
+        Thread fetchBrands = dynamoHelper.fetchBrands();
         Thread displayBrands = setBrands(dynamoHelper);
         try {
             fetchBrands.start();
@@ -73,11 +73,11 @@ public class MobileActivity extends BaseActivity {
         return new Thread(new Runnable() {
             @Override
             public void run() {
-                Queue<Brand> pending = helper.getBrandsPending();
-                Brand polled;
+                Queue<Manufacturer> pending = helper.getBrandsPending();
+                Manufacturer polled;
                 while( pending.size() > 0 ) {
                     polled = pending.poll();
-                    brands.add(polled);
+                    manufacturers.add(polled);
                 }
             }
         });

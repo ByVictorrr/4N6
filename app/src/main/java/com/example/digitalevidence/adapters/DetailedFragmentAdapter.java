@@ -1,6 +1,5 @@
 package com.example.digitalevidence.adapters;
 import android.annotation.TargetApi;
-import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,8 +8,8 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.digitalevidence.models.Brand;
-import com.example.digitalevidence.models.devices.Device;
+import com.example.digitalevidence.models.Manufacturer;
+import com.example.digitalevidence.models.Device;
 import com.example.digitalevidence.R;
 import com.squareup.picasso.Picasso;
 
@@ -18,9 +17,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class DetailedFragmentAdapter extends RecyclerView.Adapter<DetailedFragmentAdapter.ViewHolder> {
-    private List<Brand> myList;
+    private List<Manufacturer> myList;
 
-    public DetailedFragmentAdapter(List<Brand> myList) {
+    public DetailedFragmentAdapter(List<Manufacturer> myList) {
         this.myList = myList;
     }
 
@@ -34,9 +33,9 @@ public class DetailedFragmentAdapter extends RecyclerView.Adapter<DetailedFragme
     @TargetApi(24)
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        Brand brand = myList.get(position);
-        List<Device> devices = brand.getDevices().stream().collect(Collectors.toList());
-        holder.setDevices(brand.getName(),devices);
+        Manufacturer manufacturer = myList.get(position);
+        List<Device> devices = manufacturer.getDevices().stream().collect(Collectors.toList());
+        holder.setDevices(manufacturer.getName(),devices);
     }
 
     @Override
@@ -64,9 +63,13 @@ public class DetailedFragmentAdapter extends RecyclerView.Adapter<DetailedFragme
             this.button.setText(brand);
 
             if (list.size() > 2) {
-                Picasso.get().load(list.get(LEFT).getLink()).into(this.imageView0);
-                Picasso.get().load(list.get(MIDDLE).getLink()).into(this.imageView1);
-                Picasso.get().load(list.get(RIGHT).getLink()).into(this.imageView2);
+                Picasso.get().load(list.get(LEFT).getImage()).into(this.imageView0);
+                Picasso.get().load(list.get(MIDDLE).getImage()).into(this.imageView1);
+                Picasso.get().load(list.get(RIGHT).getImage()).into(this.imageView2);
+            }else{
+                Picasso.get().load(list.get(LEFT).getImage()).into(this.imageView0);
+                Picasso.get().load(list.get(LEFT).getImage()).into(this.imageView1);
+                Picasso.get().load(list.get(LEFT).getImage()).into(this.imageView2);
             }
         }
     }

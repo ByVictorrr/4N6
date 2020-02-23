@@ -1,7 +1,6 @@
 package com.example.digitalevidence.fragments;
 import android.annotation.TargetApi;
 import android.os.Bundle;
-import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,11 +10,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.digitalevidence.R;
-import com.example.digitalevidence.activities.BaseActivity;
 import com.example.digitalevidence.activities.MobileActivity;
 import com.example.digitalevidence.adapters.DetailedFragmentAdapter;
-import com.example.digitalevidence.models.Brand;
-import com.example.digitalevidence.models.devices.Device;
+import com.example.digitalevidence.models.Manufacturer;
 import com.example.digitalevidence.helpers.EndlessRecyclerViewScrollListener;
 
 import java.util.ArrayList;
@@ -49,16 +46,16 @@ public class DetailedFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
 
         activity = (MobileActivity) getActivity();
-        List<Brand> brands = new ArrayList<>();
-        DetailedFragmentAdapter detailedFragmentAdapter = new DetailedFragmentAdapter(brands);
+        List<Manufacturer> manufacturers = new ArrayList<>();
+        DetailedFragmentAdapter detailedFragmentAdapter = new DetailedFragmentAdapter(manufacturers);
         recyclerView.setAdapter(detailedFragmentAdapter);
 
-        activity.setBrands(brands);
-        activity.LoadBrands(4);
+        activity.setManufacturers(manufacturers);
+        activity.LoadBrands();
         EndlessRecyclerViewScrollListener endlessRecyclerViewScrollListener =  new EndlessRecyclerViewScrollListener(layoutManager){
             @Override
             public void onLoadMore(int page, int totalItemsCount, RecyclerView view) {
-                activity.LoadBrands(4);
+                activity.LoadBrands();
             }
         };
 

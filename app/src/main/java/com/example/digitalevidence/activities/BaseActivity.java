@@ -8,12 +8,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import com.example.digitalevidence.R;
-import com.example.digitalevidence.helpers.DynamoHelper;
-import com.example.digitalevidence.models.Brand;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import java.util.List;
-import java.util.Queue;
 
 abstract public class BaseActivity extends AppCompatActivity {
     Menu menu;

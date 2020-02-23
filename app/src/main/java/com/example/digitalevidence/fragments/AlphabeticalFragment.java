@@ -15,7 +15,7 @@ import com.example.digitalevidence.R;
 import com.example.digitalevidence.activities.BaseActivity;
 import com.example.digitalevidence.adapters.AlphabeticalFragmentAdapter;
 import com.example.digitalevidence.helpers.EndlessRecyclerViewScrollListener;
-import com.example.digitalevidence.models.devices.Device;
+import com.example.digitalevidence.models.Device;
 
 import java.util.ArrayList;
 import java.util.List;

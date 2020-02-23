@@ -7,8 +7,10 @@ import com.amazonaws.regions.Regions;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 import com.amazonaws.services.dynamodbv2.model.ScanRequest;
-import com.example.digitalevidence.models.Brand;
-import com.example.digitalevidence.models.devices.Device;
+import com.amazonaws.services.dynamodbv2.model.ScanResult;
+import com.example.digitalevidence.models.Manufacturer;
+import com.example.digitalevidence.models.Device;
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -23,18 +25,21 @@ public class DynamoHelper {
     private static DynamoHelper instance;
     private static ScanRequest scanRequest;
     private static AmazonDynamoDBClient dynamoDBClient;
+    private Queue<Manufacturer> brandsPending;
+    private String TableName;
+    private int loadNum;
 
-    private Queue<Brand> brandsPending;
-
-    public static DynamoHelper getInstance(Context context) {
+    public static DynamoHelper getInstance(Context context, String Table, int loadNum) {
         if (instance == null) {
-            instance = new DynamoHelper(context);
+            instance = new DynamoHelper(context, Table, loadNum);
         }
         return instance;
+
     }
 
+
     @TargetApi(24)
-    private DynamoHelper(Context context) {
+    private DynamoHelper(Context context, String Table, int loadNum) {
         // Initialize the Amazon Cognito credentials provider
         CognitoCachingCredentialsProvider credentialsProvider = new CognitoCachingCredentialsProvider(
                 context,
@@ -42,35 +47,38 @@ public class DynamoHelper {
                 Regions.US_WEST_2 // Region
         );
 
-        scanRequest=new ScanRequest().withConsistentRead(true);
+        scanRequest=new ScanRequest()
+                .withTableName(Table)
+                .withLimit(loadNum)
+                .withConsistentRead(true);
+
         this.dynamoDBClient = new AmazonDynamoDBClient(credentialsProvider);
         this.dynamoDBClient.setRegion(Region.getRegion(Regions.US_WEST_2));
-        this.brandsPending = new PriorityQueue(Comparator.comparing(Brand::getName));
+        this.brandsPending = new PriorityQueue(Comparator.comparing(Manufacturer::getName));
 
 
     }
 
 
-    public Thread fetchBrands(final String TABLE_NAME, final Integer loadNum){
+    public Thread fetchBrands(){
         return new Thread(new Runnable(){
             @Override
             public void run() {
                 List<Map<String, AttributeValue>> items;
+                ScanResult result;
 
-                scanRequest = scanRequest
-                        .withTableName(TABLE_NAME)
-                        .withLimit(loadNum)
-                        .withConsistentRead(true);
 
-                items = dynamoDBClient
-                        .scan(scanRequest)
-                        .getItems();
+                result = dynamoDBClient.scan(scanRequest);
+                items = result.getItems();
+                Map<String, AttributeValue> lastEvaluatedKey = result.getLastEvaluatedKey();
+
+                scanRequest.setExclusiveStartKey(lastEvaluatedKey);
 
                 // Go Through and Allocate Each Items
                 for (Map<String, AttributeValue> item : items) {
-                    Brand brand = new Brand();
-                    parseBrand(item, brand);
-                    brandsPending.add(brand);
+                    Manufacturer manufacturer = new Manufacturer();
+                    parseBrand(item, manufacturer);
+                    brandsPending.add(manufacturer);
                 }
 
             }
@@ -79,8 +87,7 @@ public class DynamoHelper {
 
 
     @TargetApi(24)
-    void parseBrand(Map<String, AttributeValue> src, Brand des){
-        final Integer NAME=0, LINK=1, DIMENSIONS=2, DATE_RELEASED=3;
+    void parseBrand(Map<String, AttributeValue> src, Manufacturer des){
 
         Object[] objects = src.values().toArray();
         List<Device> deviceList = new ArrayList<>();
@@ -92,24 +99,26 @@ public class DynamoHelper {
         List<AttributeValue> devices = attributeValue.getL();
         link = devices.get(0).getS();
 
-        for(AttributeValue mess_device: devices.get(1).getL()){
-            List<AttributeValue>  attributes = mess_device.getL();
-            List<String> s_attributes = new ArrayList<>();
-            for(AttributeValue attribute: attributes){
-                s_attributes.add(attribute.getS());
-            }
-            Device device = new Device(s_attributes.get(NAME),
-                    s_attributes.get(LINK),
-                    s_attributes.get(DATE_RELEASED),
-                    s_attributes.get(DIMENSIONS)
+        for(AttributeValue mess_device: devices.get(1).getL()) {
+
+            Map<String, AttributeValue> attributes = mess_device.getM();
+
+            Device device = new Device(
+                    attributes.get("name").getS(),
+                    attributes.get("image").getS(),
+                    attributes.get("os").getS(),
+                    attributes.get("manufacturer").getS()
             );
+
+
             deviceList.add(device);
         }
 
         des.setDevices(deviceList.stream().collect(Collectors.toSet()));
         des.setName(brandName);
         des.setLink(link);
+
     }
-    public Queue<Brand> getBrandsPending(){return this.brandsPending;}
+    public Queue<Manufacturer> getBrandsPending(){return this.brandsPending;}
 
 }

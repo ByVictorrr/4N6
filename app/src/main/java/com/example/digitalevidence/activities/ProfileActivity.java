@@ -3,8 +3,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
+import com.amazonaws.auth.CognitoCredentialsProvider;
+import com.amazonaws.mobile.auth.core.IdentityManager;
 import com.amazonaws.mobile.client.AWSMobileClient;
 import com.amazonaws.mobile.client.Callback;
+import com.amazonaws.mobile.client.IdentityProvider;
 import com.amazonaws.mobile.client.SignInUIOptions;
 import com.amazonaws.mobile.client.UserStateDetails;
 import com.example.digitalevidence.R;
@@ -25,7 +28,13 @@ public class ProfileActivity extends BaseActivity {
 
         AWSMobileClient mc =  AWSMobileClient.getInstance();
         ProfileActivity pa = this;
+
+
+        IdentityManager identityManager = new IdentityManager(getApplicationContext());
+        IdentityManager.setDefaultIdentityManager(identityManager);;
+
         mc.initialize(getApplicationContext(), new Callback<UserStateDetails>() {
+
             @Override
             public void onResult(UserStateDetails userStateDetails) {
                 switch (userStateDetails.getUserState()){

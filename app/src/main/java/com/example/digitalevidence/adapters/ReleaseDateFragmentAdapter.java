@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.digitalevidence.R;
-import com.example.digitalevidence.models.devices.Device;
+import com.example.digitalevidence.models.Device;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -55,15 +55,15 @@ public class ReleaseDateFragmentAdapter extends RecyclerView.Adapter<ReleaseDate
         }
 
         private void setDevices(List<Device> list) {
-            String NAME = list.get(0).getName();
-            String RELEASEDATE = list.get(0).getReleaseDate();
-            String DIMENSIONS = list.get(0).getDimensions();
+            final String NAME = list.get(0).getName();
+            final String MANUFACTURE = list.get(0).getManufacture();
+            final String OS = list.get(0).getOs();
 
             if (list.size() > 2) {
                 this.textView0.setText(NAME);
-                Picasso.get().load(list.get(0).getLink()).into(this.imageView);
-                this.textView1.append(RELEASEDATE);
-                this.textView2.append(DIMENSIONS);
+                Picasso.get().load(list.get(0).getImage()).into(this.imageView);
+                this.textView1.append(MANUFACTURE);
+                this.textView2.append(OS);
             }
         }
     }
