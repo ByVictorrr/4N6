@@ -29,7 +29,9 @@ abstract public class BaseActivity extends AppCompatActivity {
             if (!className.equals("MainActivity")) {
                 if (!className.equals("FavoritesActivity")) {
                     if (!className.equals("SearchActivity")) {
-                        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+                        if (!className.equals("ProfileActivity")) {
+                            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+                        }
                     }
                 }
             }
@@ -90,10 +92,4 @@ abstract public class BaseActivity extends AppCompatActivity {
         onBackPressed();
         return true;
     }
-
-
-
-
-
-
 }

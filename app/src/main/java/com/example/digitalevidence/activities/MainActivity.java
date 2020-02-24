@@ -66,5 +66,4 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         }
         return(super.onOptionsItemSelected(item));
     }
-
 }

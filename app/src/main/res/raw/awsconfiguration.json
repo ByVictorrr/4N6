@@ -1,41 +1,34 @@
 {
-    "UserAgent": "MobileHub/1.0",
-    "Version": "1.0",
-    "CredentialsProvider": {
-        "CognitoIdentity": {
-            "Default": {
-                "PoolId": "us-west-2:a890686e-c0ac-4fbc-87f3-9a5a35b96b71",
-                "Region": "us-west-2"
-            }
-        }
-    },
-    "IdentityManager": {
-        "Default": {}
-    },
-    "CognitoUserPool": {
-        "Default": {
-            "PoolId": "us-west-2_n42oj2Tf8",
-            "AppClientId": "7r4rfaehrd7en2qndd0qqebfh1",
-            "AppClientSecret": "1i43a0coll4c56h0bfuqu8ljh95pgh6ad51hka0oeu0l028t27jr",
-            "Region": "us-west-2"
-        }
-    },
-    "ContentManager": {
-        "Default": {
-            "Bucket": "digitaln-hosting-mobilehub-2069871194",
-            "Region": "us-west-2",
-            "CloudFrontURL": "https://d2mjob3pvsg5on.cloudfront.net"
-        }
-    },
-    "PinpointAnalytics": {
-        "Default": {
-            "AppId": "f8afac2ad67a4b11bd8814543134c85f",
-            "Region": "us-east-1"
-        }
-    },
-    "PinpointTargeting": {
-        "Default": {
-            "Region": "us-east-1"
-        }
+  "UserAgent": "MobileHub/1.0",
+  "Version": "1.0",
+  "CredentialsProvider": {
+    "CognitoIdentity": {
+      "Default": {
+        "PoolId": "us-west-2:170a3ab1-a7bf-403c-8058-070d508c5aec",
+        "Region": "us-west-2"
+      }
     }
+  },
+  "IdentityManager": {
+    "Default": {}
+  },
+  "CognitoUserPool": {
+    "Default": {
+      "PoolId": "us-west-2_3C7sTAiKH",
+      "AppClientId": "4ik0usqu8n1615em647frljvmm",
+      "AppClientSecret": "14i321qvgvaa3n2mvhmcs1eq2ov1olb576vbhllbqoj8uldbi5jp",
+      "Region": "us-west-2"
+    }
+  },
+  "PinpointAnalytics": {
+    "Default": {
+      "AppId": "81158b0257f243f8ad2d8c943b201679",
+      "Region": "us-east-1"
+    }
+  },
+  "PinpointTargeting": {
+    "Default": {
+      "Region": "us-east-1"
+    }
+  }
 }
