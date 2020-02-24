@@ -20,32 +20,5 @@ public class FavoritesActivity extends BaseActivity {
         TextView textView = findViewById(R.id.toolbar_title);
         textView.setText(R.string.title_favorites);
 
-        // Navigation (set Favorites)
-        BottomNavigationView bottomNavigationView = findViewById(R.id.nav);
-        menu = bottomNavigationView.getMenu();
-        MenuItem menuItem = menu.getItem(0);
-        menuItem.setChecked(true);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Intent i;
-                switch (item.getItemId()) {
-                    case R.id.navigation_home:
-                        i = new Intent(getBaseContext(), MainActivity.class);
-                        startActivity(i);
-                        return true;
-                    case R.id.navigation_favorites:
-                        i = new Intent(getBaseContext(), FavoritesActivity.class);
-                        startActivity(i);
-                        return true;
-                    case R.id.navigation_search:
-                        i = new Intent(getBaseContext(), SearchActivity.class);
-                        startActivity(i);
-                        return true;
-                }
-                return false;
-            }
-        });
     }
-
 }

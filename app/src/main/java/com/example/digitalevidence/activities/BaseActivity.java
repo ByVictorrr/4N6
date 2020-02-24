@@ -77,6 +77,7 @@ abstract public class BaseActivity extends AppCompatActivity {
         switch(item.getItemId()) {
             case R.id.profile:
                 i = new Intent(this, ProfileActivity.class);
+                i.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 startActivity(i);
                 return(true);
             /*case R.id.help:

@@ -107,5 +107,4 @@ public class MobileActivity extends BaseActivity {
         }
         return(super.onOptionsItemSelected(item));
     }
-
 }

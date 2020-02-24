@@ -1,4 +1,5 @@
 package com.example.digitalevidence.activities;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -7,14 +8,15 @@ import com.amazonaws.mobile.client.AWSMobileClient;
 import com.amazonaws.mobile.client.Callback;
 import com.amazonaws.mobile.client.SignInUIOptions;
 import com.amazonaws.mobile.client.UserStateDetails;
+import com.example.digitalevidence.models.User;
 
 public class AuthenticationActivity extends BaseActivity {
     final String TAG = this.getClass().getSimpleName();
+    User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.toolbar_profile);
 
         IdentityManager identityManager = new IdentityManager(getApplicationContext());
         IdentityManager.setDefaultIdentityManager(identityManager);;
@@ -24,7 +26,17 @@ public class AuthenticationActivity extends BaseActivity {
             public void onResult(UserStateDetails userStateDetails) {
                 switch (userStateDetails.getUserState()){
                     case SIGNED_IN:
-                        Intent i = new Intent(AuthenticationActivity.this, MainActivity.class);
+                        try {
+                            String username = AWSMobileClient.getInstance().getUserAttributes().get("given_name");
+                            String email = AWSMobileClient.getInstance().getUserAttributes().get("email");
+                            user = new User(username, email);
+                        }
+                        catch (Exception e) {
+                            user = new User("not provided", "not provided");
+                            Log.e("TEST", "User Details Error: ", e);
+                        }
+                        Intent i = new Intent(AuthenticationActivity.this, ProfileActivity.class);
+                        i.putExtra("USER", user);
                         startActivity(i);
                         break;
                     case SIGNED_OUT:
@@ -42,7 +54,18 @@ public class AuthenticationActivity extends BaseActivity {
                                                 Log.d(TAG, "onResult: " + result.getUserState());
                                                 switch (result.getUserState()){
                                                     case SIGNED_IN:
-                                                        Log.i(TAG, "User signed in");
+                                                        try {
+                                                            String username = AWSMobileClient.getInstance().getUserAttributes().get("given_name");
+                                                            String email = AWSMobileClient.getInstance().getUserAttributes().get("email");
+                                                            user = new User(username, email);
+                                                        }
+                                                        catch (Exception e) {
+                                                            user = new User("not provided", "not provided");
+                                                            Log.e("TEST", "User Details Error: ", e);
+                                                        }
+                                                        Intent i = new Intent(AuthenticationActivity.this, ProfileActivity.class);
+                                                        i.putExtra("USER", user);
+                                                        startActivity(i);
                                                         break;
                                                     case SIGNED_OUT:
                                                         Log.i(TAG, "User did not choose to sign-in");
@@ -73,5 +96,11 @@ public class AuthenticationActivity extends BaseActivity {
                 Log.e(TAG, e.toString());
             }
         });
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        setIntent(intent);
     }
 }

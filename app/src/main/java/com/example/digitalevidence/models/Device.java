@@ -13,22 +13,18 @@ public class Device {
     public String getName() {
         return  name;
     }
-
-    public void setName(String name) { this.name=name; }
-    public void setImage(String image) { this.image = image; }
-    public void setOS(String os) { this.os=os; }
-    public void setManufacture(String manufacture) { this.manufacture=manufacture; }
-
     public String getImage() {
         return image;
     }
-
     public String getOs() {
         return os;
     }
-
     public String getManufacture() {
         return manufacture;
     }
-}
 
+    public void setName(String name) { this.name = name; }
+    public void setImage(String image) { this.image = image; }
+    public void setOS(String os) { this.os = os; }
+    public void setManufacture(String manufacture) { this.manufacture = manufacture; }
+}
