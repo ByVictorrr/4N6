@@ -48,8 +48,7 @@ public class DetailedFragment extends Fragment {
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
 
-        activity = (MobileActivity) getActivity();
-        List<Manufacturer> manufacturers = new ArrayList<>();
+
         OnButtonClickListener listener = new OnButtonClickListener() {
             @Override
             public void onButtonClick(String selectedBrand) {
@@ -60,6 +59,9 @@ public class DetailedFragment extends Fragment {
                 startActivity(i);
             }
         };
+
+        activity = (MobileActivity)getActivity();
+        List<Manufacturer> manufacturers = new ArrayList<>();
         DetailedFragmentAdapter detailedFragmentAdapter = new DetailedFragmentAdapter(manufacturers, listener);
         recyclerView.setAdapter(detailedFragmentAdapter);
 

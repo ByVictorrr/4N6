@@ -38,7 +38,6 @@ public class DetailedFragmentAdapter extends RecyclerView.Adapter<DetailedFragme
         List<Device> devices = manufacturer.getDevices().stream().collect(Collectors.toList());
         holder.setDevices(manufacturer.getName(),devices);
 
-        //Get items from recyclerview when user clicks them. Then send them to FoodFragment
         holder.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

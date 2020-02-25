@@ -1,8 +1,12 @@
 package com.example.digitalevidence.fragments;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -10,8 +14,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.digitalevidence.R;
+import com.example.digitalevidence.activities.MobileDevicesActivity;
 import com.example.digitalevidence.adapters.CompactFragmentAdapter;
 import com.example.digitalevidence.helpers.EndlessRecyclerViewScrollListener;
+import com.example.digitalevidence.helpers.OnButtonClickListener;
 import com.example.digitalevidence.models.PageViewModel;
 
 import java.util.Arrays;
@@ -56,7 +62,18 @@ public class CompactFragment extends Fragment {
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
 
-        CompactFragmentAdapter compactFragmentAdapter = new CompactFragmentAdapter(BRANDS);
+        OnButtonClickListener listener = new OnButtonClickListener() {
+            @Override
+            public void onButtonClick(String selectedBrand) {
+                Log.e("TEST", selectedBrand);
+                Toast.makeText(getActivity(), "Got: " + selectedBrand, Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(getActivity(), MobileDevicesActivity.class);
+                i.putExtra("SELECTEDBRAND", selectedBrand);
+                startActivity(i);
+            }
+        };
+
+        CompactFragmentAdapter compactFragmentAdapter = new CompactFragmentAdapter(BRANDS, listener);
         recyclerView.setAdapter(compactFragmentAdapter);
 
         EndlessRecyclerViewScrollListener endlessRecyclerViewScrollListener = new EndlessRecyclerViewScrollListener(layoutManager) {
