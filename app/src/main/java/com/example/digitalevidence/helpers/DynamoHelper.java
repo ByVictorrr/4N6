@@ -76,7 +76,7 @@ public class DynamoHelper {
         });
     }
 
-    public Thread fetchDevices(){
+    /*public Thread fetchDevices(){
         return new Thread(new Runnable(){
             @Override
             public void run() {
@@ -97,7 +97,7 @@ public class DynamoHelper {
                 }
             }
         });
-    }
+    }*/
 
     @TargetApi(24)
     void parseBrand(Map<String, AttributeValue> src, Manufacturer des){
@@ -130,7 +130,7 @@ public class DynamoHelper {
         des.setLink(link);
     }
 
-    @TargetApi(24)
+    /*@TargetApi(24)
     void parseDevice(List<Device> src, Device des){
         Object[] objects = src.toArray();
 
@@ -141,7 +141,9 @@ public class DynamoHelper {
         des.setName(deviceName);
         des.setImage(image);
         des.setOS(os);
-    }
+    }*/
+
+    public Queue<Manufacturer> getBrandsPending(){return this.brandsPending;}
 
     public Queue<Device> getDevicesPending(){return this.devicesPending;}
 }

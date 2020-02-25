@@ -1,4 +1,7 @@
 package com.example.digitalevidence.models;
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.Set;
 
 public class Manufacturer {

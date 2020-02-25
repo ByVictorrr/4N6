@@ -26,6 +26,7 @@
         <activity android:name=".activities.MainActivity"/>
 
         <activity android:name=".activities.MobileActivity"/>
+        <activity android:name=".activities.MobileDevicesActivity"/>
         <activity android:name=".activities.ComputerActivity"/>
         <activity android:name=".activities.StorageActivity"/>
         <activity android:name=".activities.GamingActivity"/>

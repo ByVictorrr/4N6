@@ -49,8 +49,8 @@ public class ReleaseDateFragment extends Fragment {
 
         activity = (BaseActivity) getActivity();
         List<List<Device>> listList = new ArrayList<>();
-        AlphabeticalFragmentAdapter alphabeticalFragmentAdapter = new AlphabeticalFragmentAdapter(listList);
-        recyclerView.setAdapter(alphabeticalFragmentAdapter);
+        //AlphabeticalFragmentAdapter alphabeticalFragmentAdapter = new AlphabeticalFragmentAdapter(listList);
+        //recyclerView.setAdapter(alphabeticalFragmentAdapter);
 
         //activity.setlistLists(listList);
         //activity.loadAndSet(2);

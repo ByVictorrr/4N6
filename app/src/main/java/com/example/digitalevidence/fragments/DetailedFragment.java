@@ -1,20 +1,23 @@
 package com.example.digitalevidence.fragments;
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
+import com.example.digitalevidence.helpers.OnButtonClickListener;
 import com.example.digitalevidence.R;
 import com.example.digitalevidence.activities.MobileActivity;
+import com.example.digitalevidence.activities.MobileDevicesActivity;
 import com.example.digitalevidence.adapters.DetailedFragmentAdapter;
 import com.example.digitalevidence.models.Manufacturer;
 import com.example.digitalevidence.helpers.EndlessRecyclerViewScrollListener;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,7 +50,17 @@ public class DetailedFragment extends Fragment {
 
         activity = (MobileActivity) getActivity();
         List<Manufacturer> manufacturers = new ArrayList<>();
-        DetailedFragmentAdapter detailedFragmentAdapter = new DetailedFragmentAdapter(manufacturers);
+        OnButtonClickListener listener = new OnButtonClickListener() {
+            @Override
+            public void onButtonClick(String selectedBrand) {
+                Log.e("TEST", selectedBrand);
+                Toast.makeText(getActivity(), "Got: " + selectedBrand, Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(getActivity(), MobileDevicesActivity.class);
+                i.putExtra("SELECTEDBRAND", selectedBrand);
+                startActivity(i);
+            }
+        };
+        DetailedFragmentAdapter detailedFragmentAdapter = new DetailedFragmentAdapter(manufacturers, listener);
         recyclerView.setAdapter(detailedFragmentAdapter);
 
         activity.setManufacturers(manufacturers);

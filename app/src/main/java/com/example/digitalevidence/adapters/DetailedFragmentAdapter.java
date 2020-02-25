@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import com.example.digitalevidence.helpers.OnButtonClickListener;
 import com.example.digitalevidence.models.Manufacturer;
 import com.example.digitalevidence.models.Device;
 import com.example.digitalevidence.R;
@@ -16,9 +17,11 @@ import java.util.stream.Collectors;
 
 public class DetailedFragmentAdapter extends RecyclerView.Adapter<DetailedFragmentAdapter.ViewHolder> {
     private List<Manufacturer> myList;
+    OnButtonClickListener listener;
 
-    public DetailedFragmentAdapter(List<Manufacturer> myList) {
+    public DetailedFragmentAdapter(List<Manufacturer> myList, OnButtonClickListener listener) {
         this.myList = myList;
+        this.listener = listener;
     }
 
     @NonNull
@@ -34,6 +37,16 @@ public class DetailedFragmentAdapter extends RecyclerView.Adapter<DetailedFragme
         Manufacturer manufacturer = myList.get(position);
         List<Device> devices = manufacturer.getDevices().stream().collect(Collectors.toList());
         holder.setDevices(manufacturer.getName(),devices);
+
+        //Get items from recyclerview when user clicks them. Then send them to FoodFragment
+        holder.button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Manufacturer manufacturer = myList.get(position);
+                String selectedBrand = manufacturer.getName();
+                listener.onButtonClick(selectedBrand);
+            }
+        });
     }
 
     @Override
@@ -49,7 +62,9 @@ public class DetailedFragmentAdapter extends RecyclerView.Adapter<DetailedFragme
 
         ViewHolder(View itemView) {
             super(itemView);
+
             button = itemView.findViewById(R.id.button);
+
             imageView0 = itemView.findViewById(R.id.imageView0);
             imageView1 = itemView.findViewById(R.id.imageView1);
             imageView2 = itemView.findViewById(R.id.imageView2);

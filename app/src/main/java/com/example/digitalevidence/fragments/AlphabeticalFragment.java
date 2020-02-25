@@ -53,12 +53,12 @@ public class AlphabeticalFragment extends Fragment {
         AlphabeticalFragmentAdapter alphabeticalFragmentAdapter = new AlphabeticalFragmentAdapter(devices);
         recyclerView.setAdapter(alphabeticalFragmentAdapter);
 
-        activity.setDevices(devices);
-        activity.LoadDevices();
+        //activity.setDevices(devices);
+        //activity.LoadDevices();
         EndlessRecyclerViewScrollListener endlessRecyclerViewScrollListener =  new EndlessRecyclerViewScrollListener(layoutManager){
             @Override
             public void onLoadMore(int page, int totalItemsCount, RecyclerView view) {
-                activity.LoadDevices();
+                //activity.LoadDevices();
             }
         };
 
