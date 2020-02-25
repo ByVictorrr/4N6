@@ -10,8 +10,6 @@ import com.amazonaws.services.dynamodbv2.model.ScanRequest;
 import com.amazonaws.services.dynamodbv2.model.ScanResult;
 import com.example.digitalevidence.models.Manufacturer;
 import com.example.digitalevidence.models.Device;
-import com.google.android.material.tabs.TabLayout;
-
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.PriorityQueue;
@@ -21,11 +19,11 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class DynamoHelper {
-
     private static DynamoHelper instance;
     private static ScanRequest scanRequest;
     private static AmazonDynamoDBClient dynamoDBClient;
     private Queue<Manufacturer> brandsPending;
+    private Queue<Device> devicesPending;
     private String TableName;
     private int loadNum;
 
@@ -34,9 +32,7 @@ public class DynamoHelper {
             instance = new DynamoHelper(context, Table, loadNum);
         }
         return instance;
-
     }
-
 
     @TargetApi(24)
     private DynamoHelper(Context context, String Table, int loadNum) {
@@ -44,7 +40,7 @@ public class DynamoHelper {
         CognitoCachingCredentialsProvider credentialsProvider = new CognitoCachingCredentialsProvider(
                 context,
                 "us-west-2:66e0d23a-4c2c-46eb-ad73-b1174813e1b5", // Identity pool ID
-                Regions.US_WEST_2 // Region
+                Regions.US_WEST_2
         );
 
         scanRequest=new ScanRequest()
@@ -55,10 +51,7 @@ public class DynamoHelper {
         this.dynamoDBClient = new AmazonDynamoDBClient(credentialsProvider);
         this.dynamoDBClient.setRegion(Region.getRegion(Regions.US_WEST_2));
         this.brandsPending = new PriorityQueue(Comparator.comparing(Manufacturer::getName));
-
-
     }
-
 
     public Thread fetchBrands(){
         return new Thread(new Runnable(){
@@ -66,7 +59,6 @@ public class DynamoHelper {
             public void run() {
                 List<Map<String, AttributeValue>> items;
                 ScanResult result;
-
 
                 result = dynamoDBClient.scan(scanRequest);
                 items = result.getItems();
@@ -80,15 +72,35 @@ public class DynamoHelper {
                     parseBrand(item, manufacturer);
                     brandsPending.add(manufacturer);
                 }
-
             }
         });
     }
 
+    public Thread fetchDevices(){
+        return new Thread(new Runnable(){
+            @Override
+            public void run() {
+                List<Map<String, AttributeValue>> items;
+                ScanResult result;
+
+                result = dynamoDBClient.scan(scanRequest);
+                items = result.getItems();
+                Map<String, AttributeValue> lastEvaluatedKey = result.getLastEvaluatedKey();
+
+                scanRequest.setExclusiveStartKey(lastEvaluatedKey);
+
+                // Go Through and Allocate Each Items
+                for (Map<String, AttributeValue> item : items) {
+                    Device device = new Device();
+                    parseDevice(item, device);
+                    devicesPending.add(device);
+                }
+            }
+        });
+    }
 
     @TargetApi(24)
     void parseBrand(Map<String, AttributeValue> src, Manufacturer des){
-
         Object[] objects = src.values().toArray();
         List<Device> deviceList = new ArrayList<>();
 
@@ -110,15 +122,26 @@ public class DynamoHelper {
                     attributes.get("manufacturer").getS()
             );
 
-
             deviceList.add(device);
         }
 
         des.setDevices(deviceList.stream().collect(Collectors.toSet()));
         des.setName(brandName);
         des.setLink(link);
-
     }
-    public Queue<Manufacturer> getBrandsPending(){return this.brandsPending;}
 
+    @TargetApi(24)
+    void parseDevice(List<Device> src, Device des){
+        Object[] objects = src.toArray();
+
+        String deviceName = ((AttributeValue)(objects[0])).getS();
+        String image = ((AttributeValue)(objects[1])).getS();
+        String os = ((AttributeValue)(objects[2])).getS();
+
+        des.setName(deviceName);
+        des.setImage(image);
+        des.setOS(os);
+    }
+
+    public Queue<Device> getDevicesPending(){return this.devicesPending;}
 }

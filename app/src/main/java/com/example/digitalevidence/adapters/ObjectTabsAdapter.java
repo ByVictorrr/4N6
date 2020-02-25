@@ -6,7 +6,6 @@ import androidx.annotation.StringRes;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
-
 import com.example.digitalevidence.fragments.AlphabeticalFragment;
 import com.example.digitalevidence.R;
 import com.example.digitalevidence.fragments.DetailedFragment;
@@ -30,7 +29,7 @@ public class ObjectTabsAdapter extends FragmentPagerAdapter {
             case 0:
                 return AlphabeticalFragment.newInstance();
             case 1:
-                return DetailedFragment.newInstance();
+                return AlphabeticalFragment.newInstance();
         }
         return AlphabeticalFragment.newInstance();
     }

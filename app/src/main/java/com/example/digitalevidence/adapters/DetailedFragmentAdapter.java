@@ -7,12 +7,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.digitalevidence.models.Manufacturer;
 import com.example.digitalevidence.models.Device;
 import com.example.digitalevidence.R;
 import com.squareup.picasso.Picasso;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -66,7 +64,8 @@ public class DetailedFragmentAdapter extends RecyclerView.Adapter<DetailedFragme
                 Picasso.get().load(list.get(LEFT).getImage()).into(this.imageView0);
                 Picasso.get().load(list.get(MIDDLE).getImage()).into(this.imageView1);
                 Picasso.get().load(list.get(RIGHT).getImage()).into(this.imageView2);
-            }else{
+            }
+            else{
                 Picasso.get().load(list.get(LEFT).getImage()).into(this.imageView0);
                 Picasso.get().load(list.get(LEFT).getImage()).into(this.imageView1);
                 Picasso.get().load(list.get(LEFT).getImage()).into(this.imageView2);

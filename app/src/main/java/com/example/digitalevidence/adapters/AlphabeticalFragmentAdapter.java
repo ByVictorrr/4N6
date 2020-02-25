@@ -1,8 +1,10 @@
 package com.example.digitalevidence.adapters;
 
+import android.annotation.TargetApi;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -11,14 +13,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.digitalevidence.R;
 import com.example.digitalevidence.models.Device;
+import com.example.digitalevidence.models.Manufacturer;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class AlphabeticalFragmentAdapter extends RecyclerView.Adapter<AlphabeticalFragmentAdapter.ViewHolder> {
-    private List<List<Device>> myList;
+    private List<Device> myList;
 
-    public AlphabeticalFragmentAdapter(List<List<Device>> myList) {
+    public AlphabeticalFragmentAdapter(List<Device> myList) {
         this.myList = myList;
     }
 
@@ -29,12 +33,16 @@ public class AlphabeticalFragmentAdapter extends RecyclerView.Adapter<Alphabetic
         return new ViewHolder(view);
     }
 
+    // Obtain list of devices within brand
+    @TargetApi(24)
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        List<Device> stringObject = myList.get(position);
-        holder.setDevices(stringObject);
+        //Manufacturer manufacturer = myList.get(position);
+        //devices = manufacturer.getDevices().stream().collect(Collectors.toList());
+        holder.setDevices(myList);
     }
 
+    // Get number of devices within brand
     @Override
     public int getItemCount() {
         return myList.size();
@@ -55,9 +63,9 @@ public class AlphabeticalFragmentAdapter extends RecyclerView.Adapter<Alphabetic
         }
 
         private void setDevices(List<Device> list) {
-           final String NAME = list.get(0).getName();
-           final String MANUFACTURE = list.get(0).getManufacture();
-           final String OS = list.get(0).getOs();
+            final String NAME = list.get(0).getName();
+            final String MANUFACTURE = list.get(0).getManufacture();
+            final String OS = list.get(0).getOs();
 
             if (list.size() > 2) {
                 this.textView0.setText(NAME);

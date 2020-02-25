@@ -10,13 +10,11 @@ import android.view.MotionEvent;
 import android.view.WindowManager;
 import android.widget.TextView;
 import androidx.viewpager.widget.ViewPager;
-
 import com.example.digitalevidence.adapters.ModelTabsAdapter;
 import com.example.digitalevidence.helpers.DynamoHelper;
 import com.example.digitalevidence.models.Manufacturer;
 import com.example.digitalevidence.R;
 import com.google.android.material.tabs.TabLayout;
-
 import java.util.List;
 import java.util.Queue;
 
@@ -28,9 +26,7 @@ public class MobileActivity extends BaseActivity {
 
     @TargetApi(24)
     public void setManufacturers(List<Manufacturer> manufacturers){
-        //this.manufacturers = manufacturers.stream().collect(Collectors.toSet());
         this.manufacturers = manufacturers;
-
     }
 
     @Override
@@ -38,10 +34,9 @@ public class MobileActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mobile);
 
-        //this.manufacturers = new HashSet<>();
         this.dynamoHelper = DynamoHelper.getInstance(this, TABLE_NAME, LOAD_COUNT);
 
-            // Toolbar
+        // Toolbar
         TextView textView = findViewById(R.id.toolbar_title);
         textView.setText(R.string.title_mobile);
 
@@ -51,10 +46,9 @@ public class MobileActivity extends BaseActivity {
         viewPager.setAdapter(tabsPagerAdapter);
         TabLayout tabs = findViewById(R.id.tabLayout);
         tabs.setupWithViewPager(viewPager);
-
     }
 
-    // Maybe pass dynamohelper through
+    // Pass DynamoDB Helper Through
     public void LoadBrands(){
         Thread fetchBrands = dynamoHelper.fetchBrands();
         Thread displayBrands = setBrands(dynamoHelper);

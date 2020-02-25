@@ -1,5 +1,4 @@
 package com.example.digitalevidence.activities;
-import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -45,7 +44,6 @@ public class AuthenticationActivity extends BaseActivity {
                             public void run() {
                                 AWSMobileClient.getInstance().showSignIn(AuthenticationActivity.this,
                                         SignInUIOptions.builder()
-                                                .nextActivity(MainActivity.class)
                                                 .canCancel(false)
                                                 .build(),
                                         new Callback<UserStateDetails>() {
@@ -96,11 +94,5 @@ public class AuthenticationActivity extends BaseActivity {
                 Log.e(TAG, e.toString());
             }
         });
-    }
-
-    @Override
-    protected void onNewIntent(Intent intent) {
-        super.onNewIntent(intent);
-        setIntent(intent);
     }
 }
