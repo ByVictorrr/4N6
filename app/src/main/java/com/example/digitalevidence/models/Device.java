@@ -1,6 +1,10 @@
 package com.example.digitalevidence.models;
 
-public class Device {
+
+import java.io.IOException;
+import java.io.Serializable;
+
+public class Device implements Serializable {
     private String name, image, os, manufacture;
 
     public Device(String name, String image, String os, String manufacture) {
@@ -30,5 +34,6 @@ public class Device {
     public String getManufacture() {
         return manufacture;
     }
+
 }
 

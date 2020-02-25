@@ -1,5 +1,6 @@
 package com.example.digitalevidence.activities;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import androidx.annotation.LayoutRes;
@@ -8,7 +9,11 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import com.example.digitalevidence.R;
+import com.example.digitalevidence.fragments.CompactFragment;
+import com.example.digitalevidence.fragments.DetailedFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.util.ArrayList;
 
 abstract public class BaseActivity extends AppCompatActivity {
     Menu menu;
@@ -22,6 +27,8 @@ abstract public class BaseActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
+
+
 
         // Back Button if not a Navigation Screen
         if(actionBar != null) {

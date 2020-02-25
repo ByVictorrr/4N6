@@ -17,13 +17,14 @@ import com.example.digitalevidence.models.Manufacturer;
 import com.example.digitalevidence.R;
 import com.google.android.material.tabs.TabLayout;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Queue;
 
 public class MobileActivity extends BaseActivity {
     private DynamoHelper dynamoHelper;
     private final String TABLE_NAME = "digitaln-mobilehub-2069871194-MobileBrands";
-    public static final Integer LOAD_COUNT = 4;
+    public static final Integer LOAD_COUNT = 13;
     private List<Manufacturer> manufacturers;
 
     @TargetApi(24)
@@ -38,8 +39,12 @@ public class MobileActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mobile);
 
+        manufacturers=new ArrayList<>();
+
+
         //this.manufacturers = new HashSet<>();
         this.dynamoHelper = DynamoHelper.getInstance(this, TABLE_NAME, LOAD_COUNT);
+
 
             // Toolbar
         TextView textView = findViewById(R.id.toolbar_title);
@@ -52,6 +57,10 @@ public class MobileActivity extends BaseActivity {
         TabLayout tabs = findViewById(R.id.tabLayout);
         tabs.setupWithViewPager(viewPager);
 
+    }
+
+    public List<Manufacturer> getManufacturers() {
+        return manufacturers;
     }
 
     // Maybe pass dynamohelper through

@@ -7,14 +7,15 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.digitalevidence.R;
+import com.example.digitalevidence.models.Manufacturer;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 public class CompactFragmentAdapter extends RecyclerView.Adapter<CompactFragmentAdapter.ViewHolder> {
-    private static List<String> myList;
+    private static List<Manufacturer> myList;
 
-    public CompactFragmentAdapter(List<String> myList) {
+    public CompactFragmentAdapter(List<Manufacturer> myList) {
         this.myList = myList;
     }
 
@@ -27,7 +28,7 @@ public class CompactFragmentAdapter extends RecyclerView.Adapter<CompactFragment
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        String url_brand = myList.get(position);
+        String url_brand = myList.get(position).getLink();
         holder.setBrand(url_brand);
     }
 

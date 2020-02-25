@@ -11,8 +11,14 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 import com.example.digitalevidence.R;
+import com.example.digitalevidence.fragments.CompactFragment;
+import com.example.digitalevidence.fragments.DetailedFragment;
+
+import java.util.ArrayList;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
+
+    Bundle bundle= new Bundle();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +27,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         // Toolbar
         TextView textView = findViewById(R.id.toolbar_title);
         textView.setText(R.string.app_name);
+
+
 
         // Buttons for Selecting Device Type
         Button mobileBTN = findViewById(R.id.mobile_button);
@@ -38,7 +46,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         Intent i;
+
             i = new Intent(this, MobileActivity.class);
+            i.putExtras(bundle);
             startActivity(i);
     }
 

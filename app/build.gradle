@@ -86,11 +86,7 @@ dependencies {
 
     //For the drop-in UI also:d
     implementation 'com.amazonaws:aws-android-sdk-auth-ui:2.15.+'
-    compile 'com.amazonaws:aws-android-sdk-core:2.6.0'
-    compile 'com.amazonaws:aws-android-sdk-auth-core:2.6.0@aar'
-    compile 'com.amazonaws:aws-android-sdk-pinpoint:2.6.0'
-    compile 'com.amazonaws:aws-android-sdk-auth-ui:2.6.0@aar'
-    compile 'com.amazonaws:aws-android-sdk-auth-userpools:2.6.0@aar'
-    compile 'com.amazonaws:aws-android-sdk-cognitoidentityprovider:2.6.0'
-    implementation ('com.amazonaws:aws-android-sdk-cognitoauth:2.9.+@aar') { transitive = true }
+
+    // map frags
+    implementation 'com.google.android.gms:play-services:6.5.87'
 }

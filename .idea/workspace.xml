@@ -11,31 +11,278 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8534f877-1803-4e42-9574-e2fb425eba53" name="Default Changelist" comment="Attempt Cognito">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_amazonaws_aws_android_sdk_auth_core_2_15_2_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_amazonaws_aws_android_sdk_auth_ui_2_15_2_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_amazonaws_aws_android_sdk_auth_userpools_2_15_2_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_amazonaws_aws_android_sdk_cognitoidentityprovider_2_15_2_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_amazonaws_aws_android_sdk_core_2_15_2_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_amazonaws_aws_android_sdk_mobile_client_2_15_2_aar.xml" afterDir="false" />
+    <list default="true" id="8534f877-1803-4e42-9574-e2fb425eba53" name="Default Changelist" comment="got the brands showing">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_6_5_87_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_amazonaws_aws_android_sdk_appsync_2_8_3_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_amazonaws_aws_android_sdk_appsync_2_8_3_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_amazonaws_aws_android_sdk_mobile_client_2_13_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_amazonaws_aws_android_sdk_mobile_client_2_13_2_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_amazonaws_aws_android_sdk_auth_ui_2_15_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_amazonaws_aws_android_sdk_auth_ui_2_15_2_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_amazonaws_aws_android_sdk_auth_userpools_2_15_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_amazonaws_aws_android_sdk_auth_userpools_2_15_2_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_amazonaws_aws_android_sdk_mobile_client_2_15_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_amazonaws_aws_android_sdk_mobile_client_2_15_2_aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_arasthel_spannedgridlayoutmanager_3_0_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_arasthel_spannedgridlayoutmanager_3_0_2_aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_picasso_picasso_2_71828_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_picasso_picasso_2_71828_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/.idea/aws.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/.idea/libraries/Maven__com_amazonaws_aws_java_sdk_core_1_11_163.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/.idea/libraries/Maven__com_amazonaws_aws_java_sdk_dynamodb_1_11_163.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/.idea/libraries/Maven__com_amazonaws_aws_java_sdk_kms_1_11_163.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/.idea/libraries/Maven__com_amazonaws_aws_java_sdk_s3_1_11_163.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/.idea/libraries/Maven__com_amazonaws_aws_lambda_java_core_1_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/.idea/libraries/Maven__com_amazonaws_aws_lambda_java_events_2_2_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/.idea/libraries/Maven__com_amazonaws_jmespath_java_1_11_163.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_6_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_6_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_6_7_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/.idea/libraries/Maven__com_fasterxml_jackson_dataformat_jackson_dataformat_cbor_2_6_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/.idea/libraries/Maven__commons_codec_commons_codec_1_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/.idea/libraries/Maven__commons_logging_commons_logging_1_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/.idea/libraries/Maven__joda_time_joda_time_2_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/.idea/libraries/Maven__junit_junit_4_12.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/.idea/libraries/Maven__software_amazon_ion_ion_java_1_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Backend.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/Models/MobileDO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/Utility/Pair.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/helloworld/App.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/helloworld/GatewayResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/aws-java-sdk-core-1.11.163.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/aws-java-sdk-dynamodb-1.11.163.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/aws-java-sdk-kms-1.11.163.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/aws-java-sdk-s3-1.11.163.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/aws-lambda-java-core-1.2.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/aws-lambda-java-events-2.2.7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/commons-codec-1.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/commons-logging-1.1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/httpclient-4.5.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/httpcore-4.4.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/ion-java-1.0.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/jackson-annotations-2.6.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/jackson-core-2.6.7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/jackson-databind-2.6.7.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/jackson-dataformat-cbor-2.6.7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/jmespath-java-1.11.163.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/joda-time-2.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/HelloWorldFunction/.aws-sam/build/template.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/HelloWorldFunction/HelloWorld.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/HelloWorldFunction/dependency-reduced-pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/HelloWorldFunction/events/s3put.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/HelloWorldFunction/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/HelloWorldFunction/src/main/java/Models/MobileDO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/HelloWorldFunction/src/main/java/Utility/Pair.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/HelloWorldFunction/src/main/java/helloworld/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/HelloWorldFunction/src/main/java/helloworld/GatewayResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/HelloWorldFunction/src/test/java/helloworld/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/HelloWorldFunction/target/HelloWorld-1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/HelloWorldFunction/target/classes/Models/MobileDO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/HelloWorldFunction/target/classes/Utility/Pair.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/HelloWorldFunction/target/classes/helloworld/App.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/HelloWorldFunction/target/classes/helloworld/GatewayResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/HelloWorldFunction/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/HelloWorldFunction/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/HelloWorldFunction/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/HelloWorldFunction/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/HelloWorldFunction/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/HelloWorldFunction/target/original-HelloWorld-1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/HelloWorldFunction/target/surefire-reports/TEST-helloworld.AppTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/HelloWorldFunction/target/surefire-reports/helloworld.AppTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/HelloWorldFunction/target/test-classes/helloworld/AppTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/template.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DynamoDBLocal/DynamoDBLocal.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DynamoDBLocal/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/.idea/libraries/Maven__com_amazonaws_aws_java_sdk_core_1_11_727.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/.idea/libraries/Maven__com_amazonaws_aws_java_sdk_kms_1_11_727.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/.idea/libraries/Maven__com_amazonaws_aws_java_sdk_lambda_1_11_727.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/.idea/libraries/Maven__com_amazonaws_aws_java_sdk_s3_1_11_727.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/.idea/libraries/Maven__com_amazonaws_aws_lambda_java_core_1_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/.idea/libraries/Maven__com_amazonaws_jmespath_java_1_11_727.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/.idea/libraries/Maven__com_fasterxml_jackson_dataformat_jackson_dataformat_cbor_2_6_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/.idea/libraries/Maven__com_google_code_findbugs_annotations_3_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/.idea/libraries/Maven__com_google_code_findbugs_jsr305_3_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/.idea/libraries/Maven__com_google_errorprone_error_prone_annotations_2_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/.idea/libraries/Maven__com_google_guava_guava_25_1_jre.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/.idea/libraries/Maven__com_google_http_client_google_http_client_1_24_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/.idea/libraries/Maven__com_google_http_client_google_http_client_xml_1_24_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/.idea/libraries/Maven__com_google_j2objc_j2objc_annotations_1_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/.idea/libraries/Maven__com_squareup_okhttp3_okhttp_3_13_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/.idea/libraries/Maven__com_squareup_okio_okio_1_17_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/.idea/libraries/Maven__commons_codec_commons_codec_1_11.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/.idea/libraries/Maven__commons_io_commons_io_2_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/.idea/libraries/Maven__commons_logging_commons_logging_1_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/.idea/libraries/Maven__io_minio_minio_6_0_13.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/.idea/libraries/Maven__joda_time_joda_time_2_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/.idea/libraries/Maven__junit_junit_4_12.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/.idea/libraries/Maven__net_jcip_jcip_annotations_1_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/.idea/libraries/Maven__org_apache_commons_commons_compress_1_14.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_11.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/.idea/libraries/Maven__org_checkerframework_checker_qual_2_0_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/.idea/libraries/Maven__org_codehaus_mojo_animal_sniffer_annotations_1_14.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/.idea/libraries/Maven__org_tukaani_xz_1_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/.idea/libraries/Maven__software_amazon_ion_ion_java_1_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/.idea/libraries/Maven__xpp3_xpp3_1_1_4c.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/helloworld/App.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/helloworld/GatewayResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/helloworld/S3Stream.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/helloworld/ZipDecompressor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/animal-sniffer-annotations-1.14.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/annotations-3.0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/aws-java-sdk-core-1.11.727.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/aws-java-sdk-kms-1.11.727.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/aws-java-sdk-lambda-1.11.727.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/aws-java-sdk-s3-1.11.727.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/aws-lambda-java-core-1.2.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/checker-qual-2.0.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/commons-codec-1.11.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/commons-compress-1.14.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/commons-io-2.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/commons-logging-1.1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/error_prone_annotations-2.1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/google-http-client-1.24.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/google-http-client-xml-1.24.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/guava-25.1-jre.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/httpclient-4.5.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/httpcore-4.4.11.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/ion-java-1.0.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/j2objc-annotations-1.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/jackson-annotations-2.9.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/jackson-core-2.9.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/jackson-databind-2.9.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/jackson-dataformat-cbor-2.6.7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/jcip-annotations-1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/jmespath-java-1.11.727.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/joda-time-2.7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/jsr305-3.0.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/minio-6.0.13.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/okhttp-3.13.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/okio-1.17.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/xpp3-1.1.4c.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/xz-1.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/HelloWorldFunction/.aws-sam/build/template.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/HelloWorldFunction/HelloWorld.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/HelloWorldFunction/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/HelloWorldFunction/src/main/java/helloworld/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/HelloWorldFunction/src/main/java/helloworld/GatewayResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/HelloWorldFunction/src/test/java/helloworld/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/LambdaAPI.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/events/event.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaAPI/template.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/.idea/aws.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/.idea/libraries/Maven__com_amazonaws_aws_java_sdk_core_1_11_163.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/.idea/libraries/Maven__com_amazonaws_aws_java_sdk_dynamodb_1_11_163.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/.idea/libraries/Maven__com_amazonaws_aws_java_sdk_kms_1_11_163.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/.idea/libraries/Maven__com_amazonaws_aws_java_sdk_s3_1_11_163.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/.idea/libraries/Maven__com_amazonaws_aws_lambda_java_core_1_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/.idea/libraries/Maven__com_amazonaws_aws_lambda_java_events_2_2_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/.idea/libraries/Maven__com_amazonaws_jmespath_java_1_11_163.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_6_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_6_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_6_7_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/.idea/libraries/Maven__com_fasterxml_jackson_dataformat_jackson_dataformat_cbor_2_6_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/.idea/libraries/Maven__commons_codec_commons_codec_1_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/.idea/libraries/Maven__commons_logging_commons_logging_1_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/.idea/libraries/Maven__joda_time_joda_time_2_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/.idea/libraries/Maven__junit_junit_4_12.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/.idea/libraries/Maven__software_amazon_ion_ion_java_1_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/Backend.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/Models/MobileDO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/Utility/Pair.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/helloworld/App.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/helloworld/GatewayResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/aws-java-sdk-core-1.11.163.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/aws-java-sdk-dynamodb-1.11.163.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/aws-java-sdk-kms-1.11.163.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/aws-java-sdk-s3-1.11.163.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/aws-lambda-java-core-1.2.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/aws-lambda-java-events-2.2.7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/commons-codec-1.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/commons-logging-1.1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/httpclient-4.5.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/httpcore-4.4.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/ion-java-1.0.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/jackson-annotations-2.6.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/jackson-core-2.6.7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/jackson-databind-2.6.7.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/jackson-dataformat-cbor-2.6.7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/jmespath-java-1.11.163.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/HelloWorldFunction/.aws-sam/build/HelloWorldFunction/lib/joda-time-2.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/HelloWorldFunction/.aws-sam/build/template.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/HelloWorldFunction/HelloWorld.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/HelloWorldFunction/dependency-reduced-pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/HelloWorldFunction/events/s3put.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/HelloWorldFunction/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/HelloWorldFunction/src/main/java/Models/MobileDO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/HelloWorldFunction/src/main/java/Utility/Pair.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/HelloWorldFunction/src/main/java/helloworld/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/HelloWorldFunction/src/main/java/helloworld/GatewayResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/HelloWorldFunction/src/test/java/helloworld/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/HelloWorldFunction/target/HelloWorld-1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/HelloWorldFunction/target/classes/Models/MobileDO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/HelloWorldFunction/target/classes/Utility/Pair.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/HelloWorldFunction/target/classes/helloworld/App.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/HelloWorldFunction/target/classes/helloworld/GatewayResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/HelloWorldFunction/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/HelloWorldFunction/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/HelloWorldFunction/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/HelloWorldFunction/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/HelloWorldFunction/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/HelloWorldFunction/target/original-HelloWorld-1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/HelloWorldFunction/target/surefire-reports/TEST-helloworld.AppTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/HelloWorldFunction/target/surefire-reports/helloworld.AppTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/HelloWorldFunction/target/test-classes/helloworld/AppTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S3DynamoDBLambda/template.yaml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/activities/BaseActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/activities/BaseActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/activities/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/activities/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/activities/ProfileActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/activities/ProfileActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/toolbar_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/toolbar_profile.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/activities/MobileActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/activities/MobileActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/adapters/CompactFragmentAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/adapters/CompactFragmentAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/adapters/ReleaseDateFragmentAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/fragments/CompactFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/fragments/CompactFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/fragments/DetailedFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/fragments/DetailedFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/helpers/DynamoHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/helpers/DynamoHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/models/Device.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/models/Device.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/models/Manufacturer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/models/Manufacturer.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/app/build/" />
@@ -48,7 +295,7 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_API_27_Oreo" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_26" />
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
@@ -59,10 +306,37 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/adapters/DetailedFragmentAdapter.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/activities/MobileActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="799">
-              <caret line="59" selection-start-line="59" selection-end-line="59" />
+            <state relative-caret-position="580">
+              <caret line="50" column="16" selection-start-line="50" selection-start-column="16" selection-end-line="50" selection-end-column="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1636#1657#0" expanded="true" />
+                <element signature="e#2114#2115#0" expanded="true" />
+                <element signature="e#2150#2151#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/fragments/CompactFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="490">
+              <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/adapters/CompactFragmentAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="514">
+              <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -73,74 +347,77 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/fragments/DetailedFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="58">
-              <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
+            <state relative-caret-position="675">
+              <caret line="68" column="8" lean-forward="true" selection-start-line="68" selection-start-column="8" selection-end-line="68" selection-end-column="8" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/activities/ProfileActivity.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/compact_fragment_item.xml">
+          <provider editor-type-id="android-designer2" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="568">
-              <caret line="85" column="10" selection-start-line="85" selection-start-column="10" selection-end-line="85" selection-end-column="10" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1992#1993#0" expanded="true" />
-                <element signature="e#2051#2052#0" expanded="true" />
-                <element signature="e#3607#3608#0" expanded="true" />
-                <element signature="e#3681#3682#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/raw/awsconfiguration.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="560">
-              <caret line="45" column="61" selection-start-line="45" selection-start-column="61" selection-end-line="45" selection-end-column="61" />
-            </state>
-          </provider>
-          <provider editor-type-id="android-manifest" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/activities/BaseActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-758">
-              <caret line="23" column="42" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="225">
+              <caret line="15" column="34" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/activities/MainActivity.java">
+        <entry file="file://$PROJECT_DIR$/app/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="205">
+              <caret line="51" column="19" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/toolbar_profile.xml">
-          <provider selected="true" editor-type-id="android-designer2" />
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="305">
-              <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/models/Manufacturer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#397#398#0" expanded="true" />
+                <element signature="e#424#425#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/helpers/DynamoHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="203">
+              <caret line="77" selection-start-line="77" selection-end-line="77" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/adapters/DetailedFragmentAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="48">
+              <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/adapters/ModelTabsAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -160,6 +437,7 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -170,7 +448,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/adapters/AlphabeticalFragmentAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/devicelist_fragment_item.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/activities/FavoritesActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/activities/HelpActivity.java" />
@@ -178,17 +455,12 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/activities/HelpMobileActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/activities/MobileObjectActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/activities/SearchActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/helpers/DynamoHelper.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_help_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_help_mobile.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/compact_fragment_item.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/adapters/CompactFragmentAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/fragments/CompactFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/adapters/DeviceListFragmentAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/adapters/DetailedFragmentAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/fragments/AlphabeticalFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/activities/MobileActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/activities/GamingActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/activities/MiscActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/activities/StorageActivity.java" />
@@ -197,30 +469,40 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/activities/ComputerActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_help_models.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_help_objects.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/adapters/ReleaseDateFragmentAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/fragments/ReleaseDateFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/adapters/ObjectTabsAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/fragments/DetailedFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/helpers/CredentialHelper.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/raw/awsconfiguration.json" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/activities/AuthenticatorActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/toolbar_profile.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/models/Brand.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/adapters/AlphabeticalFragmentAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/adapters/ReleaseDateFragmentAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/adapters/DetailedFragmentAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/raw/awsconfiguration.json" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/activities/ProfileActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/models/Device.java" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/activities/BaseActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/toolbar_profile.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/activities/MainActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/activities/ProfileActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/fragments/DetailedFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/models/Manufacturer.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/adapters/CompactFragmentAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/helpers/DynamoHelper.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/activities/MobileActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/fragments/CompactFragment.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1182" />
-    <option name="y" value="492" />
-    <option name="width" value="1394" />
-    <option name="height" value="1756" />
+    <option name="x" value="1709" />
+    <option name="y" value="33" />
+    <option name="width" value="1622" />
+    <option name="height" value="988" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
@@ -230,54 +512,107 @@
           <expand>
             <path>
               <item name="Digital Evidence" type="b2602c69:ProjectViewProjectNode" />
-              <item name="4N6testtttt" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="4N6" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
               <item name="Digital Evidence" type="b2602c69:ProjectViewProjectNode" />
-              <item name="4N6testtttt" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="4N6" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
             <path>
-              <item name="Digital Evidence" type="b2602c69:ProjectViewProjectNode" />
-              <item name="4N6testtttt" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Digital Evidence" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
             </path>
             <path>
-              <item name="Digital Evidence" type="b2602c69:ProjectViewProjectNode" />
-              <item name="4N6testtttt" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="Digital Evidence" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
             </path>
             <path>
-              <item name="Digital Evidence" type="b2602c69:ProjectViewProjectNode" />
-              <item name="4N6testtttt" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="res" type="462c0819:PsiDirectoryNode" />
+              <item name="Digital Evidence" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="digitalevidence" type="cbb59c9e:AndroidPsiDirectoryNode" />
             </path>
             <path>
-              <item name="Digital Evidence" type="b2602c69:ProjectViewProjectNode" />
-              <item name="4N6testtttt" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="res" type="462c0819:PsiDirectoryNode" />
-              <item name="raw" type="462c0819:PsiDirectoryNode" />
+              <item name="Digital Evidence" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="digitalevidence" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="activities" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Digital Evidence" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="digitalevidence" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="adapters" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Digital Evidence" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="digitalevidence" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="fragments" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Digital Evidence" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="digitalevidence" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="helpers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Digital Evidence" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="digitalevidence" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Digital Evidence" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="digitalevidence" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Digital Evidence" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+            </path>
+            <path>
+              <item name="Digital Evidence" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
+            </path>
+            <path>
+              <item name="Digital Evidence" type="1abcf292:AndroidViewProjectNode" />
+              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_2_API_26" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-02-25T00:09:59.980Z" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="android.template.packageName">
@@ -377,7 +712,7 @@
       <option name="PM_INSTALL_OPTIONS" value="" />
       <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
       <option name="ACTIVITY_EXTRA_FLAGS" value="" />
-      <option name="MODE" value="default_activity" />
+      <option name="MODE" value="specific_activity" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
       <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
@@ -416,11 +751,15 @@
         <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
       </Profilers>
       <option name="DEEP_LINK" value="" />
-      <option name="ACTIVITY_CLASS" value="" />
+      <option name="ACTIVITY_CLASS" value="com.example.digitalevidence.activities.MainActivity" />
       <method v="2">
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Android App.app" />
+      <item itemvalue="Android App.ProfileActivity" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Android App.ProfileActivity" />
@@ -448,11 +787,21 @@
     <option name="localTasksCounter" value="2" />
     <servers />
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="591" y="0" width="697" height="878" extended-state="0" />
+    <frame x="29" y="33" width="1622" height="988" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.44913927" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.28136882" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Build Variants" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
@@ -460,22 +809,24 @@
       <window_info id="Resources Explorer" order="6" />
       <window_info id="Capture Tool" order="7" />
       <window_info id="Favorites" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Build" order="0" weight="0.25298014" />
-      <window_info anchor="bottom" id="Run" order="1" weight="0.32980132" />
-      <window_info anchor="bottom" id="Logcat" order="2" weight="0.32980132" />
-      <window_info anchor="bottom" id="TODO" order="3" />
-      <window_info anchor="bottom" id="Android Profiler" order="4" weight="0.32980132" />
-      <window_info anchor="bottom" id="Find" order="5" weight="0.32847682" />
-      <window_info anchor="bottom" id="Terminal" order="6" />
-      <window_info active="true" anchor="bottom" id="Event Log" order="7" side_tool="true" visible="true" weight="0.3328877" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Debug" order="9" />
+      <window_info active="true" anchor="bottom" id="Messages" visible="true" weight="0.3607306" />
+      <window_info anchor="bottom" id="Build" order="0" sideWeight="0.49756098" weight="0.38698632" />
+      <window_info anchor="bottom" id="Run" order="1" weight="0.2979452" />
+      <window_info anchor="bottom" id="Logcat" order="2" weight="0.32876712" />
+      <window_info anchor="bottom" id="TODO" order="3" weight="0.32990867" />
+      <window_info anchor="bottom" id="Android Profiler" order="4" weight="0.32876712" />
+      <window_info anchor="bottom" id="Find" order="5" sideWeight="0.49936628" weight="0.32762557" />
+      <window_info anchor="bottom" id="Terminal" order="6" weight="0.32876712" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.502439" side_tool="true" weight="0.23068893" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32990867" />
+      <window_info anchor="bottom" id="Debug" order="9" weight="0.25" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Theme Preview" order="2" />
       <window_info anchor="right" id="Gradle" order="3" />
       <window_info anchor="right" id="Palette&#9;" order="4" />
-      <window_info anchor="right" id="Preview" order="5" />
+      <window_info anchor="right" id="Preview" order="5" weight="0.32987806" />
+      <window_info anchor="right" id="Assistant" order="6" visible="true" weight="0.32894737" />
     </layout>
     <layout-to-restore>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
@@ -508,82 +859,33 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Clean up code and reformat alphabetical" />
     <MESSAGE value="Attempt Cognito" />
-    <option name="LAST_COMMIT_MESSAGE" value="Attempt Cognito" />
+    <MESSAGE value="got the brands showing" />
+    <option name="LAST_COMMIT_MESSAGE" value="got the brands showing" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/fragments/DetailedFragment.java</url>
+          <line>64</line>
+          <properties />
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/fragments/CompactFragment.java</url>
+          <line>70</line>
+          <properties />
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/activities/FavoritesActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="7" lean-forward="true" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/activities/HelpMobileActivity.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/activities/SearchActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="568">
-          <caret line="51" column="46" selection-start-line="51" selection-start-column="46" selection-end-line="51" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/nav.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/devicelist_fragment_item.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="41" column="4" selection-start-line="41" selection-start-column="4" selection-end-line="43" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/activities/HelpActivity.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="568">
-          <caret line="54" column="12" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/activities/HelpMainActivity.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_help_main.xml">
       <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/detailed_fragment_item.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/compact_fragment_item.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="34" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/fragments/CompactFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="61" selection-start-line="61" selection-end-line="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -598,30 +900,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/activities/MiscActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1853">
-          <caret line="109" column="5" selection-start-line="109" selection-start-column="5" selection-end-line="109" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/activities/GamingActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1853">
           <caret line="109" column="5" selection-start-line="109" selection-start-column="5" selection-end-line="109" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/activities/MobileActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1955">
-          <caret line="115" column="1" lean-forward="true" selection-start-line="115" selection-start-column="1" selection-end-line="115" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -661,36 +943,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_devicelist2.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/adapters/DeviceListFragmentAdapter.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/adapters/CompactFragmentAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="591">
-          <caret line="47" column="57" selection-start-line="47" selection-start-column="57" selection-end-line="47" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/adapters/AlphabeticalFragmentAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-214">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/adapters/ReleaseDateFragmentAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="27" column="102" lean-forward="true" selection-start-line="27" selection-start-column="102" selection-end-line="27" selection-end-column="102" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/fragments/AlphabeticalFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -711,55 +963,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/adapters/ObjectTabsAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="e#1504#1505#0" expanded="true" />
-            <element signature="e#1528#1529#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/adapters/DetailedFragmentAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/fragments/DetailedFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/activities/ComputerActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="40" column="87" selection-start-line="40" selection-start-column="83" selection-end-line="40" selection-end-column="87" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_computer.xml">
       <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.amazonaws/aws-android-sdk-auth-ui/2.7.7/5b4bb11d8410b18f1da9f009635f024cc117d65f/aws-android-sdk-auth-ui-2.7.7-sources.jar!/com/amazonaws/mobile/auth/ui/AuthUIConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="189" column="23" selection-start-line="189" selection-start-column="23" selection-end-line="189" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/com.amazonaws/aws-android-sdk-auth-ui/2.7.7/5b4bb11d8410b18f1da9f009635f024cc117d65f/aws-android-sdk-auth-ui-2.7.7-sources.jar!/com/amazonaws/mobile/auth/ui/AuthUIConfiguration.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/navigation.xml">
       <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
@@ -791,38 +999,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/helpers/DynamoHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/helpers/CredentialHelper.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/adapters/ModelTabsAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/activities/AuthenticatorActivity.java" />
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="73" column="48" selection-start-line="73" selection-start-column="48" selection-end-line="73" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
       <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor">
@@ -834,54 +1012,263 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/toolbar_profile.xml">
       <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor">
-        <state relative-caret-position="305">
+        <state relative-caret-position="345">
           <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/activities/BaseActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-758">
-          <caret line="23" column="42" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="45" column="61" selection-start-line="45" selection-start-column="61" selection-end-line="45" selection-end-column="61" />
+        <state relative-caret-position="537">
+          <caret line="48" column="72" selection-start-line="48" selection-start-column="72" selection-end-line="48" selection-end-column="72" />
         </state>
       </provider>
       <provider editor-type-id="android-manifest" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/activities/ProfileActivity.java">
+    <entry file="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/com.amazonaws/aws-android-sdk-core/2.15.2/c5f084b08cae23f75cc695dd1277f6a805149ad1/aws-android-sdk-core-2.15.2-sources.jar!/com/amazonaws/auth/AWSCredentialsProviderChain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="568">
-          <caret line="85" column="10" selection-start-line="85" selection-start-column="10" selection-end-line="85" selection-end-column="10" />
+        <state relative-caret-position="1395">
+          <caret line="116" selection-start-line="116" selection-end-line="116" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/com.amazonaws/aws-android-sdk-ddb/2.7.7/ab33f249e37034e51126ca2d29b34a80ff5c50ba/aws-android-sdk-ddb-2.7.7-sources.jar!/com/amazonaws/services/dynamodbv2/AmazonDynamoDBClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36810">
+          <caret line="2480" selection-start-line="2480" selection-end-line="2480" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/adapters/ObjectTabsAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1992#1993#0" expanded="true" />
-            <element signature="e#2051#2052#0" expanded="true" />
-            <element signature="e#3607#3608#0" expanded="true" />
-            <element signature="e#3681#3682#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/adapters/ReleaseDateFragmentAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="62" column="44" selection-start-line="62" selection-start-column="44" selection-end-line="62" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/models/Device.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/activities/ProfileActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="750">
+          <caret line="63" column="66" selection-start-line="63" selection-start-column="66" selection-end-line="63" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/raw/awsconfiguration.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+        <state relative-caret-position="270">
+          <caret line="18" column="83" selection-start-line="18" selection-start-column="83" selection-end-line="18" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/activities/BaseActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/activities/ComputerActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/androidx.fragment/fragment/1.1.0/b9ebb04df2cb0cad4419af3c658690bc82aa5706/fragment-1.1.0-sources.jar!/androidx/fragment/app/Fragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="2599" selection-start-line="2599" selection-end-line="2599" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Android/Sdk/sources/android-29/android/app/Activity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="6975" selection-start-line="6975" selection-end-line="6975" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Android/Sdk/sources/android-29/android/app/Instrumentation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="1213" selection-start-line="1213" selection-end-line="1213" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/adapters/AlphabeticalFragmentAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="63" column="63" selection-start-line="63" selection-start-column="63" selection-end-line="63" selection-end-column="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Android/Sdk/sources/android-29/android/app/ActivityThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="2771" selection-start-line="2771" selection-end-line="2771" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/activities/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="289">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/activities/MiscActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="843">
+          <caret line="69" column="1" lean-forward="true" selection-start-line="69" selection-start-column="1" selection-end-line="69" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/detailed_fragment_item.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/compact_fragment_item.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="34" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/adapters/DetailedFragmentAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/adapters/ModelTabsAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/models/Manufacturer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#397#398#0" expanded="true" />
+            <element signature="e#424#425#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/adapters/CompactFragmentAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="514">
+          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/helpers/DynamoHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="77" selection-start-line="77" selection-end-line="77" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/activities/MobileActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="50" column="16" selection-start-line="50" selection-start-column="16" selection-end-line="50" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1636#1657#0" expanded="true" />
+            <element signature="e#2114#2115#0" expanded="true" />
+            <element signature="e#2150#2151#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/fragments/DetailedFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="68" column="8" lean-forward="true" selection-start-line="68" selection-start-column="8" selection-end-line="68" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/digitalevidence/fragments/CompactFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="51" column="19" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="19" />
         </state>
       </provider>
     </entry>

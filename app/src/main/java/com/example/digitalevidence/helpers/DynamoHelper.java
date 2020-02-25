@@ -26,9 +26,6 @@ public class DynamoHelper {
     private static ScanRequest scanRequest;
     private static AmazonDynamoDBClient dynamoDBClient;
     private Queue<Manufacturer> brandsPending;
-    private String TableName;
-    private int loadNum;
-
     public static DynamoHelper getInstance(Context context, String Table, int loadNum) {
         if (instance == null) {
             instance = new DynamoHelper(context, Table, loadNum);

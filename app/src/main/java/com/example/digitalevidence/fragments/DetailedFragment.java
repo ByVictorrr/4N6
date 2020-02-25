@@ -14,9 +14,11 @@ import com.example.digitalevidence.activities.MobileActivity;
 import com.example.digitalevidence.adapters.DetailedFragmentAdapter;
 import com.example.digitalevidence.models.Manufacturer;
 import com.example.digitalevidence.helpers.EndlessRecyclerViewScrollListener;
+import com.google.android.gms.maps.MapFragment;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @TargetApi(23)
 public class DetailedFragment extends Fragment {
@@ -36,6 +38,8 @@ public class DetailedFragment extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
+
+    @TargetApi(24)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_detailed, container, false);
@@ -45,13 +49,16 @@ public class DetailedFragment extends Fragment {
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
 
-        activity = (MobileActivity) getActivity();
-        List<Manufacturer> manufacturers = new ArrayList<>();
+
+        activity=(MobileActivity)getActivity();
+        List<Manufacturer> manufacturers  = activity.getManufacturers();
+
         DetailedFragmentAdapter detailedFragmentAdapter = new DetailedFragmentAdapter(manufacturers);
         recyclerView.setAdapter(detailedFragmentAdapter);
 
-        activity.setManufacturers(manufacturers);
-        activity.LoadBrands();
+
+
+
         EndlessRecyclerViewScrollListener endlessRecyclerViewScrollListener =  new EndlessRecyclerViewScrollListener(layoutManager){
             @Override
             public void onLoadMore(int page, int totalItemsCount, RecyclerView view) {
