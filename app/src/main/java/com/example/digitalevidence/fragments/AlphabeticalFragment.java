@@ -50,15 +50,19 @@ public class AlphabeticalFragment extends Fragment {
 
         activity = (MobileDevicesActivity) getActivity();
         List<Device> devices = new ArrayList<>();
+        List<Device> passed_devices;
         AlphabeticalFragmentAdapter alphabeticalFragmentAdapter = new AlphabeticalFragmentAdapter(devices);
         recyclerView.setAdapter(alphabeticalFragmentAdapter);
 
-        //activity.setDevices(devices);
-        //activity.LoadDevices();
+        int i=0;
         EndlessRecyclerViewScrollListener endlessRecyclerViewScrollListener =  new EndlessRecyclerViewScrollListener(layoutManager){
             @Override
             public void onLoadMore(int page, int totalItemsCount, RecyclerView view) {
-                //activity.LoadDevices();
+                devices.add(passed_devices.get(i));
+                devices.add(passed_devices.get(i+1));
+                devices.add(passed_devices.get(i+2));
+                i++;
+
             }
         };
 

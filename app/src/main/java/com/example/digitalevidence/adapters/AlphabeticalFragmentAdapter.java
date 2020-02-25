@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class AlphabeticalFragmentAdapter extends RecyclerView.Adapter<AlphabeticalFragmentAdapter.ViewHolder> {
-    private List<Device> myList;
+    List<Device> myList;
 
     public AlphabeticalFragmentAdapter(List<Device> myList) {
         this.myList = myList;
