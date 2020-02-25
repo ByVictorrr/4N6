@@ -15,6 +15,8 @@ import com.example.digitalevidence.helpers.DynamoHelper;
 import com.example.digitalevidence.models.Manufacturer;
 import com.example.digitalevidence.R;
 import com.google.android.material.tabs.TabLayout;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Queue;
 
@@ -34,6 +36,7 @@ public class MobileActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mobile);
 
+        this.manufacturers = new ArrayList<>();
         this.dynamoHelper = DynamoHelper.getInstance(this, TABLE_NAME, LOAD_COUNT);
 
         // Toolbar
@@ -100,5 +103,9 @@ public class MobileActivity extends BaseActivity {
                 dialog.show();
         }
         return(super.onOptionsItemSelected(item));
+    }
+
+    public List<Manufacturer> getManufacturers() {
+        return manufacturers;
     }
 }

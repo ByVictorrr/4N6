@@ -60,12 +60,14 @@ public class DetailedFragment extends Fragment {
             }
         };
 
-        activity = (MobileActivity)getActivity();
-        List<Manufacturer> manufacturers = new ArrayList<>();
+
+        activity=(MobileActivity)getActivity();
+        List<Manufacturer> manufacturers  = activity.getManufacturers();
+
+
         DetailedFragmentAdapter detailedFragmentAdapter = new DetailedFragmentAdapter(manufacturers, listener);
         recyclerView.setAdapter(detailedFragmentAdapter);
 
-        activity.setManufacturers(manufacturers);
         activity.LoadBrands();
         EndlessRecyclerViewScrollListener endlessRecyclerViewScrollListener =  new EndlessRecyclerViewScrollListener(layoutManager){
             @Override

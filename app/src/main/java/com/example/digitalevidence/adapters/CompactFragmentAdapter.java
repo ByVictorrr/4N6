@@ -14,10 +14,10 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 public class CompactFragmentAdapter extends RecyclerView.Adapter<CompactFragmentAdapter.ViewHolder> {
-    private static List<String> myList;
+    private static List<Manufacturer> myList;
     OnButtonClickListener listener;
 
-    public CompactFragmentAdapter(List<String> myList, OnButtonClickListener listener) {
+    public CompactFragmentAdapter(List<Manufacturer> myList, OnButtonClickListener listener) {
         this.myList = myList;
         this.listener = listener;
     }
@@ -31,13 +31,13 @@ public class CompactFragmentAdapter extends RecyclerView.Adapter<CompactFragment
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        String url_brand = myList.get(position);
+        String url_brand = myList.get(position).getLink();
         holder.setBrand(url_brand);
 
         holder.imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String selectedBrand = myList.get(position);
+                String selectedBrand = myList.get(position).getName();
                 listener.onButtonClick(selectedBrand);
             }
         });

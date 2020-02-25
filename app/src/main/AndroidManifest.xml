@@ -7,7 +7,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:fullBackupContent="true"
+        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -15,26 +15,41 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
 
-        <activity android:name=".activities.AuthenticationActivity">
+        <activity android:name=".activities.BaseActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.BASE" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".activities.BaseActivity"/>
-        <activity android:name=".activities.MainActivity"/>
+        <activity android:name=".activities.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
 
-        <activity android:name=".activities.MobileActivity"/>
-        <activity android:name=".activities.MobileDevicesActivity"/>
-        <activity android:name=".activities.ComputerActivity"/>
-        <activity android:name=".activities.StorageActivity"/>
-        <activity android:name=".activities.GamingActivity"/>
-        <activity android:name=".activities.MiscActivity"/>
+        <activity android:name=".activities.MobileActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MOBILE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
 
-        <activity android:name=".activities.ProfileActivity"/>
-        <activity android:name=".activities.FavoritesActivity"/>
-        <activity android:name=".activities.SearchActivity"/>
+        <activity android:name=".activities.StorageActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.STORAGE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".activities.ProfileActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.PROFILE" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
     </application>
+
 </manifest>
