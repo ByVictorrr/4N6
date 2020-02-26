@@ -20,6 +20,7 @@ import com.example.digitalevidence.models.Manufacturer;
 import com.example.digitalevidence.helpers.EndlessRecyclerViewScrollListener;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @TargetApi(23)
 public class DetailedFragment extends Fragment {
@@ -39,6 +40,7 @@ public class DetailedFragment extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
+    @TargetApi(24)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_detailed, container, false);
@@ -48,22 +50,20 @@ public class DetailedFragment extends Fragment {
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
 
+        activity = (MobileActivity)getActivity();
+        List<Manufacturer> manufacturers = activity.getManufacturers();
+        activity.setManufacturers(manufacturers);
 
         OnButtonClickListener listener = new OnButtonClickListener() {
             @Override
             public void onButtonClick(String selectedBrand) {
-                Log.e("TEST", selectedBrand);
-                Toast.makeText(getActivity(), "Got: " + selectedBrand, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Selected " + selectedBrand, Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(getActivity(), MobileDevicesActivity.class);
-                i.putExtra("SELECTEDBRAND", selectedBrand);
+                Manufacturer collect = manufacturers.stream().filter(m -> m.getName() == selectedBrand).collect(Collectors.toList()).get(0);
+                i.putExtra("BRAND_DEVICES", collect);
                 startActivity(i);
             }
         };
-
-
-        activity=(MobileActivity)getActivity();
-        List<Manufacturer> manufacturers  = activity.getManufacturers();
-
 
         DetailedFragmentAdapter detailedFragmentAdapter = new DetailedFragmentAdapter(manufacturers, listener);
         recyclerView.setAdapter(detailedFragmentAdapter);

@@ -1,23 +1,16 @@
 package com.example.digitalevidence.adapters;
-
 import android.annotation.TargetApi;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.digitalevidence.R;
 import com.example.digitalevidence.models.Device;
-import com.example.digitalevidence.models.Manufacturer;
 import com.squareup.picasso.Picasso;
-
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class AlphabeticalFragmentAdapter extends RecyclerView.Adapter<AlphabeticalFragmentAdapter.ViewHolder> {
     List<Device> myList;
@@ -37,9 +30,7 @@ public class AlphabeticalFragmentAdapter extends RecyclerView.Adapter<Alphabetic
     @TargetApi(24)
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        //Manufacturer manufacturer = myList.get(position);
-        //devices = manufacturer.getDevices().stream().collect(Collectors.toList());
-        holder.setDevices(myList);
+        holder.setDevices(myList, position);
     }
 
     // Get number of devices within brand
@@ -62,16 +53,16 @@ public class AlphabeticalFragmentAdapter extends RecyclerView.Adapter<Alphabetic
             textView2 = itemView.findViewById(R.id.textView2);
         }
 
-        private void setDevices(List<Device> list) {
-            final String NAME = list.get(0).getName();
-            final String MANUFACTURE = list.get(0).getManufacture();
-            final String OS = list.get(0).getOs();
+        private void setDevices(List<Device> list, int position) {
+            final String NAME = list.get(position).getName();
+            final String MANUFACTURE = "Release Date: " + list.get(position).getManufacture();
+            final String OS = "Dimensions: " + list.get(position).getOs();
 
             if (list.size() > 2) {
                 this.textView0.setText(NAME);
-                Picasso.get().load(list.get(0).getImage()).into(this.imageView);
-                this.textView1.append(MANUFACTURE);
-                this.textView2.append(OS);
+                Picasso.get().load(list.get(position).getImage()).into(this.imageView);
+                this.textView1.setText(MANUFACTURE);
+                this.textView2.setText(OS);
             }
         }
     }

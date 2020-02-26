@@ -5,12 +5,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.digitalevidence.R;
 import com.example.digitalevidence.helpers.OnButtonClickListener;
 import com.example.digitalevidence.models.Manufacturer;
 import com.squareup.picasso.Picasso;
-
 import java.util.List;
 
 public class CompactFragmentAdapter extends RecyclerView.Adapter<CompactFragmentAdapter.ViewHolder> {
@@ -53,6 +51,7 @@ public class CompactFragmentAdapter extends RecyclerView.Adapter<CompactFragment
 
         ViewHolder(View itemView) {
             super(itemView);
+
             imageView = itemView.findViewById(R.id.imageView);
         }
 

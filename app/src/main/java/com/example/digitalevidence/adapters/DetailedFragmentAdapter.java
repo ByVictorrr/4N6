@@ -1,5 +1,6 @@
 package com.example.digitalevidence.adapters;
 import android.annotation.TargetApi;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,7 +37,7 @@ public class DetailedFragmentAdapter extends RecyclerView.Adapter<DetailedFragme
     public void onBindViewHolder(ViewHolder holder, int position) {
         Manufacturer manufacturer = myList.get(position);
         List<Device> devices = manufacturer.getDevices().stream().collect(Collectors.toList());
-        holder.setDevices(manufacturer.getName(),devices);
+        holder.setDevices(manufacturer.getName(),devices, position);
 
         holder.button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,7 +70,7 @@ public class DetailedFragmentAdapter extends RecyclerView.Adapter<DetailedFragme
             imageView2 = itemView.findViewById(R.id.imageView2);
         }
 
-        private void setDevices(String brand, List<Device> list) {
+        private void setDevices(String brand, List<Device> list, int position) {
             final int LEFT = 0, MIDDLE = 1, RIGHT = 2;
 
             this.button.setText(brand);

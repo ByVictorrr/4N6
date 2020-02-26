@@ -8,7 +8,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import com.example.digitalevidence.fragments.AlphabeticalFragment;
 import com.example.digitalevidence.R;
-import com.example.digitalevidence.fragments.DetailedFragment;
+import com.example.digitalevidence.fragments.ReleaseDateFragment;
 
 public class ObjectTabsAdapter extends FragmentPagerAdapter {
     @StringRes
@@ -27,11 +27,11 @@ public class ObjectTabsAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                return AlphabeticalFragment.newInstance();
+                return ReleaseDateFragment.newInstance();
             case 1:
                 return AlphabeticalFragment.newInstance();
         }
-        return AlphabeticalFragment.newInstance();
+        return ReleaseDateFragment.newInstance();
     }
 
     @Nullable

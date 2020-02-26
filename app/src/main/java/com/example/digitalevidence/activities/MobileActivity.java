@@ -15,7 +15,6 @@ import com.example.digitalevidence.helpers.DynamoHelper;
 import com.example.digitalevidence.models.Manufacturer;
 import com.example.digitalevidence.R;
 import com.google.android.material.tabs.TabLayout;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Queue;
@@ -85,7 +84,7 @@ public class MobileActivity extends BaseActivity {
         Intent i;
         switch(item.getItemId()) {
             case R.id.profile:
-                i = new Intent(this, MobileActivity.class);
+                i = new Intent(this, ProfileActivity.class);
                 startActivity(i);
                 return(true);
             case R.id.help:

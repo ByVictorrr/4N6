@@ -9,26 +9,19 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.digitalevidence.R;
-import com.example.digitalevidence.activities.MobileActivity;
 import com.example.digitalevidence.activities.MobileDevicesActivity;
 import com.example.digitalevidence.adapters.AlphabeticalFragmentAdapter;
 import com.example.digitalevidence.helpers.EndlessRecyclerViewScrollListener;
 import com.example.digitalevidence.models.Device;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.PriorityQueue;
 import java.util.Queue;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 @TargetApi(23)
 public class AlphabeticalFragment extends Fragment {
     private MobileDevicesActivity activity;
     private final int COLS = 1;
-    private int i = 0;
-
 
     public AlphabeticalFragment() {
         // Required empty public constructor
@@ -53,24 +46,22 @@ public class AlphabeticalFragment extends Fragment {
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
 
-        activity = (MobileDevicesActivity) getActivity();
+        activity = (MobileDevicesActivity)getActivity();
         List<Device> devices = new ArrayList<>();
-
         Queue<Device> passed_devices = new LinkedList<>();
         try {
             for(Device d: activity.getBrand().getDevices()){
-                passed_devices.add((Device) d.clone());
+                passed_devices.add((Device)d.clone());
+
             }
-        }catch (Exception e){
+        }
+        catch (Exception e){
             e.printStackTrace();
         }
-
-
         load_device(passed_devices, devices, 4);
 
         AlphabeticalFragmentAdapter alphabeticalFragmentAdapter = new AlphabeticalFragmentAdapter(devices);
         recyclerView.setAdapter(alphabeticalFragmentAdapter);
-
 
         EndlessRecyclerViewScrollListener endlessRecyclerViewScrollListener =  new EndlessRecyclerViewScrollListener(layoutManager){
             @Override
@@ -83,13 +74,11 @@ public class AlphabeticalFragment extends Fragment {
         layoutManager.setMeasuredDimension(Integer.MAX_VALUE, Integer.MAX_VALUE);
         return root;
     }
+
     void load_device(Queue<Device> q, List<Device> d, int load_num){
-        int i=0;
+        int i = 0;
         while(i < load_num && !q.isEmpty()){
             d.add(q.poll());
         }
-
-
     }
-
 }

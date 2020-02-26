@@ -76,29 +76,6 @@ public class DynamoHelper {
         });
     }
 
-    /*public Thread fetchDevices(){
-        return new Thread(new Runnable(){
-            @Override
-            public void run() {
-                List<Map<String, AttributeValue>> items;
-                ScanResult result;
-
-                result = dynamoDBClient.scan(scanRequest);
-                items = result.getItems();
-                Map<String, AttributeValue> lastEvaluatedKey = result.getLastEvaluatedKey();
-
-                scanRequest.setExclusiveStartKey(lastEvaluatedKey);
-
-                // Go Through and Allocate Each Items
-                for (Map<String, AttributeValue> item : items) {
-                    Device device = new Device();
-                    parseDevice(item, device);
-                    devicesPending.add(device);
-                }
-            }
-        });
-    }*/
-
     @TargetApi(24)
     void parseBrand(Map<String, AttributeValue> src, Manufacturer des){
         Object[] objects = src.values().toArray();
@@ -130,20 +107,5 @@ public class DynamoHelper {
         des.setLink(link);
     }
 
-    /*@TargetApi(24)
-    void parseDevice(List<Device> src, Device des){
-        Object[] objects = src.toArray();
-
-        String deviceName = ((AttributeValue)(objects[0])).getS();
-        String image = ((AttributeValue)(objects[1])).getS();
-        String os = ((AttributeValue)(objects[2])).getS();
-
-        des.setName(deviceName);
-        des.setImage(image);
-        des.setOS(os);
-    }*/
-
     public Queue<Manufacturer> getBrandsPending(){return this.brandsPending;}
-
-    public Queue<Device> getDevicesPending(){return this.devicesPending;}
 }
