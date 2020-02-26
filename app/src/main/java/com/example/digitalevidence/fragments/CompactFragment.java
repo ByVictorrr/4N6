@@ -1,4 +1,5 @@
 package com.example.digitalevidence.fragments;
+import android.annotation.TargetApi;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -22,7 +23,9 @@ import com.example.digitalevidence.helpers.OnButtonClickListener;
 import com.example.digitalevidence.models.Manufacturer;
 import com.example.digitalevidence.models.PageViewModel;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 public class CompactFragment extends Fragment {
@@ -45,6 +48,8 @@ public class CompactFragment extends Fragment {
         pageViewModel.setIndex(TAG);
     }
 
+
+    @TargetApi(24)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_compact, container, false);
@@ -68,7 +73,8 @@ public class CompactFragment extends Fragment {
                 Log.e("TEST", selectedBrand);
                 Toast.makeText(getActivity(), "Got: " + selectedBrand, Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(getActivity(), MobileDevicesActivity.class);
-                i.putExtra("SELECTEDBRAND", selectedBrand);
+                Manufacturer collect = manufacturers.stream().filter(m -> m.getName() == selectedBrand).collect(Collectors.toList()).get(0);
+                i.putExtra("BRAND_DEVICES", collect);
                 startActivity(i);
             }
         };

@@ -1,6 +1,10 @@
 package com.example.digitalevidence.models;
 
-public class Device {
+import androidx.annotation.NonNull;
+
+import java.io.Serializable;
+
+public class Device implements Serializable, Cloneable {
     private String name, image, os, manufacture;
 
     public Device(String name, String image, String os, String manufacture) {
@@ -27,4 +31,10 @@ public class Device {
     public void setImage(String image) { this.image = image; }
     public void setOS(String os) { this.os = os; }
     public void setManufacture(String manufacture) { this.manufacture = manufacture; }
+
+    @NonNull
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
 }

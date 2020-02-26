@@ -2,9 +2,10 @@ package com.example.digitalevidence.models;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.io.Serializable;
 import java.util.Set;
 
-public class Manufacturer {
+public class Manufacturer implements Serializable {
     private String name;
     private String link;
     private Set<Device> devices;

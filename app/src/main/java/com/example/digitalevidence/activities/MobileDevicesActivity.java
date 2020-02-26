@@ -4,20 +4,22 @@ import android.widget.TextView;
 import androidx.viewpager.widget.ViewPager;
 import com.example.digitalevidence.R;
 import com.example.digitalevidence.adapters.ObjectTabsAdapter;
+import com.example.digitalevidence.models.Manufacturer;
 import com.google.android.material.tabs.TabLayout;
 
 public class MobileDevicesActivity extends BaseActivity {
+    Manufacturer brand;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mobile);
 
         // Obtain Selected Brand from Click
-        String selectedBrand = getIntent().getStringExtra("SELECTEDBRAND");
+        brand = (Manufacturer)getIntent().getSerializableExtra("BRAND_DEVICES");
 
         // Toolbar
         TextView textView = findViewById(R.id.toolbar_title);
-        textView.setText(selectedBrand);
+        textView.setText(brand.getName());
 
         // Tabs
         ObjectTabsAdapter tabsPagerAdapter = new ObjectTabsAdapter(this, getSupportFragmentManager());
@@ -26,4 +28,6 @@ public class MobileDevicesActivity extends BaseActivity {
         TabLayout tabs = findViewById(R.id.tabLayout);
         tabs.setupWithViewPager(viewPager);
     }
+    public Manufacturer getBrand(){return brand;}
+
 }
