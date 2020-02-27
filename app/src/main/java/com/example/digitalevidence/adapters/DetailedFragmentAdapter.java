@@ -1,6 +1,5 @@
 package com.example.digitalevidence.adapters;
 import android.annotation.TargetApi;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +7,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.digitalevidence.helpers.ComparatorHelper;
 import com.example.digitalevidence.helpers.OnButtonClickListener;
 import com.example.digitalevidence.models.Manufacturer;
 import com.example.digitalevidence.models.Device;
@@ -70,20 +71,25 @@ public class DetailedFragmentAdapter extends RecyclerView.Adapter<DetailedFragme
             imageView2 = itemView.findViewById(R.id.imageView2);
         }
 
+        @TargetApi(24)
         private void setDevices(String brand, List<Device> list, int position) {
             final int LEFT = 0, MIDDLE = 1, RIGHT = 2;
 
             this.button.setText(brand);
 
-            if (list.size() > 2) {
-                Picasso.get().load(list.get(LEFT).getImage()).into(this.imageView0);
-                Picasso.get().load(list.get(MIDDLE).getImage()).into(this.imageView1);
-                Picasso.get().load(list.get(RIGHT).getImage()).into(this.imageView2);
-            }
-            else{
-                Picasso.get().load(list.get(LEFT).getImage()).into(this.imageView0);
-                Picasso.get().load(list.get(LEFT).getImage()).into(this.imageView1);
-                Picasso.get().load(list.get(LEFT).getImage()).into(this.imageView2);
+            final int SPOTS=3;
+            List<String> unique_images = ComparatorHelper.getDiffObjects(list, SPOTS)
+                                .stream().map(d->d.getImage()).collect(Collectors.toList());
+
+
+            if (unique_images.size() > 2) {
+                Picasso.get().load(unique_images.get(LEFT)).into(this.imageView0);
+                Picasso.get().load(unique_images.get(MIDDLE)).into(this.imageView1);
+                Picasso.get().load(unique_images.get(RIGHT)).into(this.imageView2);
+            } else{
+                Picasso.get().load(unique_images.get(RIGHT)).into(this.imageView0);
+                Picasso.get().load(unique_images.get(MIDDLE)).into(this.imageView1);
+                Picasso.get().load(unique_images.get(LEFT)).into(this.imageView2);
             }
         }
     }
