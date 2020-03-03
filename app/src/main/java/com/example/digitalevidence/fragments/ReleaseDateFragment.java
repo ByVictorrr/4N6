@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.digitalevidence.R;
 import com.example.digitalevidence.activities.MobileDevicesActivity;
-import com.example.digitalevidence.adapters.AlphabeticalFragmentAdapter;
+import com.example.digitalevidence.adapters.ReleaseDateFragmentAdapter;
 import com.example.digitalevidence.helpers.EndlessRecyclerViewScrollListener;
 import com.example.digitalevidence.models.Device;
 import java.util.ArrayList;
@@ -27,8 +27,8 @@ public class ReleaseDateFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static ReleaseDateFragment newInstance() {
-        return new ReleaseDateFragment();
+    public static AlphabeticalFragment newInstance() {
+        return new AlphabeticalFragment();
     }
 
     @Override
@@ -60,8 +60,8 @@ public class ReleaseDateFragment extends Fragment {
         }
         load_device(passed_devices, devices, 4);
 
-        AlphabeticalFragmentAdapter alphabeticalFragmentAdapter = new AlphabeticalFragmentAdapter(devices);
-        recyclerView.setAdapter(alphabeticalFragmentAdapter);
+        ReleaseDateFragmentAdapter releasedateFragmentAdapter = new ReleaseDateFragmentAdapter(devices);
+        recyclerView.setAdapter(releasedateFragmentAdapter);
 
         EndlessRecyclerViewScrollListener endlessRecyclerViewScrollListener =  new EndlessRecyclerViewScrollListener(layoutManager){
             @Override

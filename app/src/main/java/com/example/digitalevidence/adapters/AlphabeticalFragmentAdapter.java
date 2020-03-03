@@ -58,7 +58,7 @@ public class AlphabeticalFragmentAdapter extends RecyclerView.Adapter<Alphabetic
             final String MANUFACTURE = "Release Date: " + list.get(position).getManufacture();
             final String OS = "Dimensions: " + list.get(position).getOs();
 
-            if (list.size() > 2) {
+            if (list.size() > 0) {
                 this.textView0.setText(NAME);
                 Picasso.get().load(list.get(position).getImage()).into(this.imageView);
                 this.textView1.setText(MANUFACTURE);

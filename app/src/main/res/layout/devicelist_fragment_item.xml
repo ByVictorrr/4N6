@@ -22,22 +22,19 @@
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:contentDescription="@string/tab_brand"
-        app:srcCompat="@drawable/iphonex" />
+        android:contentDescription="@string/tab_brand" />
 
     <TextView
         style="@style/TextBox"
         android:id="@+id/textView1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/description_releasedate" />
+        android:layout_height="wrap_content" />
 
     <TextView
         style="@style/TextBox"
         android:id="@+id/textView2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/description_dimensions" />
+        android:layout_height="wrap_content" />
 
     <Space
         android:layout_width="match_parent"

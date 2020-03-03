@@ -15,7 +15,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
 
-        <!--<activity android:name=".activities.AuthenticationActivity">
+        <activity android:name=".activities.AuthenticationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -23,16 +23,16 @@
         </activity>
 
         <activity android:name=".activities.BaseActivity"/>
-        <activity android:name=".activities.MainActivity"/>-->
+        <activity android:name=".activities.MainActivity"/>
 
-        <activity android:name=".activities.AuthenticationActivity"/>
+        <!--<activity android:name=".activities.AuthenticationActivity"/>
         <activity android:name=".activities.BaseActivity"/>
         <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
+        </activity>-->
 
         <activity android:name=".activities.MobileActivity"/>
         <activity android:name=".activities.MobileDevicesActivity"/>
