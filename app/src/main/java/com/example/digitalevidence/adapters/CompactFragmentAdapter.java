@@ -51,12 +51,12 @@ public class CompactFragmentAdapter extends RecyclerView.Adapter<CompactFragment
 
         ViewHolder(View itemView) {
             super(itemView);
-
             imageView = itemView.findViewById(R.id.imageView);
         }
 
+        // Note: Needs android:usesCleartextTraffic="true" in manifest to avoid 504 errors
         private void setBrand(String url) {
-            Picasso.get().load(url).into(this.imageView);
+            Picasso.get().load(url).error(R.drawable.blank).into(this.imageView);
         }
     }
 }

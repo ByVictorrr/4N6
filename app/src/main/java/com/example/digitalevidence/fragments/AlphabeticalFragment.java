@@ -49,6 +49,7 @@ public class AlphabeticalFragment extends Fragment {
         activity = (MobileDevicesActivity)getActivity();
         List<Device> devices = new ArrayList<>();
         Queue<Device> passed_devices = new LinkedList<>();
+
         try {
             for(Device d: activity.getBrand().getDevices()){
                 passed_devices.add((Device)d.clone());
@@ -58,6 +59,7 @@ public class AlphabeticalFragment extends Fragment {
         catch (Exception e){
             e.printStackTrace();
         }
+
         load_device(passed_devices, devices, 4);
 
         AlphabeticalFragmentAdapter alphabeticalFragmentAdapter = new AlphabeticalFragmentAdapter(devices);

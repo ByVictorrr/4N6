@@ -80,20 +80,6 @@ public class DetailedFragmentAdapter extends RecyclerView.Adapter<DetailedFragme
             List<String> unique_images = ComparatorHelper.getDiffObjects(list).stream().map(d->d.getImage()).collect(Collectors.toList());
             int size = unique_images.size();
 
-            if (size > 0) {
-                Log.e("TEST", "ONE");
-                Picasso.get().load(unique_images.get(0)).into(this.imageView0);
-
-                if (size > 1) {
-                    Log.e("TEST", "TWO");
-                    Picasso.get().load(unique_images.get(1)).into(this.imageView1);
-
-                    if (size > 2) {
-                        Log.e("TEST", "THREE");
-                        Picasso.get().load(unique_images.get(2)).into(this.imageView2);
-                    }
-                }
-            }
             if (size > 2) {
                 Picasso.get().load(unique_images.get(LEFT)).into(this.imageView0);
                 Picasso.get().load(unique_images.get(MIDDLE)).into(this.imageView1);
