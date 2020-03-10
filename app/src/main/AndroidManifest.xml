@@ -22,11 +22,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".activities.BaseActivity"/>
         <activity android:name=".activities.MainActivity"/>
 
-        <!--<activity android:name=".activities.AuthenticationActivity"/>
+        <!--
+        Uncomment this and comment the section above if want no authentication
+
+        <activity android:name=".activities.AuthenticationActivity"/>
         <activity android:name=".activities.BaseActivity"/>
         <activity android:name=".activities.MainActivity">
             <intent-filter>

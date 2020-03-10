@@ -1,7 +1,5 @@
 package com.example.digitalevidence.models;
-
 import androidx.annotation.NonNull;
-
 import java.io.Serializable;
 
 public class Device implements Serializable, Cloneable {
