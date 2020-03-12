@@ -1,0 +1,6 @@
+[submodule "LambdaS3AdapterFromZipToFiles"]
+	path = LambdaS3AdapterFromZipToFiles
+	url = https://github.com/ByVictorrr/LambdaS3AdapterFromZipToFiles
+[submodule "LambdaS3ToDynamo"]
+	path = LambdaS3ToDynamo
+	url = https://github.com/ByVictorrr/LambdaS3ToDynamo

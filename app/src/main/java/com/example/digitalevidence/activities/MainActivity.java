@@ -10,11 +10,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.amazonaws.mobile.client.AWSMobileClient;
-import com.amazonaws.mobile.client.AWSStartupHandler;
-import com.amazonaws.mobile.client.AWSStartupResult;
 import com.example.digitalevidence.R;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
@@ -26,14 +24,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         // Toolbar
         TextView textView = findViewById(R.id.toolbar_title);
         textView.setText(R.string.app_name);
-
-        // Establishes your connection to aws and acts as an interface for your services
-        AWSMobileClient.getInstance().initialize(this, new AWSStartupHandler() {
-            @Override
-            public void onComplete(AWSStartupResult awsStartupResult) {
-                Log.d("YourMainActivity", "AWSMobileClient is instantiated and you are connected to AWS!");
-            }
-        }).execute();
 
         // Buttons for Selecting Device Type
         Button mobileBTN = findViewById(R.id.mobile_button);
@@ -51,28 +41,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         Intent i;
-        switch (v.getId()) {
-            case R.id.mobile_button:
-                i = new Intent(this, MobileActivity.class);
-                startActivity(i);
-                break;
-            case R.id.computer_button:
-                i = new Intent(this, ComputerActivity.class);
-                startActivity(i);
-                break;
-            case R.id.storage_button:
-                i = new Intent(this, StorageActivity.class);
-                startActivity(i);
-                break;
-            case R.id.gaming_button:
-                i = new Intent(this, GamingActivity.class);
-                startActivity(i);
-                break;
-            case R.id.misc_button:
-                i = new Intent(this, MiscActivity.class);
-                startActivity(i);
-                break;
-        }
+            i = new Intent(this, MobileActivity.class);
+            startActivity(i);
     }
 
     @Override
@@ -99,6 +69,4 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         }
         return(super.onOptionsItemSelected(item));
     }
-
-    public void loadAndSet(int item_to_load){}
 }

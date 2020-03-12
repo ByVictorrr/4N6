@@ -1,6 +1,5 @@
 package com.example.digitalevidence.activities;
 import android.content.Intent;
-import android.util.Pair;
 import android.view.Menu;
 import android.view.MenuItem;
 import androidx.annotation.LayoutRes;
@@ -8,10 +7,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import com.example.digitalevidence.models.Model;
 import com.example.digitalevidence.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import java.util.List;
 
 abstract public class BaseActivity extends AppCompatActivity {
     Menu menu;
@@ -32,7 +29,9 @@ abstract public class BaseActivity extends AppCompatActivity {
             if (!className.equals("MainActivity")) {
                 if (!className.equals("FavoritesActivity")) {
                     if (!className.equals("SearchActivity")) {
-                        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+                        if (!className.equals("ProfileActivity")) {
+                            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+                        }
                     }
                 }
             }
@@ -78,6 +77,7 @@ abstract public class BaseActivity extends AppCompatActivity {
         switch(item.getItemId()) {
             case R.id.profile:
                 i = new Intent(this, ProfileActivity.class);
+                i.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 startActivity(i);
                 return(true);
             /*case R.id.help:
@@ -93,8 +93,4 @@ abstract public class BaseActivity extends AppCompatActivity {
         onBackPressed();
         return true;
     }
-
-    abstract public void loadAndSet(int item_to_load);
-    public void setModels(List<Pair<String, List<Model>>> brandModels){}
-    public void setlistLists(List<List<Model>> brandObjects){}
 }

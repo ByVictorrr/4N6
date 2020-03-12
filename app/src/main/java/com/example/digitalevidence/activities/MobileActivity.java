@@ -1,10 +1,10 @@
 package com.example.digitalevidence.activities;
+import android.annotation.TargetApi;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.util.Pair;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.WindowManager;
@@ -12,24 +12,31 @@ import android.widget.TextView;
 import androidx.viewpager.widget.ViewPager;
 import com.example.digitalevidence.adapters.ModelTabsAdapter;
 import com.example.digitalevidence.helpers.DynamoHelper;
-import com.example.digitalevidence.models.MODEL_TYPE;
-import com.example.digitalevidence.models.MobileTableDO;
-import com.example.digitalevidence.models.Model;
+import com.example.digitalevidence.models.Manufacturer;
 import com.example.digitalevidence.R;
 import com.google.android.material.tabs.TabLayout;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Queue;
 
 public class MobileActivity extends BaseActivity {
     private DynamoHelper dynamoHelper;
-    private List<Pair<String, List<Model>>> brandModels;
+    private final String TABLE_NAME = "digitaln-mobilehub-2069871194-MobileBrands";
+    public static final Integer LOAD_COUNT = 4;
+    private List<Manufacturer> manufacturers;
+
+    @TargetApi(24)
+    public void setManufacturers(List<Manufacturer> manufacturers){
+        this.manufacturers = manufacturers;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mobile);
+
+        this.manufacturers = new ArrayList<>();
+        this.dynamoHelper = DynamoHelper.getInstance(this, TABLE_NAME, LOAD_COUNT);
 
         // Toolbar
         TextView textView = findViewById(R.id.toolbar_title);
@@ -41,45 +48,32 @@ public class MobileActivity extends BaseActivity {
         viewPager.setAdapter(tabsPagerAdapter);
         TabLayout tabs = findViewById(R.id.tabLayout);
         tabs.setupWithViewPager(viewPager);
-
-        // Utilize Items Labeled Mobile from DynamoDB
-        this.dynamoHelper = new DynamoHelper(this, MODEL_TYPE.MOBILE, MobileTableDO.TABLE_NAME);
     }
 
-    public void loadAndSet(int item_to_load){
-        Thread getAll = dynamoHelper.getNItems(item_to_load);
-        Thread doAll = addDataToList();
+    // Pass DynamoDB Helper Through
+    public void LoadBrands(){
+        Thread fetchBrands = dynamoHelper.fetchBrands();
+        Thread displayBrands = setBrands(dynamoHelper);
         try {
-            getAll.start();
-            getAll.join();
-            doAll.start();
-            doAll.join();
+            fetchBrands.start();
+            fetchBrands.join();
+            displayBrands.start();
+            displayBrands.join();
         }
         catch (Exception e) {
             e.getLocalizedMessage();
         }
     }
 
-    private Thread addDataToList(){
+    private Thread setBrands(DynamoHelper helper){
         return new Thread(new Runnable() {
             @Override
             public void run() {
-                Queue<Model> pending = dynamoHelper.getModelsPending();
-                Model polled;
-                int size;
-                while(pending.size() > 0) {
+                Queue<Manufacturer> pending = helper.getBrandsPending();
+                Manufacturer polled;
+                while( pending.size() > 0 ) {
                     polled = pending.poll();
-                    // Case 1 - one of prev pulls was the same brand
-                    if ((size = brandModels.size()) > 0 && brandModels.get(size-1).first.equals(polled.getBrand())){
-                        brandModels.get(size-1).second.add(polled);
-                    }
-                    else{
-                        List<Model> models = new ArrayList<>();
-                        models.add(polled);
-                        String brand =  polled.getBrand();
-                        Pair<String, List<Model>> newPair = new Pair<>(brand, models);
-                        brandModels.add(newPair);
-                    }
+                    manufacturers.add(polled);
                 }
             }
         });
@@ -110,7 +104,7 @@ public class MobileActivity extends BaseActivity {
         return(super.onOptionsItemSelected(item));
     }
 
-    public void setModels(List<Pair<String, List<Model>>> brandModels){
-        this.brandModels = brandModels;
+    public List<Manufacturer> getManufacturers() {
+        return manufacturers;
     }
 }

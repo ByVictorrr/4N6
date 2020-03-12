@@ -5,17 +5,19 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.digitalevidence.R;
+import com.example.digitalevidence.helpers.OnButtonClickListener;
+import com.example.digitalevidence.models.Manufacturer;
 import com.squareup.picasso.Picasso;
-
 import java.util.List;
 
 public class CompactFragmentAdapter extends RecyclerView.Adapter<CompactFragmentAdapter.ViewHolder> {
-    private static List<String> myList;
+    private static List<Manufacturer> myList;
+    OnButtonClickListener listener;
 
-    public CompactFragmentAdapter(List<String> myList) {
+    public CompactFragmentAdapter(List<Manufacturer> myList, OnButtonClickListener listener) {
         this.myList = myList;
+        this.listener = listener;
     }
 
     @NonNull
@@ -27,8 +29,16 @@ public class CompactFragmentAdapter extends RecyclerView.Adapter<CompactFragment
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        String url_brand = myList.get(position);
+        String url_brand = myList.get(position).getLink();
         holder.setBrand(url_brand);
+
+        holder.imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String selectedBrand = myList.get(position).getName();
+                listener.onButtonClick(selectedBrand);
+            }
+        });
     }
 
     @Override
@@ -44,8 +54,9 @@ public class CompactFragmentAdapter extends RecyclerView.Adapter<CompactFragment
             imageView = itemView.findViewById(R.id.imageView);
         }
 
+        // Note: Needs android:usesCleartextTraffic="true" in manifest to avoid 504 errors
         private void setBrand(String url) {
-            Picasso.get().load(url).into(this.imageView);
+            Picasso.get().load(url).error(R.drawable.blank).into(this.imageView);
         }
     }
 }

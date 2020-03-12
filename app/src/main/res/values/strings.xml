@@ -2,6 +2,11 @@
     <string name="app_name">Digital Evidence</string>
 
     <string name="title_profile">Profile</string>
+    <string name="name">Name: </string>
+    <string name="agency">Agency: </string>
+    <string name="department">Department: </string>
+    <string name="email">Email: </string>
+    <string name="sign_out">Sign Out</string>
 
     <string name="title_edit">Edit</string>
     <string name="title_favorites">Favorites</string>

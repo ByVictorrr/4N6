@@ -1,24 +1,21 @@
 package com.example.digitalevidence.adapters;
-
+import android.annotation.TargetApi;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.digitalevidence.R;
-import com.example.digitalevidence.models.Model;
+import com.example.digitalevidence.models.Device;
 import com.squareup.picasso.Picasso;
-
 import java.util.List;
 
 public class ReleaseDateFragmentAdapter extends RecyclerView.Adapter<ReleaseDateFragmentAdapter.ViewHolder> {
-    private List<List<Model>> myList;
+    List<Device> myList;
 
-    public ReleaseDateFragmentAdapter(List<List<Model>> myList) {
+    public ReleaseDateFragmentAdapter(List<Device> myList) {
         this.myList = myList;
     }
 
@@ -29,12 +26,14 @@ public class ReleaseDateFragmentAdapter extends RecyclerView.Adapter<ReleaseDate
         return new ViewHolder(view);
     }
 
+    // Obtain list of devices within brand
+    @TargetApi(24)
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        List<Model> stringObject = myList.get(position);
-        holder.setDevices(stringObject);
+        holder.setDevices(myList, position);
     }
 
+    // Get number of devices within brand
     @Override
     public int getItemCount() {
         return myList.size();
@@ -54,16 +53,16 @@ public class ReleaseDateFragmentAdapter extends RecyclerView.Adapter<ReleaseDate
             textView2 = itemView.findViewById(R.id.textView2);
         }
 
-        private void setDevices(List<Model> list) {
-            String NAME = list.get(0).getName();
-            String RELEASEDATE = list.get(0).getReleaseDate();
-            String DIMENSIONS = list.get(0).getDimensions();
+        private void setDevices(List<Device> list, int position) {
+            final String NAME = list.get(position).getName();
+            final String MANUFACTURE = "Release Date: " + list.get(position).getManufacture();
+            final String OS = "Dimensions: " + list.get(position).getOs();
 
-            if (list.size() > 2) {
+            if (list.size() > 0) {
                 this.textView0.setText(NAME);
-                Picasso.get().load(list.get(0).getLink()).into(this.imageView);
-                this.textView1.append(RELEASEDATE);
-                this.textView2.append(DIMENSIONS);
+                Picasso.get().load(list.get(position).getImage()).into(this.imageView);
+                this.textView1.setText(MANUFACTURE);
+                this.textView2.setText(OS);
             }
         }
     }

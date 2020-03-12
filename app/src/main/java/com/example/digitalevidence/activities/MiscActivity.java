@@ -12,9 +12,6 @@ import android.widget.TextView;
 import androidx.viewpager.widget.ViewPager;
 import com.example.digitalevidence.adapters.ModelTabsAdapter;
 import com.example.digitalevidence.helpers.DynamoHelper;
-import com.example.digitalevidence.models.MODEL_TYPE;
-import com.example.digitalevidence.models.MobileTableDO;
-import com.example.digitalevidence.models.Model;
 import com.example.digitalevidence.R;
 import com.google.android.material.tabs.TabLayout;
 
@@ -24,7 +21,6 @@ import java.util.Queue;
 
 public class MiscActivity extends BaseActivity {
     private DynamoHelper dynamoHelper;
-    private List<Pair<String, List<Model>>> brandModels;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,46 +39,8 @@ public class MiscActivity extends BaseActivity {
         tabs.setupWithViewPager(viewPager);
 
         // Utilize Items Labeled Mobile from DynamoDB
-        this.dynamoHelper = new DynamoHelper(this, MODEL_TYPE.MOBILE, MobileTableDO.TABLE_NAME);
     }
 
-    public void loadAndSet(int item_to_load){
-        Thread getAll = dynamoHelper.getNItems(item_to_load);
-        Thread doAll = addDataToList();
-        try {
-            getAll.start();
-            getAll.join();
-            doAll.start();
-            doAll.join();
-        }
-        catch (Exception e) {
-            e.getLocalizedMessage();
-        }
-    }
-
-    private Thread addDataToList(){
-        return new Thread(new Runnable() {
-            @Override
-            public void run() {
-                Queue<Model> pending = dynamoHelper.getModelsPending();
-                Model polled;
-                int size;
-                while(pending.size() > 0) {
-                    polled = pending.poll();
-                    // Case 1 - one of prev pulls was the same brand
-                    if ((size = brandModels.size()) > 0 && brandModels.get(size-1).first.equals(polled.getBrand())){
-                        brandModels.get(size-1).second.add(polled);
-                    }else{
-                        List<Model> models = new ArrayList<>();
-                        models.add(polled);
-                        String brand =  polled.getBrand();
-                        Pair<String, List<Model>> newPair = new Pair<>(brand, models);
-                        brandModels.add(newPair);
-                    }
-                }
-            }
-        });
-    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -109,7 +67,4 @@ public class MiscActivity extends BaseActivity {
         return(super.onOptionsItemSelected(item));
     }
 
-    public void setModels(List<Pair<String, List<Model>>> brandModels){
-        this.brandModels = brandModels;
-    }
 }
